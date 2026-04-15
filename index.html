@@ -33,7 +33,7 @@
         header {
             background: var(--primary-dark);
             color: var(--white);
-            padding: 1rem 0;
+            padding: 0.7rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -53,6 +53,15 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .logo-image {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
         }
 
         .logo-text {
@@ -76,7 +85,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.2rem;
             list-style: none;
         }
 
@@ -135,7 +144,7 @@
 .hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
     color: var(--white);
-    padding: 6rem 2rem 5rem;
+    padding: 3.5rem 2rem 2.5rem;
     position: relative;
     overflow: hidden;
 }
@@ -148,7 +157,7 @@
     transform: translate(-50%, -50%);
     width: 1600px;  /* Ajusta según el tamaño que quieras */
     height: 1600px; /* Ajusta según el tamaño que quieras */
-    background-image: url('/img/logo-final.png');
+    background-image: url('./img/logo-final.png');
     background-repeat: no-repeat;
     background-size: contain;  /* Importante: mantiene proporción */
     background-position: center;
@@ -175,14 +184,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -1px;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             font-weight: 400;
             opacity: 0.95;
@@ -190,16 +199,16 @@
 
         .hero-description {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.4rem;
             opacity: 0.85;
-            max-width: 800px;
+            max-width: 760px;
             line-height: 1.7;
         }
 
         /* Institucional Section */
         .institucional {
             background: var(--white);
-            padding: 4rem 2rem;
+            padding: 2.4rem 2rem;
         }
 
         .institucional-content {
@@ -233,7 +242,7 @@
 
         .stat-box {
             background: var(--light-blue);
-            padding: 2rem;
+            padding: 1.4rem;
             border-radius: 10px;
             text-align: center;
             border-left: 4px solid var(--accent);
@@ -254,7 +263,7 @@
 
         /* Research Areas */
         section {
-            padding: 4rem 2rem;
+            padding: 2.4rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -288,14 +297,14 @@
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
         .research-card {
             background: var(--white);
             border: 2px solid #e2e8f0;
             border-radius: 10px;
-            padding: 2rem;
+            padding: 1.4rem;
             transition: all 0.3s;
         }
 
@@ -324,13 +333,14 @@
 
         /* Team Section */
         .team {
-            background: var(--light-blue);
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
         }
 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
         .team-card {
@@ -407,7 +417,7 @@
             background: var(--white);
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.4rem;
             transition: all 0.3s;
         }
 
@@ -453,12 +463,12 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            padding: 1.4rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -484,7 +494,7 @@
             background: #0a0e1a;
             color: var(--white);
             text-align: center;
-            padding: 2rem;
+            padding: 1.4rem;
         }
 
         footer p {
@@ -779,6 +789,7 @@
     <header>
         <nav>
             <div class="logo-section">
+                <img src="./img/logo-final.png" alt="Logo SiMAF" class="logo-image">
                 <div class="logo-text">
                     <div class="logo-main">SiMAF</div>
                     <div class="logo-sub">Universidad de Mendoza</div>
@@ -805,78 +816,6 @@
             <p class="hero-description">
                 Centro de investigación dedicado al desarrollo y aplicación de métodos computacionales avanzados para el estudio de fenómenos físicos mediante simulaciones de dinámica molecular, cálculos ab initio y algoritmos de alto rendimiento en arquitecturas paralelas.
             </p>
-        </div>
-    </section>
-
-    <section class="institucional">
-        <div class="institucional-content">
-            <div class="institucional-text">
-                <h2>Excelencia en Investigación Computacional</h2>
-                <p>
-                    El Laboratorio SiMAF es un centro de referencia en investigación computacional aplicada a ciencia de materiales, astrofísica y física. Nuestro equipo desarrolla y aplica métodos numéricos avanzados para resolver problemas fundamentales en estas áreas.
-                </p>
-                <p>
-                    Contamos con infraestructura computacional de alto rendimiento y colaboraciones con instituciones científicas de prestigio internacional, lo que nos permite abordar problemas de gran complejidad computacional.
-                </p>
-            </div>
-            <div class="institucional-stats">
-                <div class="stat-box">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Años de Trayectoria</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Publicaciones Científicas</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Proyectos de Investigación</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Colaboraciones Internacionales</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="investigacion">
-        <div class="section-header">
-            <h2>Líneas de Investigación</h2>
-            <div class="underline"></div>
-            <p>Áreas de investigación y desarrollo científico</p>
-        </div>
-        <div class="research-grid">
-            <div class="research-card">
-                <div class="research-icon">🔬</div>
-                <h3>Materiales bajo Condiciones Extremas</h3>
-                <p>Simulación computacional de materiales sometidos a alta presión, temperatura y deformación mediante técnicas de dinámica molecular clásica y ab initio.</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">⭐</div>
-                <h3>Astrofísica Computacional</h3>
-                <p>Modelado de procesos astrofísicos, incluyendo colisiones planetarias, dinámica de granos cósmicos y formación de sistemas planetarios mediante simulaciones Monte Carlo y N-cuerpos.</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">💻</div>
-                <h3>Computación de Alto Rendimiento</h3>
-                <p>Desarrollo e implementación de algoritmos paralelos optimizados para arquitecturas GPGPU, permitiendo simulaciones de gran escala espacial y temporal.</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">🧪</div>
-                <h3>Nanomateriales y Propiedades Mecánicas</h3>
-                <p>Caracterización computacional de propiedades mecánicas, térmicas y estructurales de materiales a escala nanométrica y microestructuras complejas.</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">☢️</div>
-                <h3>Daño por Radiación en Materiales</h3>
-                <p>Análisis mediante simulaciones atomísticas del daño estructural inducido por radiación en materiales de interés tecnológico y nuclear.</p>
-            </div>
-            <div class="research-card">
-                <div class="research-icon">🔩</div>
-                <h3>Materiales Porosos y Espumas Metálicas</h3>
-                <p>Estudio de la relación entre microestructura y propiedades mecánicas en materiales con arquitectura porosa controlada.</p>
-            </div>
         </div>
     </section>
 
@@ -964,6 +903,102 @@
                         <a href="#">Publicaciones</a>
                     </div>
                 </div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">TE</div>
+                <div class="team-info">
+                    <div class="team-name">Tomás Agustín Escalante</div>
+                    <div class="team-role">Investigador del laboratorio</div>
+                    <div class="team-links">
+                        <a href="#">Curriculum Vitae</a>
+                        <a href="#">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">MB</div>
+                <div class="team-info">
+                    <div class="team-name">María José Buzzachi</div>
+                    <div class="team-role">Investigadora del laboratorio</div>
+                    <div class="team-links">
+                        <a href="#">Curriculum Vitae</a>
+                        <a href="#">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="institucional">
+        <div class="institucional-content">
+            <div class="institucional-text">
+                <h2>Excelencia en Investigación Computacional</h2>
+                <p>
+                    El Laboratorio SiMAF es un centro de referencia en investigación computacional aplicada a ciencia de materiales, astrofísica y física. Nuestro equipo desarrolla y aplica métodos numéricos avanzados para resolver problemas fundamentales en estas áreas.
+                </p>
+                <p>
+                    Contamos con infraestructura computacional de alto rendimiento y colaboraciones con instituciones científicas de prestigio internacional, lo que nos permite abordar problemas de gran complejidad computacional.
+                </p>
+            </div>
+            <div class="institucional-stats">
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Años de Trayectoria</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Publicaciones Científicas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Proyectos de Investigación</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Colaboraciones Internacionales</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="investigacion">
+        <div class="section-header">
+            <h2>Líneas de Investigación</h2>
+            <div class="underline"></div>
+            <p>Áreas de investigación y desarrollo científico</p>
+        </div>
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon">🔬</div>
+                <h3>Materiales bajo Condiciones Extremas</h3>
+                <p>Simulación computacional de materiales sometidos a alta presión, temperatura y deformación mediante técnicas de dinámica molecular clásica y ab initio.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">⭐</div>
+                <h3>Astrofísica Computacional</h3>
+                <p>Modelado de procesos astrofísicos, incluyendo colisiones planetarias, dinámica de granos cósmicos y formación de sistemas planetarios mediante simulaciones Monte Carlo y N-cuerpos.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">💻</div>
+                <h3>Computación de Alto Rendimiento</h3>
+                <p>Desarrollo e implementación de algoritmos paralelos optimizados para arquitecturas GPGPU, permitiendo simulaciones de gran escala espacial y temporal.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">🧪</div>
+                <h3>Nanomateriales y Propiedades Mecánicas</h3>
+                <p>Caracterización computacional de propiedades mecánicas, térmicas y estructurales de materiales a escala nanométrica y microestructuras complejas.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">☢️</div>
+                <h3>Daño por Radiación en Materiales</h3>
+                <p>Análisis mediante simulaciones atomísticas del daño estructural inducido por radiación en materiales de interés tecnológico y nuclear.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">🔩</div>
+                <h3>Materiales Porosos y Espumas Metálicas</h3>
+                <p>Estudio de la relación entre microestructura y propiedades mecánicas en materiales con arquitectura porosa controlada.</p>
             </div>
         </div>
     </section>
