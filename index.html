@@ -55,6 +55,15 @@
             gap: 1rem;
         }
 
+        .logo-image {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+        }
+
         .logo-text {
             display: flex;
             flex-direction: column;
@@ -148,7 +157,7 @@
     transform: translate(-50%, -50%);
     width: 1600px;  /* Ajusta según el tamaño que quieras */
     height: 1600px; /* Ajusta según el tamaño que quieras */
-    background-image: url('/img/logo-final.png');
+    background-image: url('./img/logo-final.png');
     background-repeat: no-repeat;
     background-size: contain;  /* Importante: mantiene proporción */
     background-position: center;
@@ -779,6 +788,7 @@
     <header>
         <nav>
             <div class="logo-section">
+                <img src="./img/logo-final.png" alt="Logo SiMAF" class="logo-image">
                 <div class="logo-text">
                     <div class="logo-main">SiMAF</div>
                     <div class="logo-sub">Universidad de Mendoza</div>

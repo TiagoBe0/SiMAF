@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Ing. Diego R. Tramontina - Publicaciones | SiMAF</title>
+    <title>Dr. Orlando Raúl Deluigi - Publicaciones | SiMAF</title>
     <style>
         * {
             margin: 0;
@@ -53,6 +53,13 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .logo-image {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
         }
 
         .logo-main {
@@ -306,6 +313,7 @@
     <header>
         <nav>
             <div class="logo-section">
+                <img src="./img/logo-final.png" alt="Logo SiMAF" class="logo-image">
                 <div>
                     <div class="logo-main">SiMAF</div>
                     <div class="logo-sub">Universidad de Mendoza</div>
@@ -313,18 +321,18 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="publicaciones.html">Publicaciones</a></li>
-                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="index.html#publicaciones">Publicaciones</a></li>
+                <li><a href="index.html#equipo">Equipo</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="researcher-hero">
         <div class="hero-content">
-            <div class="researcher-photo">DT</div>
+            <div class="researcher-photo">ORD</div>
             <div class="researcher-info">
-                <h1>Dr. Ing. Diego R. Tramontina</h1>
-                <p class="researcher-role">Investigador Adjunto CONICET</p>
+                <h1>Dr. Orlando Raúl Deluigi</h1>
+                <p class="researcher-role">Investigador CONICET</p>
                 <div class="researcher-links">
                     <a href="https://scholar.google.com/citations?user=XXXXXXX" target="_blank" class="link-btn">Google Scholar</a>
                     <a href="#" target="_blank" class="link-btn">ResearchGate</a>
@@ -338,26 +346,26 @@
     <div class="container">
         <div class="stats-bar">
             <div class="stat-card">
-                <div class="stat-number">26</div>
+                <div class="stat-number">17</div>
                 <div class="stat-label">Publicaciones Totales</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">24</div>
+                <div class="stat-number">11</div>
                 <div class="stat-label">Disponibles en Línea</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">2013-2025</div>
+                <div class="stat-number">2020-2025</div>
                 <div class="stat-label">Período Activo</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">Plasticidad</div>
+                <div class="stat-number">Aleaciones HEA</div>
                 <div class="stat-label">Área Principal</div>
             </div>
         </div>
 
         <div class="section-header">
             <h2>Publicaciones Científicas</h2>
-            <p style="color: var(--text-light);">Especialización en dinámica molecular y propiedades mecánicas de materiales</p>
+            <p style="color: var(--text-light);">Artículos en revistas de alto impacto</p>
         </div>
 
         <div class="publications-list">
@@ -368,7 +376,48 @@
                 </div>
                 <p class="publication-authors">FR Roco, O Deluigi, M Opazo, N Amigo, J Rojas-Nunez, FJ Valencia, DR Tramontina, EM Bringa</p>
                 <p class="publication-meta"><strong>International Journal of Refractory Metals and Hard Materials</strong> 128, 107038</p>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Mechanical properties of hcp Fe at high pressures and temperatures from large-scale molecular dynamics simulations</h3>
+                    <span class="year-badge">2024</span>
+                </div>
+                <p class="publication-authors">OR Deluigi, EM Bringa</p>
+                <p class="publication-meta"><strong>Journal of Applied Physics</strong> 136 (19), 195901</p>
                 <span class="availability-tag">✓ Disponible</span>
+                <br><br>
+                <a href="https://pubs.aip.org/aip/jap/article/136/19/195901/3320676" target="_blank" class="publication-link">
+                    📄 Acceder al documento completo →
+                </a>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Chemical short-range order increases the phonon heat conductivity in a refractory high-entropy alloy</h3>
+                    <span class="year-badge">2024</span>
+                </div>
+                <p class="publication-authors">G Mora-Barzaga, HM Urbassek, OR Deluigi, PM Pasinetti, EM Bringa</p>
+                <p class="publication-meta"><strong>Scientific Reports</strong> 14 (1), 20628</p>
+                <span class="availability-tag">✓ Disponible</span>
+                <br><br>
+                <a href="https://www.nature.com/articles/s41598-024-70500-9.pdf" target="_blank" class="publication-link">
+                    📄 Acceder al documento completo →
+                </a>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Atomistic Simulations of the Shock and Spall Behavior of the Refractory High-Entropy Alloy HfNbTaTiZr</h3>
+                    <span class="year-badge">2024</span>
+                </div>
+                <p class="publication-authors">D Thürmer, OR Deluigi, HM Urbassek, EM Bringa, N Merkert</p>
+                <p class="publication-meta"><strong>High Entropy Alloys & Materials</strong> 2 (2), 321-331</p>
+                <span class="availability-tag">✓ Disponible</span>
+                <br><br>
+                <a href="https://link.springer.com/article/10.1007/S44210-024-00042-2" target="_blank" class="publication-link">
+                    📄 Acceder al documento completo →
+                </a>
             </div>
 
             <div class="publication-card">
@@ -387,14 +436,37 @@
 
             <div class="publication-card">
                 <div class="publication-header">
-                    <h3 class="publication-title">Plasticity in diamond nanoparticles: dislocations and amorphization during loading and dislocation multiplication during unloading</h3>
-                    <span class="year-badge">2024</span>
+                    <h3 class="publication-title">A spall and diffraction study of nanosecond pressure release across the iron ε-α phase boundary</h3>
+                    <span class="year-badge">2023</span>
                 </div>
-                <p class="publication-authors">F Aquistapace, D Castillo-Castro, RI González, N Amigo, G García Vidable, DR Tramontina, FJ Valencia, EM Bringa</p>
-                <p class="publication-meta"><strong>Journal of Materials Science</strong> 59 (12), 4788-4809</p>
+                <p class="publication-authors">G Righi, R Briggs, OR Deluigi, CV Stan, S Singh, SM Clarke, EM Bringa, RF Smith, RE Rudd, HS Park</p>
+                <p class="publication-meta"><strong>Acta Materialia</strong> 257, 119148</p>
                 <span class="availability-tag">✓ Disponible</span>
                 <br><br>
-                <a href="https://www.researchgate.net/profile/Daniel-Castillo-Castro/publication/376755445_Plasticity_in_diamond_nanoparticles_dislocations_and_amorphization_during_loading_and_dislocation_multiplication_during_unloading/links/6732bf37f255d57286677f79/Plasticity-in-diamond-nanoparticles-dislocations-and-amorphization-during-loading-and-dislocation-multiplication-during-unloading.pdf" target="_blank" class="publication-link">
+                <a href="https://www.sciencedirect.com/science/article/am/pii/S1359645423004792" target="_blank" class="publication-link">
+                    📄 Acceder al documento completo →
+                </a>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Multisom: Multi-layer self organizing maps for local structure identification in crystalline structures</h3>
+                    <span class="year-badge">2023</span>
+                </div>
+                <p class="publication-authors">F Aquistapace, N Amigo, JF Troncoso, O Deluigi, EM Bringa</p>
+                <p class="publication-meta"><strong>Computational Materials Science</strong> 227, 112263</p>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Probing radiation resistance in simulated metallic core–shell nanoparticles</h3>
+                    <span class="year-badge">2023</span>
+                </div>
+                <p class="publication-authors">DR Tramontina, OR Deluigi, R Pinzón, J Rojas-Nunez, FJ Valencia, RC Pasianot, SE Baltazar, RI Gonzalez</p>
+                <p class="publication-meta"><strong>Computational Materials Science</strong> 227, 112304</p>
+                <span class="availability-tag">✓ Disponible</span>
+                <br><br>
+                <a href="https://www.researchgate.net/profile/Diego-Tramontina/publication/372813587_Probing_radiation_resistance_in_simulated_metallic_core-shell_nanoparticles/links/64d129cd40a524707ba4a985/Probing-radiation-resistance-in-simulated-metallic-core-shell-nanoparticles.pdf" target="_blank" class="publication-link">
                     📄 Acceder al documento completo →
                 </a>
             </div>
@@ -410,14 +482,28 @@
 
             <div class="publication-card">
                 <div class="publication-header">
-                    <h3 class="publication-title">Probing radiation resistance in simulated metallic core–shell nanoparticles</h3>
+                    <h3 class="publication-title">Simulated nanoindentation into single-phase fcc FeₓNi₁₋ₓ alloys predicts maximum hardness for equiatomic stoichiometry</h3>
                     <span class="year-badge">2023</span>
                 </div>
-                <p class="publication-authors">DR Tramontina, OR Deluigi, R Pinzón, J Rojas-Nunez, FJ Valencia, RC Pasianot, SE Baltazar, RI Gonzalez, EM Bringa</p>
-                <p class="publication-meta"><strong>Computational Materials Science</strong> 227, 112304</p>
+                <p class="publication-authors">IA Alhafez, OR Deluigi, D Tramontina, CJ Ruestes, EM Bringa, HM Urbassek</p>
+                <p class="publication-meta"><strong>Scientific Reports</strong> 13 (1), 9806</p>
                 <span class="availability-tag">✓ Disponible</span>
                 <br><br>
-                <a href="https://www.researchgate.net/profile/Diego-Tramontina/publication/372813587_Probing_radiation_resistance_in_simulated_metallic_core-shell_nanoparticles/links/64d129cd40a524707ba4a985/Probing-radiation-resistance-in-simulated-metallic-core-shell-nanoparticles.pdf" target="_blank" class="publication-link">
+                <a href="https://www.nature.com/articles/s41598-023-36899-3" target="_blank" class="publication-link">
+                    📄 Acceder al documento completo →
+                </a>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Atomistic simulations of ductile failure in a bcc high-entropy alloy</h3>
+                    <span class="year-badge">2023</span>
+                </div>
+                <p class="publication-authors">F Aquistapace, N Vazquez, M Chiarpotti, O Deluigi, CJ Ruestes, EM Bringa</p>
+                <p class="publication-meta"><strong>High Entropy Alloys & Materials</strong> 1 (1), 84-95</p>
+                <span class="availability-tag">✓ Disponible</span>
+                <br><br>
+                <a href="https://arxiv.org/pdf/2208.00234" target="_blank" class="publication-link">
                     📄 Acceder al documento completo →
                 </a>
             </div>
@@ -438,181 +524,55 @@
 
             <div class="publication-card">
                 <div class="publication-header">
-                    <h3 class="publication-title">Simulated nanoindentation into single-phase fcc FeₓNi₁₋ₓ alloys predicts maximum hardness for equiatomic stoichiometry</h3>
-                    <span class="year-badge">2023</span>
-                </div>
-                <p class="publication-authors">I Alabd Alhafez, OR Deluigi, D Tramontina, CJ Ruestes, EM Bringa, HM Urbassek</p>
-                <p class="publication-meta"><strong>Scientific Reports</strong> 13 (1), 9806</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://www.nature.com/articles/s41598-023-36899-3" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Effects of airless bodies' regolith structures and of the solar wind's properties on the backscattered energetic neutral atoms flux</h3>
-                    <span class="year-badge">2023</span>
-                </div>
-                <p class="publication-authors">S Verkercke, JY Chaufray, F Leblanc, EM Bringa, D Tramontina, L Morrissey, A Woodson</p>
-                <p class="publication-meta"><strong>The Planetary Science Journal</strong> 4 (10), 197</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://iopscience.iop.org/article/10.3847/PSJ/acf6bd/pdf" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">On the origins of backscattered solar wind energetic neutral hydrogen from the Moon and Mercury</h3>
-                    <span class="year-badge">2023</span>
-                </div>
-                <p class="publication-authors">F Leblanc, R Deborde, D Tramontina, E Bringa, JY Chaufray, S Aizawa, R Modolo, L Morrissey, A Woodson</p>
-                <p class="publication-meta"><strong>Planetary and Space Science</strong> 229, 105660</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://www.sciencedirect.com/science/article/am/pii/S0032063323000296" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Spin-lattice-dynamics analysis of magnetic properties of iron under compression</h3>
-                    <span class="year-badge">2023</span>
-                </div>
-                <p class="publication-authors">G Dos Santos, R Meyer, D Tramontina, EM Bringa, HM Urbassek</p>
-                <p class="publication-meta"><strong>Scientific Reports</strong> 13 (1), 14282</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://www.nature.com/articles/s41598-023-41499-2" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Simulations of plasticity in diamond nanoparticles showing ultrahigh strength</h3>
+                    <h3 class="publication-title">Atomistic simulations of tensile deformation of a nanoporous high-entropy alloy</h3>
                     <span class="year-badge">2022</span>
                 </div>
-                <p class="publication-authors">GG Vidable, RI Gonzalez, FJ Valencia, N Amigo, D Tramontina, EM Bringa</p>
-                <p class="publication-meta"><strong>Diamond and Related Materials</strong> 126, 109109</p>
+                <p class="publication-authors">OR Deluigi, F Valencia, N Amigo, F Aquistapace, RI Gonzalez, EM Bringa</p>
+                <p class="publication-meta"><strong>Journal of Materials Science</strong> 57 (42), 19817-19831</p>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Exceptionally high spallation strength for a high-entropy alloy demonstrated by experiments and simulations</h3>
+                    <span class="year-badge">2022</span>
+                </div>
+                <p class="publication-authors">D Thürmer, S Zhao, OR Deluigi, C Stan, IA Alhafez, HM Urbassek, MA Meyers, EM Bringa, N Gunkelmann</p>
+                <p class="publication-meta"><strong>Journal of Alloys and Compounds</strong> 895, 162567</p>
                 <span class="availability-tag">✓ Disponible</span>
                 <br><br>
-                <a href="https://www.researchgate.net/profile/Diego-Tramontina/publication/360679149_Simulations_of_plasticity_in_diamond_nanoparticles_showing_ultrahigh_strength/links/628d4c3b345118162aa2fd38/Simulations-of-plasticity-in-diamond-nanoparticles-showing-ultrahigh-strength.pdf" target="_blank" class="publication-link">
+                <a href="https://www.sciencedirect.com/science/article/am/pii/S0925838821039773" target="_blank" class="publication-link">
                     📄 Acceder al documento completo →
                 </a>
             </div>
 
             <div class="publication-card">
                 <div class="publication-header">
-                    <h3 class="publication-title">Simulation of tantalum nanocrystals under shock-wave loading: Dislocations and twinning</h3>
-                    <span class="year-badge">2017</span>
+                    <h3 class="publication-title">Simulations of primary damage in a High Entropy Alloy: Probing enhanced radiation resistance</h3>
+                    <span class="year-badge">2021</span>
                 </div>
-                <p class="publication-authors">DR Tramontina, EN Hahn, MA Meyers, EM Bringa</p>
-                <p class="publication-meta"><strong>AIP Conference Proceedings</strong> 1793 (1), 070002</p>
+                <p class="publication-authors">OR Deluigi, RC Pasianot, FJ Valencia, A Caro, D Farkas, EM Bringa</p>
+                <p class="publication-meta"><strong>Acta Materialia</strong> 213, 116951</p>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <h3 class="publication-title">Impulsive generation of &lt;100&gt; dislocation loops in BCC iron</h3>
+                    <span class="year-badge">2020</span>
+                </div>
+                <p class="publication-authors">AI Bertoni, OR Deluigi, GJ Dos Santos, MP Díaz, EM Bringa</p>
+                <p class="publication-meta"><strong>Modelling and Simulation in Materials Science and Engineering</strong> 28 (5), 055001</p>
                 <span class="availability-tag">✓ Disponible</span>
                 <br><br>
-                <a href="https://pubs.aip.org/aip/acp/article-pdf/doi/10.1063/1.4971590/13733526/070002_1_online.pdf" target="_blank" class="publication-link">
+                <a href="https://ri.conicet.gov.ar/bitstream/handle/11336/142063/CONICET_Digital_Nro.ed9f8cb2-9057-4cc7-a148-2e7b3a9c493e_X.pdf?sequence=7&isAllowed=y" target="_blank" class="publication-link">
                     📄 Acceder al documento completo →
                 </a>
             </div>
+        </div>
+    </div>
 
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Hydrogen storage in palladium hollow nanoparticles</h3>
-                    <span class="year-badge">2016</span>
-                </div>
-                <p class="publication-authors">FJ Valencia, RI González, D Tramontina, J Rogan, JA Valdivia, M Kiwi, EM Bringa</p>
-                <p class="publication-meta"><strong>The Journal of Physical Chemistry C</strong> 120 (41), 23836-23841</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://ri.conicet.gov.ar/bitstream/handle/11336/59505/CONICET_Digital_Nro.c6c56af9-59a9-4381-8f71-5b84e846ba23_A.pdf?sequence=2" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Nucleation of plasticity in nanoparticle collisions</h3>
-                    <span class="year-badge">2016</span>
-                </div>
-                <p class="publication-authors">EN Millán, DR Tramontina, HM Urbassek, EM Bringa</p>
-                <p class="publication-meta"><strong>Physical Review E</strong> 93 (6), 063004</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://ri.conicet.gov.ar/bitstream/handle/11336/56501/CONICET_Digital_Nro.113f1286-878d-4b20-9b99-d3bd73ee2c87_B.pdf?sequence=11&isAllowed=y" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">The elastic–plastic transition in nanoparticle collisions</h3>
-                    <span class="year-badge">2016</span>
-                </div>
-                <p class="publication-authors">EN Millán, DR Tramontina, HM Urbassek, EM Bringa</p>
-                <p class="publication-meta"><strong>Physical Chemistry Chemical Physics</strong> 18 (5), 3423-3429</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://pubs.rsc.org/en/content/articlepdf/2015/cp/c5cp05150a" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Confinement effects of ion tracks in ultrathin polymer films</h3>
-                    <span class="year-badge">2015</span>
-                </div>
-                <p class="publication-authors">RM Papaléo, R Thomaz, LI Gutierres, VM De Menezes, D Severin, C Trautmann, D Tramontina, EM Bringa, MG Del Pópolo</p>
-                <p class="publication-meta"><strong>Physical Review Letters</strong> 114 (11), 118302</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://repositorio.pucrs.br/dspace/bitstream/10923/12676/2/Confinement_Effects_of_Ion_Tracks_in_Ultrathin_Polymer_Films.pdf" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Comparative simulation study of the structure of the plastic zone produced by nanoindentation</h3>
-                    <span class="year-badge">2015</span>
-                </div>
-                <p class="publication-authors">Y Gao, CJ Ruestes, DR Tramontina, HM Urbassek</p>
-                <p class="publication-meta"><strong>Journal of the Mechanics and Physics of Solids</strong> 75, 58-75</p>
-                <span class="availability-tag">✓ Disponible</span>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Morphological changes in polycrystalline Fe after compression and release</h3>
-                    <span class="year-badge">2015</span>
-                </div>
-                <p class="publication-authors">N Gunkelmann, DR Tramontina, EM Bringa, HM Urbassek</p>
-                <p class="publication-meta"><strong>Journal of Applied Physics</strong> 117 (8)</p>
-                <span class="availability-tag">✓ Disponible</span>
-                <br><br>
-                <a href="https://ri.conicet.gov.ar/bitstream/handle/11336/40045/CONICET_Digital_Nro.a9a7eebd-eb04-49e0-b03d-f589ce097f18_A.pdf?sequence=2&isAllowed=y" target="_blank" class="publication-link">
-                    📄 Acceder al documento completo →
-                </a>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Mechanical properties of irradiated nanowires–a molecular dynamics study</h3>
-                    <span class="year-badge">2015</span>
-                </div>
-                <p class="publication-authors">E Figueroa, D Tramontina, G Gutiérrez, E Bringa</p>
-                <p class="publication-meta"><strong>Journal of Nuclear Materials</strong> 467, 677-682</p>
-                <span class="availability-tag">✓ Disponible</span>
-            </div>
-
-            <div class="publication-card">
-                <div class="publication-header">
-                    <h3 class="publication-title">Atomistic simulation of tantalum nanoindentation: Effects of indenter diameter, penetration velocity, and interatomic potentials on defect mechanisms and evolution</h3>
-                    <span class="year-badge">2014</span>
-                </div>
-                <p class="publication-authors">CJ Ruestes, A Stukowski, Y Tang, DR Tramontina, P Erhart, BA Rem
+    <footer>
+        <p>&copy; 2025 SiMAF - Laboratorio de Simulaciones en Materiales, Astrofísica y Física | Universidad de Mendoza</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
