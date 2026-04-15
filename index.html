@@ -33,7 +33,7 @@
         header {
             background: var(--primary-dark);
             color: var(--white);
-            padding: 1rem 0;
+            padding: 0.7rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -53,6 +53,15 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .logo-image {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
         }
 
         .logo-text {
@@ -76,7 +85,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.2rem;
             list-style: none;
         }
 
@@ -135,7 +144,7 @@
 .hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
     color: var(--white);
-    padding: 6rem 2rem 5rem;
+    padding: 3.5rem 2rem 2.5rem;
     position: relative;
     overflow: hidden;
 }
@@ -148,7 +157,7 @@
     transform: translate(-50%, -50%);
     width: 1600px;  /* Ajusta según el tamaño que quieras */
     height: 1600px; /* Ajusta según el tamaño que quieras */
-    background-image: url('/img/logo-final.png');
+    background-image: url('./img/logo-final.png');
     background-repeat: no-repeat;
     background-size: contain;  /* Importante: mantiene proporción */
     background-position: center;
@@ -175,14 +184,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -1px;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             font-weight: 400;
             opacity: 0.95;
@@ -190,16 +199,16 @@
 
         .hero-description {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.4rem;
             opacity: 0.85;
-            max-width: 800px;
+            max-width: 760px;
             line-height: 1.7;
         }
 
         /* Institucional Section */
         .institucional {
             background: var(--white);
-            padding: 4rem 2rem;
+            padding: 2.4rem 2rem;
         }
 
         .institucional-content {
@@ -233,7 +242,7 @@
 
         .stat-box {
             background: var(--light-blue);
-            padding: 2rem;
+            padding: 1.4rem;
             border-radius: 10px;
             text-align: center;
             border-left: 4px solid var(--accent);
@@ -254,7 +263,7 @@
 
         /* Research Areas */
         section {
-            padding: 4rem 2rem;
+            padding: 2.4rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -288,14 +297,14 @@
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
         .research-card {
             background: var(--white);
             border: 2px solid #e2e8f0;
             border-radius: 10px;
-            padding: 2rem;
+            padding: 1.4rem;
             transition: all 0.3s;
         }
 
@@ -324,13 +333,14 @@
 
         /* Team Section */
         .team {
-            background: var(--light-blue);
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
         }
 
         .team-card {
@@ -339,6 +349,8 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.3s;
+            max-width: 220px;
+            margin: 0 auto;
         }
 
         .team-card:hover {
@@ -347,43 +359,41 @@
         }
 
         .team-photo {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--white);
-            font-weight: 700;
+            width: 110px;
+            height: 110px;
+            display: block;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(26, 54, 93, 0.25);
+            margin: 0.9rem auto 0;
         }
 
         .team-info {
-            padding: 1.5rem;
+            padding: 0.9rem;
         }
 
         .team-name {
             color: var(--primary-dark);
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
         }
 
         .team-role {
             color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.78rem;
         }
 
         .team-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.4rem;
         }
 
         .team-links a {
             color: var(--accent);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.78rem;
             font-weight: 500;
             transition: color 0.3s;
         }
@@ -407,7 +417,7 @@
             background: var(--white);
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.4rem;
             transition: all 0.3s;
         }
 
@@ -453,12 +463,12 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            padding: 1.4rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -484,7 +494,7 @@
             background: #0a0e1a;
             color: var(--white);
             text-align: center;
-            padding: 2rem;
+            padding: 1.4rem;
         }
 
         footer p {
@@ -779,6 +789,7 @@
     <header>
         <nav>
             <div class="logo-section">
+                <img src="./img/logo-final.png" alt="Logo SiMAF" class="logo-image">
                 <div class="logo-text">
                     <div class="logo-main">SiMAF</div>
                     <div class="logo-sub">Universidad de Mendoza</div>
@@ -807,6 +818,109 @@
             </p>
         </div>
     </section>
+
+    <section id="equipo" class="team">
+        <div class="section-header">
+            <h2>Equipo de Investigación</h2>
+            <div class="underline"></div>
+            <p>Investigadores y colaboradores del laboratorio</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar2.png" alt="Foto de Eduardo Bringa">
+                <div class="team-info">
+                    <div class="team-name">Dr. Eduardo Bringa</div>
+                    <div class="team-role">Director del Laboratorio - Investigador Principal CONICET</div>
+                    <div class="team-links">
+                        <a href="simaf_publications_bringa.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar1.png" alt="Foto de Gonzalo Dos Santos">
+                <div class="team-info">
+                    <div class="team-name">Dr. Gonzalo Dos Santos</div>
+                    <div class="team-role">Investigador Adjunto CONICET</div>
+                    <div class="team-links">
+                        <a href="gonzalo_dos_santos_publications.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar4.png" alt="Foto de Diego Tramontina">
+                <div class="team-info">
+                    <div class="team-name">Dr. Ing. Diego R. Tramontina</div>
+                    <div class="team-role">Investigador Adjunto CONICET</div>
+                    <div class="team-links">
+                        <a href="diego_tramontina_publications.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar6.png" alt="Foto de Geraudys Mora Barzaga">
+                <div class="team-info">
+                    <div class="team-name">Dr. Geraudys Mora Barzaga</div>
+                    <div class="team-role">Becario Postdoctoral CONICET</div>
+                    <div class="team-links">
+                        <a href="gera_mora_publications.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar7.png" alt="Foto de Orlando Deluigi">
+                <div class="team-info">
+                    <div class="team-name">Dr. Orlando Deluigi</div>
+                    <div class="team-role">Becario Postdoctoral CONICET</div>
+                    <div class="team-links">
+                        <a href="orlando_deluigi_publications.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="team-card">
+                <img class="team-photo" src="./img/avatar8.png" alt="Foto de Federico Andres Cartellone">
+                <div class="team-info">
+                    <div class="team-name">Lic. Federico Andres Cartellone</div>
+                    <div class="team-role">Becario Doctoral CONICET</div>
+                    <div class="team-links">
+                        <a href="fede_cartellone_publications.html">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="team-card">
+                <img class="team-photo" src="./img/avatar5.png" alt="Foto de Santiago Bergamin Saua">
+                <div class="team-info">
+                    <div class="team-name">Lic. Santiago Bergamin Saua</div>
+                    <div class="team-role">Becario Doctoral CONICET</div>
+                    <div class="team-links">
+                        <a href="#">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar9.png" alt="Foto de Tomás Agustín Escalante">
+                <div class="team-info">
+                    <div class="team-name">Tomás Agustín Escalante</div>
+                    <div class="team-role">Investigador del laboratorio</div>
+                    <div class="team-links">
+                        <a href="#">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <img class="team-photo" src="./img/avatar3.png" alt="Foto de María José Buzzachi">
+                <div class="team-info">
+                    <div class="team-name">María José Buzzachi</div>
+                    <div class="team-role">Investigadora del laboratorio</div>
+                    <div class="team-links">
+                        <a href="#">Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <section class="institucional">
         <div class="institucional-content">
@@ -876,94 +990,6 @@
                 <div class="research-icon">🔩</div>
                 <h3>Materiales Porosos y Espumas Metálicas</h3>
                 <p>Estudio de la relación entre microestructura y propiedades mecánicas en materiales con arquitectura porosa controlada.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipo" class="team">
-        <div class="section-header">
-            <h2>Equipo de Investigación</h2>
-            <div class="underline"></div>
-            <p>Investigadores y colaboradores del laboratorio</p>
-        </div>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="team-photo">EB</div>
-                <div class="team-info">
-                    <div class="team-name">Dr. Eduardo Bringa</div>
-                    <div class="team-role">Director del Laboratorio - Investigador Principal CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="simaf_publications_bringa.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">CR</div>
-                <div class="team-info">
-                    <div class="team-name">Dr. Gonzalo Dos Santos</div>
-                    <div class="team-role">Investigador Adjunto CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="gonzalo_dos_santos_publications.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">DT</div>
-                <div class="team-info">
-                    <div class="team-name">Dr. Ing. Diego R. Tramontina</div>
-                    <div class="team-role">Investigador Adjunto CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="diego_tramontina_publications.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">GM</div>
-                <div class="team-info">
-                    <div class="team-name">Dr. Geraudys Mora Barzaga</div>
-                    <div class="team-role">Becario Postdoctoral CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="gera_mora_publications.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-card">
-                <div class="team-photo">OD</div>
-                <div class="team-info">
-                    <div class="team-name">Dr. Orlando Deluigi</div>
-                    <div class="team-role">Becario Postdoctoral CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="orlando_deluigi_publications.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-                        <div class="team-card">
-                <div class="team-photo">FC</div>
-                <div class="team-info">
-                    <div class="team-name">Lic. Federico Andres Cartellone</div>
-                    <div class="team-role">Becario Doctoral CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="fede_cartellone_publications.html">Publicaciones</a>
-                    </div>
-                </div>
-            </div>
-                        <div class="team-card">
-                <div class="team-photo">SB</div>
-                <div class="team-info">
-                    <div class="team-name">Lic. Santiago Bergamin Saua</div>
-                    <div class="team-role">Becario Doctoral CONICET</div>
-                    <div class="team-links">
-                        <a href="#">Curriculum Vitae</a>
-                        <a href="#">Publicaciones</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
