@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);}
+  .card{padding:22px 28px;min-height:150px;box-sizing:border-box;}
+  .row{display:flex;gap:16px;flex-wrap:wrap;}
+  .cell{display:flex;flex-direction:column;gap:6px;}
+  .dot{width:96px;height:50px;border-radius:2px;display:flex;align-items:center;padding-left:12px;color:white;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:0.04em;}
+  .meta{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);}
+  .name{font-family:var(--font-sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-muted);}
+</style></head><body><div class="card">
+<div class="row">
+  <div class="cell">
+    <div class="dot" style="background:#0a7a3e">OK</div>
+    <div class="name">Success</div><div class="meta">#0a7a3e</div>
+  </div>
+  <div class="cell">
+    <div class="dot" style="background:#9a6a00">WARN</div>
+    <div class="name">Warning</div><div class="meta">#9a6a00</div>
+  </div>
+  <div class="cell">
+    <div class="dot" style="background:#b32033">ERR</div>
+    <div class="name">Error</div><div class="meta">#b32033</div>
+  </div>
+  <div class="cell">
+    <div class="dot" style="background:#0078f0">INFO</div>
+    <div class="name">Info</div><div class="meta">#0078f0</div>
+  </div>
+</div>
+</div></body></html>

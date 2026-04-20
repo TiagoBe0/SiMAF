@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);}
+  .card{padding:28px;min-height:150px;box-sizing:border-box;font-family:var(--font-sans);display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+  button{font-family:var(--font-sans);font-size:14px;font-weight:500;padding:10px 18px;border-radius:4px;border:1px solid transparent;cursor:pointer;letter-spacing:-0.01em;transition:all 120ms cubic-bezier(0.2,0,0,1);}
+  .primary{background:#0050f0;color:#fff;}
+  .primary:hover{background:#0040d0;}
+  .secondary{background:transparent;color:#0c0f1a;border-color:#c5cad8;}
+  .secondary:hover{background:#f1f3f7;border-color:#98a0b8;}
+  .ghost{background:transparent;color:#0050f0;padding:10px 12px;}
+  .ghost:hover{background:#e3ecff;}
+  .icon-btn{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid #c5cad8;color:#0c0f1a;}
+  .icon-btn:hover{background:#f1f3f7;}
+  .disabled{opacity:0.4;cursor:not-allowed;}
+</style></head><body><div class="card">
+  <button class="primary">Ver publicación</button>
+  <button class="primary" style="background:#0040d0">Hover</button>
+  <button class="primary disabled">Disabled</button>
+  <button class="secondary">Descargar PDF</button>
+  <button class="ghost">Leer más →</button>
+  <button class="icon-btn">↗</button>
+</div></body></html>

@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);}
+  .card{padding:24px 28px;min-height:150px;box-sizing:border-box;font-family:var(--font-sans);display:flex;gap:40px;}
+  .col{display:flex;flex-direction:column;gap:10px;}
+  .tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-muted);}
+  .row{display:flex;gap:14px;align-items:center;}
+  .sq{width:56px;height:56px;background:#fbf9f4;border:1px solid #c5cad8;}
+  .px{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);}
+  .sh{width:72px;height:50px;background:white;border-radius:2px;}
+  .s1{box-shadow:0 1px 0 rgba(12,15,26,0.04),0 1px 2px rgba(12,15,26,0.04);border:1px solid #e3e6ee;}
+  .s2{box-shadow:0 2px 0 rgba(12,15,26,0.04),0 4px 12px rgba(12,15,26,0.06);}
+  .s3{box-shadow:0 4px 24px rgba(12,15,26,0.08);}
+</style></head><body><div class="card">
+<div class="col">
+  <div class="tag">Radii — sharp register</div>
+  <div class="row">
+    <div class="sq" style="border-radius:0"></div><div class="px">r-0 · 0</div>
+    <div class="sq" style="border-radius:2px"></div><div class="px">r-1 · 2</div>
+    <div class="sq" style="border-radius:4px"></div><div class="px">r-2 · 4</div>
+    <div class="sq" style="border-radius:6px"></div><div class="px">r-3 · 6</div>
+    <div class="sq" style="border-radius:999px"></div><div class="px">r-pill</div>
+  </div>
+</div>
+<div class="col">
+  <div class="tag">Elevation — flat &amp; restrained</div>
+  <div class="row">
+    <div class="sh s1"></div><div class="px">shadow-1</div>
+    <div class="sh s2"></div><div class="px">shadow-2</div>
+    <div class="sh s3"></div><div class="px">shadow-3</div>
+  </div>
+</div>
+</div></body></html>

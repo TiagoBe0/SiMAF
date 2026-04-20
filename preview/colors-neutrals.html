@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);}
+  .card{padding:24px 28px;min-height:150px;box-sizing:border-box;font-family:var(--font-sans);}
+  .row{display:flex;gap:18px;flex-wrap:wrap;}
+  .ramp{display:flex;flex-direction:column;gap:4px;}
+  .ramp-title{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:4px;}
+  .ramp-row{display:flex;}
+  .stop{width:46px;height:46px;display:flex;align-items:flex-end;justify-content:flex-start;padding:4px;}
+  .stop small{font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.55);}
+  .stop.dark small{color:rgba(255,255,255,0.75);}
+</style></head><body><div class="card">
+<div class="row">
+  <div class="ramp"><div class="ramp-title">Ink (paper text)</div><div class="ramp-row">
+    <div class="stop dark" style="background:#0c0f1a"><small>900</small></div>
+    <div class="stop dark" style="background:#1a2238"><small>800</small></div>
+    <div class="stop dark" style="background:#2b3556"><small>700</small></div>
+    <div class="stop dark" style="background:#4a5578"><small>600</small></div>
+    <div class="stop dark" style="background:#6b7596"><small>500</small></div>
+    <div class="stop" style="background:#98a0b8"><small>400</small></div>
+    <div class="stop" style="background:#c5cad8"><small>300</small></div>
+    <div class="stop" style="background:#e3e6ee"><small>200</small></div>
+    <div class="stop" style="background:#f1f3f7"><small>100</small></div>
+  </div></div>
+  <div class="ramp"><div class="ramp-title">Paper (surfaces)</div><div class="ramp-row">
+    <div class="stop" style="background:#fbf9f4;border:1px solid #e3e6ee"><small>50</small></div>
+    <div class="stop" style="background:#f4efe4"><small>100</small></div>
+    <div class="stop" style="background:#e8e0cc"><small>200</small></div>
+    <div class="stop" style="background:#d6ccb3"><small>300</small></div>
+  </div></div>
+</div>
+</div></body></html>

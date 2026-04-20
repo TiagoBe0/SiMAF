@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);}
+  .card{padding:22px 28px;min-height:150px;box-sizing:border-box;font-family:var(--font-sans);}
+  .plot{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:end;}
+  svg{width:100%;height:140px;}
+  .lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-muted);margin-top:6px;}
+  .cap{font-family:var(--font-serif);font-size:13px;color:var(--fg-muted);margin-top:2px;}
+</style></head><body><div class="card">
+<div class="plot">
+  <div>
+    <svg viewBox="0 0 400 140">
+      <line x1="30" y1="120" x2="390" y2="120" stroke="#0c0f1a" stroke-width="1"/>
+      <line x1="30" y1="10" x2="30" y2="120" stroke="#0c0f1a" stroke-width="1"/>
+      <polyline fill="none" stroke="#f02850" stroke-width="1.5" points="30,90 60,85 90,70 120,55 150,45 180,60 210,75 240,65 270,55 300,50 330,60 360,70 390,75"/>
+      <polyline fill="none" stroke="#0050f0" stroke-width="1.5" points="30,110 60,100 90,88 120,70 150,50 180,40 210,55 240,72 270,80 300,88 330,95 360,100 390,105"/>
+      <polyline fill="none" stroke="#28c850" stroke-width="1.5" points="30,100 60,108 90,95 120,82 150,65 180,50 210,40 240,45 270,58 300,70 330,78 360,84 390,90"/>
+    </svg>
+    <div class="lbl">Fig. 1 · g(r) para tres temperaturas</div>
+    <div class="cap">Función de distribución radial, <em>T</em> = 300, 600, 1000 K.</div>
+  </div>
+  <div>
+    <svg viewBox="0 0 400 140">
+      <line x1="30" y1="120" x2="390" y2="120" stroke="#0c0f1a" stroke-width="1"/>
+      <line x1="30" y1="10" x2="30" y2="120" stroke="#0c0f1a" stroke-width="1"/>
+      <g>
+        <rect x="50" y="70" width="22" height="50" fill="#2828f0"/>
+        <rect x="85" y="45" width="22" height="75" fill="#0050f0"/>
+        <rect x="120" y="30" width="22" height="90" fill="#0078f0"/>
+        <rect x="155" y="52" width="22" height="68" fill="#00a0c8"/>
+        <rect x="190" y="75" width="22" height="45" fill="#00a050"/>
+        <rect x="225" y="62" width="22" height="58" fill="#28c850"/>
+        <rect x="260" y="80" width="22" height="40" fill="#78c828"/>
+        <rect x="295" y="90" width="22" height="30" fill="#f0c828"/>
+        <rect x="330" y="95" width="22" height="25" fill="#f0a028"/>
+      </g>
+    </svg>
+    <div class="lbl">Fig. 2 · Espectro de DOS</div>
+    <div class="cap">Densidad de estados proyectada por orbital.</div>
+  </div>
+</div>
+</div></body></html>

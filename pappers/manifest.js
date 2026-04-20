@@ -1,0 +1,22 @@
+window.FEATURED_ARTICLE = {
+  pdf:      null,
+  abstract: null,
+  eyebrow_es: 'Artículo más reciente',
+  eyebrow_en: 'Latest article',
+  year: '2025',
+  title_es: 'Compression of refractory high-entropy alloy nanoparticles: Size and short-range order effects',
+  title_en: 'Compression of refractory high-entropy alloy nanoparticles: Size and short-range order effects',
+  abstract_es: 'Se estudia la compresión de nanopartículas de aleaciones de alta entropía refractarias mediante simulaciones de dinámica molecular. Los resultados revelan efectos significativos del tamaño y el orden de corto alcance en las propiedades mecánicas.',
+  abstract_en: 'We study the compression of refractory high-entropy alloy nanoparticles via molecular dynamics simulations. Results reveal significant effects of size and short-range order on mechanical properties.',
+  authors: [
+    { name: 'FA Cartellone', role: 'Doctoral' },
+    { name: 'N Amigo', role: 'Colab.' },
+    { name: 'FR Roco', role: 'Colab.' },
+    { name: 'O Deluigi', role: 'Postdoc' },
+    { name: 'FJ Valencia', role: 'Colab.' },
+    { name: 'EM Bringa', role: 'PI' },
+  ],
+  venue: 'Int. J. Refract. Met. Hard Mater. 107498',
+  arxiv: null,
+  doi:   '10.1016/j.ijrmhm.2025.107498',
+};
