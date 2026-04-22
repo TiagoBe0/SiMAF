@@ -10,11 +10,17 @@
   body::before {
     content:"";
     position:fixed;
-    inset:-12vw;
+    inset:-35vmax;
     background:url("img/logo-final.png") center / cover no-repeat;
     opacity:0.12;
     pointer-events:none;
     z-index:0;
+    animation: simaf-bg-rotate 180s linear infinite;
+    transform-origin:center;
+  }
+  @keyframes simaf-bg-rotate {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
   }
   #root { position:relative; z-index:1; }
   * { box-sizing: border-box; }
