@@ -85,6 +85,7 @@
 <script type="text/babel" src="ResearchLines.jsx"></script>
 <script type="text/babel" src="Publications.jsx"></script>
 <script type="text/babel" src="People.jsx"></script>
+<script type="text/babel" src="Collaborations.jsx"></script>
 <script type="text/babel" src="Footer.jsx"></script>
 <script src="../../pappers/manifest.js"></script>
 <script type="text/babel" src="FeaturedArticle.jsx"></script>
@@ -174,6 +175,12 @@ function App() {
           <People lang={lang} />
           <Footer lang={lang} />
         </main>
+      )}
+      {screen==='collaborations' && (
+        <>
+          <Collaborations lang={lang} />
+          <Footer lang={lang} />
+        </>
       )}
     </>
   );

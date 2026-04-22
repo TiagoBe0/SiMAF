@@ -16,6 +16,7 @@ window.Header = function Header({ screen, setScreen, lang, setLang }) {
     { id: 'research', es: 'Investigación', en: 'Research' },
     { id: 'publications', es: 'Publicaciones', en: 'Publications' },
     { id: 'people', es: 'Personas', en: 'People' },
+    { id: 'collaborations', es: 'Colaboraciones', en: 'Collaborations' },
   ];
   return (
     <header style={headerStyles.bar}>
