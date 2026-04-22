@@ -273,6 +273,7 @@
   </footer>
 </div>
 
+<script src="../../assets/publication-bringa.txt"></script>
 <script>
   const state = { publications: [], query: "", year: "" };
   const el = {
@@ -405,19 +406,39 @@
   }
 
   async function init() {
-    try {
-      const response = await fetch("../../assets/publication-bringa.txt", { cache: "no-store" });
-      if (!response.ok) throw new Error("No se pudo leer el archivo de publicaciones.");
-      state.publications = parsePublications(await response.text());
+    function usePublications(publicationList, sourceLabel) {
+      state.publications = publicationList
+        .map(pub => ({
+          title: String(pub.title || "Sin título"),
+          authors: String(pub.authors || ""),
+          journal: String(pub.journal || ""),
+          year: Number(pub.year) || 0,
+          volume: String(pub.volume || ""),
+          available: Boolean(pub.available),
+          url: String(pub.url || ""),
+        }))
+        .filter(pub => pub.title && pub.year)
+        .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
       const years = state.publications.map(pub => pub.year).filter(Boolean);
       const min = Math.min(...years);
       const max = Math.max(...years);
-      el.range.textContent = state.publications.length ? min + "-" + max : "Sin publicaciones";
+      el.range.textContent = state.publications.length ? min + "-" + max + " · " + sourceLabel : "Sin publicaciones";
       renderYearOptions(state.publications);
       render();
+    }
+
+    try {
+      const response = await fetch("../../assets/publication-bringa.txt", { cache: "no-store" });
+      if (!response.ok) throw new Error("No se pudo leer el archivo de publicaciones.");
+      usePublications(parsePublications(await response.text()), "archivo externo");
     } catch (error) {
+      if (typeof publications !== "undefined" && Array.isArray(publications)) {
+        usePublications(publications, "archivo local");
+        return;
+      }
       el.list.className = "empty";
-      el.list.innerHTML = "No pude cargar <code>assets/publication-bringa.txt</code>. Probá abrir esta página desde un servidor local.";
+      el.list.innerHTML = "No pude cargar <code>assets/publication-bringa.txt</code>. Revisá que el archivo exista junto al proyecto.";
       el.range.textContent = "Error de carga";
     }
   }
