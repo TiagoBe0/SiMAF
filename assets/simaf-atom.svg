@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Animación SiMAF</title>
+  <desc id="desc">Motivo atómico animado para la portada de SiMAF</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#f7f9ff"/>
+      <stop offset="100%" stop-color="#d9e4ff"/>
+    </radialGradient>
+    <linearGradient id="orbit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f356f"/>
+      <stop offset="100%" stop-color="#4d88ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="320" height="320" rx="24" fill="url(#bg)"/>
+
+  <g transform="translate(160 160)">
+    <ellipse rx="108" ry="44" fill="none" stroke="url(#orbit)" stroke-width="6" opacity="0.9"/>
+    <ellipse rx="108" ry="44" fill="none" stroke="url(#orbit)" stroke-width="6" opacity="0.8" transform="rotate(60)"/>
+    <ellipse rx="108" ry="44" fill="none" stroke="url(#orbit)" stroke-width="6" opacity="0.7" transform="rotate(120)"/>
+
+    <circle r="26" fill="#0f356f"/>
+
+    <g>
+      <circle cx="108" cy="0" r="8" fill="#4d88ff"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle cx="108" cy="0" r="8" fill="#0f356f"/>
+      <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="5.5s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle cx="108" cy="0" r="8" fill="#6a9dff"/>
+      <animateTransform attributeName="transform" type="rotate" from="240" to="600" dur="6.8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
