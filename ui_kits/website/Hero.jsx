@@ -56,9 +56,9 @@ window.Hero = function Hero({ lang }) {
         <button style={heroStyles.ghost}>{copy.cta2}</button>
       </div>
       <img
-        src="/img/logo-final.png"
-        data-fallbacks="../../img/logo-final.png|img/logo-final.png"
-        onError={withSrcFallback(['../../img/logo-final.png', 'img/logo-final.png'])}
+        src="img/logo-final.png"
+        data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
+        onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
         style={heroStyles.watermark}
         alt=""
       />

@@ -14,9 +14,9 @@ window.Footer = function Footer({ lang }) {
       <div style={ftStyles.inner}>
         <div style={ftStyles.brand}>
           <img
-            src="/img/logo-final.png"
-            data-fallbacks="../../img/logo-final.png|img/logo-final.png"
-            onError={withSrcFallback(['../../img/logo-final.png', 'img/logo-final.png'])}
+            src="img/logo-final.png"
+            data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
+            onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
             alt=""
             style={ftStyles.mark}
           />

@@ -22,9 +22,9 @@ window.Header = function Header({ screen, setScreen, lang, setLang }) {
       <div style={headerStyles.inner}>
         <a href="#" onClick={(e)=>{e.preventDefault();setScreen('home');}} style={headerStyles.brand}>
           <img
-            src="/img/logo-final.png"
-            data-fallbacks="../../img/logo-final.png|img/logo-final.png"
-            onError={withSrcFallback(['../../img/logo-final.png', 'img/logo-final.png'])}
+            src="img/logo-final.png"
+            data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
+            onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
             alt=""
             style={headerStyles.mark}
           />
