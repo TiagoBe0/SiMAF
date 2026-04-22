@@ -23,8 +23,13 @@ window.Hero = function Hero({ lang }) {
       <div style={heroStyles.masthead}>
         <span>{copy.eye}</span><span>{copy.badge}</span>
       </div>
-      <h1 style={heroStyles.h}>{copy.h}</h1>
-      <p style={heroStyles.lead}>{copy.lead}</p>
+      <div style={heroStyles.intro}>
+        <div style={heroStyles.copy}>
+          <h1 style={heroStyles.h}>{copy.h}</h1>
+          <p style={heroStyles.lead}>{copy.lead}</p>
+        </div>
+        <img src="../../assets/simaf-atom.svg" style={heroStyles.heroGif} alt="Animación científica de SiMAF" loading="lazy" />
+      </div>
       <div style={heroStyles.stats}>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>15+</div><div style={heroStyles.statL}>{lang==='es'?'Años':'Years'}</div></div>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>100+</div><div style={heroStyles.statL}>{lang==='es'?'Publicaciones':'Publications'}</div></div>
@@ -35,7 +40,7 @@ window.Hero = function Hero({ lang }) {
         <button style={heroStyles.primary}>{copy.cta1}</button>
         <button style={heroStyles.ghost}>{copy.cta2}</button>
       </div>
-      <img src="../../assets/logo-final.png" style={heroStyles.watermark} alt="" />
+      <img src="../../img/logo-final.png" style={heroStyles.watermark} alt="" />
     </section>
   );
 };
@@ -43,8 +48,11 @@ window.Hero = function Hero({ lang }) {
 const heroStyles = {
   wrap: { position:'relative', padding:'80px 48px 72px', maxWidth:1280, margin:'0 auto', overflow:'hidden' },
   masthead: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
-  h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'40px 0 28px', maxWidth:'20ch' },
-  lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:'0 0 36px' },
+  intro: { display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40, margin:'40px 0 36px' },
+  copy: { flex:'1 1 680px', minWidth:0 },
+  h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 28px', maxWidth:'20ch' },
+  lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
+  heroGif: { width:'min(27vw, 270px)', minWidth:170, height:'auto', borderRadius:18, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
   stats: { display:'flex', gap:40, marginBottom:36 },
   stat: { },
   statN: { fontFamily:'var(--font-serif)', fontSize:36, fontWeight:500, color:'var(--fg)', lineHeight:1 },

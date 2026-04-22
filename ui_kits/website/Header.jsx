@@ -11,7 +11,7 @@ window.Header = function Header({ screen, setScreen, lang, setLang }) {
     <header style={headerStyles.bar}>
       <div style={headerStyles.inner}>
         <a href="#" onClick={(e)=>{e.preventDefault();setScreen('home');}} style={headerStyles.brand}>
-          <img src="../../assets/logo-final.png" alt="" style={headerStyles.mark} />
+          <img src="../../img/logo-final.png" alt="" style={headerStyles.mark} />
           <div>
             <a href="#" onClick={(e)=>{e.preventDefault();setScreen('home');}} style={{...headerStyles.wm, textDecoration:'none', color:'inherit'}}>SiMAF</a>
             <div style={headerStyles.wmSub}>{lang==='es'?'Universidad de Mendoza':'Universidad de Mendoza'}</div>
@@ -39,7 +39,7 @@ const headerStyles = {
   bar: { position:'sticky', top:0, zIndex:10, background:'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter:'blur(12px)', borderBottom:'1px solid var(--border)' },
   inner: { maxWidth:1280, margin:'0 auto', padding:'14px 48px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:32 },
   brand: { display:'flex', alignItems:'center', gap:14, textDecoration:'none', color:'var(--fg)' },
-  mark: { width:40, height:40, objectFit:'cover', borderRadius:2 },
+  mark: { width:40, height:40, objectFit:'cover', borderRadius:'50%' },
   wm: { fontFamily:'var(--font-serif)', fontSize:22, fontWeight:500, letterSpacing:'0.02em', lineHeight:1 },
   wmSub: { fontFamily:'var(--font-sans)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:3 },
   nav: { display:'flex', alignItems:'center', gap:28 },
