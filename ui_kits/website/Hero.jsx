@@ -65,7 +65,7 @@ const heroStyles = {
   copy: { flex:'1 1 680px', minWidth:0 },
   h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 28px', maxWidth:'20ch' },
   lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
-  heroGif: { display:'block', width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', objectFit:'cover', overflow:'hidden', borderRadius:24, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
+  heroGif: { display:'block', width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', objectFit:'cover', overflow:'hidden', borderRadius:70, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
   stats: { display:'flex', gap:40, marginBottom:36 },
   stat: { },
   statN: { fontFamily:'var(--font-serif)', fontSize:36, fontWeight:500, color:'var(--fg)', lineHeight:1 },
