@@ -31,14 +31,11 @@ window.People = function People({ lang }) {
               <div style={pplStyles.name}>{m.name}</div>
               <div style={pplStyles.role}>{m.role[lang]}</div>
               <div style={pplStyles.tag}>{m.tag}</div>
-              {m.pubs && (() => {
-                const hasPage = m.pubs === 'publicaciones-ebringa.html';
-                return (
-                  <a href={hasPage ? m.pubs : '#'} onClick={hasPage ? undefined : e=>e.preventDefault()} style={pplStyles.link}>
-                    {lang==='es'?'Publicaciones →':'Publications →'}
-                  </a>
-                );
-              })()}
+              {m.pubs && (
+                <a href={m.pubs} style={pplStyles.link}>
+                  {lang==='es'?'Publicaciones →':'Publications →'}
+                </a>
+              )}
             </div>
           </div>
         ))}

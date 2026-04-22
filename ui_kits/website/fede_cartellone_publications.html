@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lic.Federico Andres Cartellone · Publicaciones · SiMAF</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
+  body { font-family:var(--font-sans); position:relative; min-height:100vh; }
+  body::before { content:""; position:fixed; inset:-35vmax; background:url("img/logo-final.png") center / cover no-repeat; opacity:0.12; pointer-events:none; z-index:0; animation:simaf-bg-rotate 180s linear infinite; transform-origin:center; }
+  @keyframes simaf-bg-rotate { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  * { box-sizing:border-box; }
+  a { color:var(--accent); }
+  .page { position:relative; z-index:1; min-height:100vh; }
+  .site-header { position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .header-inner { max-width:1280px; margin:0 auto; padding:14px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+  .brand { display:flex; align-items:center; gap:14px; color:var(--fg); text-decoration:none; }
+  .brand img { width:40px; height:40px; object-fit:cover; border-radius:50%; }
+  .brand-name { font-family:var(--font-serif); font-size:22px; font-weight:500; letter-spacing:0.02em; line-height:1; }
+  .brand-sub { margin-top:3px; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-muted); }
+  .nav { display:flex; align-items:center; gap:28px; }
+  .nav a { padding:6px 0; border-bottom:1px solid transparent; color:var(--fg-muted); font-size:13px; font-weight:500; text-decoration:none; }
+  .nav a.active { color:var(--fg); border-bottom-color:var(--fg); }
+  main { max-width:1280px; margin:0 auto; padding:64px 48px 0; }
+  .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); }
+  h1 { max-width:18ch; margin:12px 0 0; font-family:var(--font-serif); font-size:clamp(42px, 6vw, 72px); font-weight:500; line-height:1.05; }
+  .lead { max-width:68ch; margin:22px 0 0; font-family:var(--font-serif); font-size:22px; font-style:italic; line-height:1.55; color:var(--fg-muted); }
+  .rule-head { margin-top:56px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:8px 0; display:flex; justify-content:space-between; gap:24px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); }
+  .tools { margin-top:28px; display:grid; grid-template-columns:minmax(220px, 1fr) 180px; gap:16px; }
+  .tools input, .tools select { width:100%; border:1px solid var(--border-strong); border-radius:4px; background:color-mix(in srgb, var(--bg) 84%, white); color:var(--fg); font-family:var(--font-sans); font-size:14px; padding:12px 14px; }
+  .year-block { display:grid; grid-template-columns:160px 1fr; gap:40px; padding:30px 0; border-bottom:1px solid var(--border); }
+  .year { font-size:13px; font-weight:600; letter-spacing:0.14em; color:var(--fg-muted); }
+  .items { display:flex; flex-direction:column; gap:24px; }
+  .publication h2 { margin:0 0 6px; font-family:var(--font-serif); font-size:21px; font-weight:500; line-height:1.3; color:var(--fg); }
+  .authors { font-family:var(--font-serif); font-size:15px; font-style:italic; color:var(--fg-muted); }
+  .authors strong { color:var(--fg); font-weight:600; }
+  .meta { margin-top:8px; display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:var(--font-mono); font-size:12px; color:var(--fg-muted); }
+  .venue { color:var(--fg); }
+  .sep { color:var(--fg-faint); }
+  .pdf-link { color:var(--accent); font-weight:600; text-decoration:none; }
+  .empty { padding:44px 0; font-family:var(--font-serif); font-size:22px; font-style:italic; color:var(--fg-muted); }
+  .site-footer { margin-top:80px; background:var(--navy-900); color:#e9edf7; padding:64px 48px 32px; }
+  .footer-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:60px; }
+  .footer-brand { display:flex; gap:16px; align-items:flex-start; }
+  .footer-brand img { width:56px; height:56px; object-fit:cover; border-radius:50%; }
+  .footer-name { font-family:var(--font-serif); font-size:26px; font-weight:500; color:#fbf9f4; }
+  .footer-sub { max-width:32ch; margin-top:4px; font-family:var(--font-serif); font-size:14px; font-style:italic; line-height:1.4; color:#a8b3d1; }
+  .footer-cols { display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; }
+  .footer-heading { margin-bottom:12px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#a8b3d1; }
+  .footer-item { margin-top:6px; font-size:13px; color:#e9edf7; }
+  .footer-rule { max-width:1280px; margin:48px auto 0; padding-top:16px; border-top:1px solid #0f356f; display:flex; justify-content:space-between; gap:24px; font-size:11px; letter-spacing:0.12em; color:#a8b3d1; }
+  @media (max-width: 760px) { .header-inner, main, .site-footer { padding-left:24px; padding-right:24px; } .header-inner, .nav, .rule-head, .footer-rule { align-items:flex-start; flex-direction:column; } .nav { gap:14px; } .tools, .year-block, .footer-inner, .footer-cols { grid-template-columns:1fr; } .year-block { gap:14px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="img/logo-final.png" alt="" /><div><div class="brand-name">SiMAF</div><div class="brand-sub">Universidad de Mendoza</div></div></a><nav class="nav" aria-label="Secciones"><a href="index.html">Inicio</a><a href="index.html">Investigación</a><a class="active" href="#">Publicaciones</a><a href="index.html">Personas</a></nav></div></header>
+  <main>
+    <div class="eyebrow">Publicaciones · Investigador</div>
+    <h1>Lic.Federico Andres Cartellone</h1>
+    <p class="lead">Becario Doctoral CONICET. Artículos seleccionados del investigador, agrupados por año y listos para consulta dentro del estilo SiMAF.</p>
+    <div class="rule-head"><span><strong id="pub-count">Publicaciones</strong></span><span id="pub-range">Lista transcrita en HTML</span></div>
+    <div class="tools" aria-label="Filtros de publicaciones"><input id="search" type="search" placeholder="Buscar por título, autor, revista o año" autocomplete="off" /><select id="year-filter"><option value="">Todos los años</option></select></div>
+    <section id="publications" class="empty">Cargando publicaciones...</section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="img/logo-final.png" alt="" /><div><div class="footer-name">SiMAF</div><div class="footer-sub">Laboratorio de Simulaciones en Materiales, Astrofísica y Física · Universidad de Mendoza</div></div></div><div class="footer-cols"><div><div class="footer-heading">Contacto</div><div class="footer-item">simaf@uncu.edu.ar</div><div class="footer-item">ebringa@mendoza-conicet.gob.ar</div></div><div><div class="footer-heading">Dirección</div><div class="footer-item">Facultad de Ingeniería</div><div class="footer-item">Universidad de Mendoza, Argentina</div></div><div><div class="footer-heading">Lista</div><div class="footer-item">Publicaciones transcritas en HTML</div></div></div></div><div class="footer-rule"><span>© SiMAF 2019-2026</span><span style="font-family:var(--font-serif); font-style:italic;">Publicaciones · Lic.Federico Andres Cartellone</span></div></footer>
+</div>
+<script>
+  const researcherName = "Lic.Federico Andres Cartellone";
+  const embeddedPublications = [
+    {
+        "title": "Compression of refractory high-entropy alloy nanoparticles: Size and short-range order effects",
+        "year": "2025",
+        "authors": "FA Cartellone, N Amigo, FR Roco, O Deluigi, FJ Valencia, EM Bringa",
+        "journal": "International Journal of Refractory Metals and Hard Materials",
+        "volume": "107498",
+        "url": "https://doi.org/10.1016/j.ijrmhm.2025.107498"
+    },
+    {
+        "title": "Mechanical properties of high entropy alloy nanoparticles obtained by nanoindentation: a BCC HfNbZrTaTi and FCC FeNiCrCoCu case",
+        "year": "2025",
+        "authors": "FR Roco, FJ Valencia, J Rogan, M Ramirez, FA Cartellone, EM Bringa",
+        "journal": "Materials Today Communications",
+        "volume": "43, 111628",
+        "url": "https://doi.org/10.1016/j.mtcomm.2025.111628"
+    }
+];
+  const state = { publications: [], query: "", year: "" };
+  const el = { list: document.getElementById("publications"), count: document.getElementById("pub-count"), range: document.getElementById("pub-range"), search: document.getElementById("search"), year: document.getElementById("year-filter") };
+  function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"}[char])); }
+  function renderYearOptions(publications) { const years = [...new Set(publications.map(pub => pub.year))].sort((a, b) => b - a); el.year.innerHTML = '<option value="">Todos los años</option>' + years.map(year => '<option value="' + year + '">' + year + '</option>').join(""); }
+  function highlightInvestigator(authors) {
+    const parts = researcherName.replace(/^(Dr\.? Ing\.?|Dr\.?|Lic\.?|Ing\.?)\s*/i, "").split(/\s+/).filter(Boolean);
+    const last = (parts[parts.length - 1] || "").toLowerCase();
+    return escapeHtml(authors).split(",").map(author => {
+      const trimmed = author.trim();
+      return last && trimmed.toLowerCase().includes(last) ? "<strong>" + trimmed + "</strong>" : trimmed;
+    }).join(", ");
+  }
+  function publicationHtml(pub) { const url = pub.url ? '<span class="sep">·</span><a class="pdf-link" href="' + escapeHtml(pub.url) + '" target="_blank" rel="noopener">PDF / DOI ↗</a>' : ""; const volume = pub.volume ? '<span class="sep">·</span><span>' + escapeHtml(pub.volume) + '</span>' : ""; return '<article class="publication"><h2>' + escapeHtml(pub.title) + '</h2><div class="authors">' + highlightInvestigator(pub.authors) + '</div><div class="meta"><span class="venue">' + escapeHtml(pub.journal || "Publicación") + '</span>' + volume + url + '</div></article>'; }
+  function render() { const query = state.query.trim().toLowerCase(); const filtered = state.publications.filter(pub => { const matchesYear = !state.year || String(pub.year) === state.year; const haystack = [pub.title, pub.authors, pub.journal, pub.volume, pub.year].join(" ").toLowerCase(); return matchesYear && (!query || haystack.includes(query)); }); el.count.textContent = filtered.length + " publicaciones"; if (!filtered.length) { el.list.className = "empty"; el.list.innerHTML = "No hay publicaciones que coincidan con ese filtro."; return; } const groups = filtered.reduce((acc, pub) => { (acc[pub.year] ||= []).push(pub); return acc; }, {}); el.list.className = ""; el.list.innerHTML = Object.keys(groups).sort((a, b) => b - a).map(year => '<div class="year-block"><div class="year">' + year + '</div><div class="items">' + groups[year].map(publicationHtml).join("") + '</div></div>').join(""); }
+  function init() { state.publications = embeddedPublications.map(pub => ({ title:String(pub.title || "Sin título"), authors:String(pub.authors || ""), journal:String(pub.journal || ""), year:Number(pub.year) || 0, volume:String(pub.volume || ""), url:String(pub.url || "") })).filter(pub => pub.title && pub.year).sort((a, b) => b.year - a.year || a.title.localeCompare(b.title)); const years = state.publications.map(pub => pub.year).filter(Boolean); el.range.textContent = state.publications.length ? Math.min(...years) + "-" + Math.max(...years) + " · HTML" : "Sin publicaciones"; renderYearOptions(state.publications); render(); }
+  el.search.addEventListener("input", event => { state.query = event.target.value; render(); }); el.year.addEventListener("change", event => { state.year = event.target.value; render(); }); init();
+</script>
+</body>
+</html>

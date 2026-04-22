@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Ing. Diego R. Tramontina · Publicaciones · SiMAF</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
+  body { font-family:var(--font-sans); position:relative; min-height:100vh; }
+  body::before { content:""; position:fixed; inset:-35vmax; background:url("img/logo-final.png") center / cover no-repeat; opacity:0.12; pointer-events:none; z-index:0; animation:simaf-bg-rotate 180s linear infinite; transform-origin:center; }
+  @keyframes simaf-bg-rotate { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  * { box-sizing:border-box; }
+  a { color:var(--accent); }
+  .page { position:relative; z-index:1; min-height:100vh; }
+  .site-header { position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .header-inner { max-width:1280px; margin:0 auto; padding:14px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+  .brand { display:flex; align-items:center; gap:14px; color:var(--fg); text-decoration:none; }
+  .brand img { width:40px; height:40px; object-fit:cover; border-radius:50%; }
+  .brand-name { font-family:var(--font-serif); font-size:22px; font-weight:500; letter-spacing:0.02em; line-height:1; }
+  .brand-sub { margin-top:3px; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-muted); }
+  .nav { display:flex; align-items:center; gap:28px; }
+  .nav a { padding:6px 0; border-bottom:1px solid transparent; color:var(--fg-muted); font-size:13px; font-weight:500; text-decoration:none; }
+  .nav a.active { color:var(--fg); border-bottom-color:var(--fg); }
+  main { max-width:1280px; margin:0 auto; padding:64px 48px 0; }
+  .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); }
+  h1 { max-width:18ch; margin:12px 0 0; font-family:var(--font-serif); font-size:clamp(42px, 6vw, 72px); font-weight:500; line-height:1.05; }
+  .lead { max-width:68ch; margin:22px 0 0; font-family:var(--font-serif); font-size:22px; font-style:italic; line-height:1.55; color:var(--fg-muted); }
+  .rule-head { margin-top:56px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:8px 0; display:flex; justify-content:space-between; gap:24px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); }
+  .tools { margin-top:28px; display:grid; grid-template-columns:minmax(220px, 1fr) 180px; gap:16px; }
+  .tools input, .tools select { width:100%; border:1px solid var(--border-strong); border-radius:4px; background:color-mix(in srgb, var(--bg) 84%, white); color:var(--fg); font-family:var(--font-sans); font-size:14px; padding:12px 14px; }
+  .year-block { display:grid; grid-template-columns:160px 1fr; gap:40px; padding:30px 0; border-bottom:1px solid var(--border); }
+  .year { font-size:13px; font-weight:600; letter-spacing:0.14em; color:var(--fg-muted); }
+  .items { display:flex; flex-direction:column; gap:24px; }
+  .publication h2 { margin:0 0 6px; font-family:var(--font-serif); font-size:21px; font-weight:500; line-height:1.3; color:var(--fg); }
+  .authors { font-family:var(--font-serif); font-size:15px; font-style:italic; color:var(--fg-muted); }
+  .authors strong { color:var(--fg); font-weight:600; }
+  .meta { margin-top:8px; display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:var(--font-mono); font-size:12px; color:var(--fg-muted); }
+  .venue { color:var(--fg); }
+  .sep { color:var(--fg-faint); }
+  .pdf-link { color:var(--accent); font-weight:600; text-decoration:none; }
+  .empty { padding:44px 0; font-family:var(--font-serif); font-size:22px; font-style:italic; color:var(--fg-muted); }
+  .site-footer { margin-top:80px; background:var(--navy-900); color:#e9edf7; padding:64px 48px 32px; }
+  .footer-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:60px; }
+  .footer-brand { display:flex; gap:16px; align-items:flex-start; }
+  .footer-brand img { width:56px; height:56px; object-fit:cover; border-radius:50%; }
+  .footer-name { font-family:var(--font-serif); font-size:26px; font-weight:500; color:#fbf9f4; }
+  .footer-sub { max-width:32ch; margin-top:4px; font-family:var(--font-serif); font-size:14px; font-style:italic; line-height:1.4; color:#a8b3d1; }
+  .footer-cols { display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; }
+  .footer-heading { margin-bottom:12px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#a8b3d1; }
+  .footer-item { margin-top:6px; font-size:13px; color:#e9edf7; }
+  .footer-rule { max-width:1280px; margin:48px auto 0; padding-top:16px; border-top:1px solid #0f356f; display:flex; justify-content:space-between; gap:24px; font-size:11px; letter-spacing:0.12em; color:#a8b3d1; }
+  @media (max-width: 760px) { .header-inner, main, .site-footer { padding-left:24px; padding-right:24px; } .header-inner, .nav, .rule-head, .footer-rule { align-items:flex-start; flex-direction:column; } .nav { gap:14px; } .tools, .year-block, .footer-inner, .footer-cols { grid-template-columns:1fr; } .year-block { gap:14px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="img/logo-final.png" alt="" /><div><div class="brand-name">SiMAF</div><div class="brand-sub">Universidad de Mendoza</div></div></a><nav class="nav" aria-label="Secciones"><a href="index.html">Inicio</a><a href="index.html">Investigación</a><a class="active" href="#">Publicaciones</a><a href="index.html">Personas</a></nav></div></header>
+  <main>
+    <div class="eyebrow">Publicaciones · Investigador</div>
+    <h1>Dr. Ing. Diego R. Tramontina</h1>
+    <p class="lead">Investigador Adjunto CONICET. Artículos seleccionados del investigador, agrupados por año y listos para consulta dentro del estilo SiMAF.</p>
+    <div class="rule-head"><span><strong id="pub-count">Publicaciones</strong></span><span id="pub-range">Lista transcrita en HTML</span></div>
+    <div class="tools" aria-label="Filtros de publicaciones"><input id="search" type="search" placeholder="Buscar por título, autor, revista o año" autocomplete="off" /><select id="year-filter"><option value="">Todos los años</option></select></div>
+    <section id="publications" class="empty">Cargando publicaciones...</section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="img/logo-final.png" alt="" /><div><div class="footer-name">SiMAF</div><div class="footer-sub">Laboratorio de Simulaciones en Materiales, Astrofísica y Física · Universidad de Mendoza</div></div></div><div class="footer-cols"><div><div class="footer-heading">Contacto</div><div class="footer-item">simaf@uncu.edu.ar</div><div class="footer-item">ebringa@mendoza-conicet.gob.ar</div></div><div><div class="footer-heading">Dirección</div><div class="footer-item">Facultad de Ingeniería</div><div class="footer-item">Universidad de Mendoza, Argentina</div></div><div><div class="footer-heading">Lista</div><div class="footer-item">Publicaciones transcritas en HTML</div></div></div></div><div class="footer-rule"><span>© SiMAF 2019-2026</span><span style="font-family:var(--font-serif); font-style:italic;">Publicaciones · Dr. Ing. Diego R. Tramontina</span></div></footer>
+</div>
+<script>
+  const researcherName = "Dr. Ing. Diego R. Tramontina";
+  const embeddedPublications = [
+    {
+        "title": "Temperature effects on the strength of a nanocrystalline refractory high entropy alloy",
+        "year": "2025",
+        "authors": "FR Roco, O Deluigi, M Opazo, N Amigo, J Rojas-Nunez, FJ Valencia, DR Tramontina, EM Bringa",
+        "journal": "International Journal of Refractory Metals and Hard Materials",
+        "volume": "128, 107038",
+        "url": ""
+    },
+    {
+        "title": "Nanoindentation into a bcc high-entropy HfNbTaTiZr alloy—an atomistic study of the effect of short-range order",
+        "year": "2024",
+        "authors": "IA Alhafez, OR Deluigi, D Tramontina, N Merkert, HM Urbassek, EM Bringa",
+        "journal": "Scientific Reports",
+        "volume": "14 (1), 9112",
+        "url": "https://www.nature.com/articles/s41598-024-59761-6.pdf"
+    },
+    {
+        "title": "Plasticity in diamond nanoparticles: dislocations and amorphization during loading and dislocation multiplication during unloading",
+        "year": "2024",
+        "authors": "F Aquistapace, D Castillo-Castro, RI González, N Amigo, G García Vidable, DR Tramontina, FJ Valencia, EM Bringa",
+        "journal": "Journal of Materials Science",
+        "volume": "59 (12), 4788-4809",
+        "url": "https://www.researchgate.net/profile/Daniel-Castillo-Castro/publication/376755445_Plasticity_in_diamond_nanoparticles_dislocations_and_amorphization_during_loading_and_dislocation_multiplication_during_unloading/links/6732bf37f255d57286677f79/Plasticity-in-diamond-nanoparticles-dislocations-and-amorphization-during-loading-and-dislocation-multiplication-during-unloading.pdf"
+    },
+    {
+        "title": "Plastic behavior of a nanoporous high-entropy alloy under compression",
+        "year": "2023",
+        "authors": "O Deluigi, N Amigo, FJ Valencia, F Aquistapace, DR Tramontina, RI Gonzalez, EM Bringa",
+        "journal": "Computational Materials Science",
+        "volume": "226, 112241",
+        "url": ""
+    },
+    {
+        "title": "Probing radiation resistance in simulated metallic core–shell nanoparticles",
+        "year": "2023",
+        "authors": "DR Tramontina, OR Deluigi, R Pinzón, J Rojas-Nunez, FJ Valencia, RC Pasianot, SE Baltazar, RI Gonzalez, EM Bringa",
+        "journal": "Computational Materials Science",
+        "volume": "227, 112304",
+        "url": "https://www.researchgate.net/profile/Diego-Tramontina/publication/372813587_Probing_radiation_resistance_in_simulated_metallic_core-shell_nanoparticles/links/64d129cd40a524707ba4a985/Probing-radiation-resistance-in-simulated-metallic-core-shell-nanoparticles.pdf"
+    },
+    {
+        "title": "Influence of grain size on mechanical properties of a refractory high entropy alloy under uniaxial tension",
+        "year": "2023",
+        "authors": "O Deluigi, F Valencia, DR Tramontina, N Amigo, J Rojas-Nunez, EM Bringa",
+        "journal": "Crystals",
+        "volume": "13 (2), 357",
+        "url": "https://www.mdpi.com/2073-4352/13/2/357"
+    },
+    {
+        "title": "Simulated nanoindentation into single-phase fcc FeₓNi₁₋ₓ alloys predicts maximum hardness for equiatomic stoichiometry",
+        "year": "2023",
+        "authors": "I Alabd Alhafez, OR Deluigi, D Tramontina, CJ Ruestes, EM Bringa, HM Urbassek",
+        "journal": "Scientific Reports",
+        "volume": "13 (1), 9806",
+        "url": "https://www.nature.com/articles/s41598-023-36899-3"
+    },
+    {
+        "title": "Effects of airless bodies' regolith structures and of the solar wind's properties on the backscattered energetic neutral atoms flux",
+        "year": "2023",
+        "authors": "S Verkercke, JY Chaufray, F Leblanc, EM Bringa, D Tramontina, L Morrissey, A Woodson",
+        "journal": "The Planetary Science Journal",
+        "volume": "4 (10), 197",
+        "url": "https://iopscience.iop.org/article/10.3847/PSJ/acf6bd/pdf"
+    },
+    {
+        "title": "On the origins of backscattered solar wind energetic neutral hydrogen from the Moon and Mercury",
+        "year": "2023",
+        "authors": "F Leblanc, R Deborde, D Tramontina, E Bringa, JY Chaufray, S Aizawa, R Modolo, L Morrissey, A Woodson",
+        "journal": "Planetary and Space Science",
+        "volume": "229, 105660",
+        "url": "https://www.sciencedirect.com/science/article/am/pii/S0032063323000296"
+    },
+    {
+        "title": "Spin-lattice-dynamics analysis of magnetic properties of iron under compression",
+        "year": "2023",
+        "authors": "G Dos Santos, R Meyer, D Tramontina, EM Bringa, HM Urbassek",
+        "journal": "Scientific Reports",
+        "volume": "13 (1), 14282",
+        "url": "https://www.nature.com/articles/s41598-023-41499-2"
+    },
+    {
+        "title": "Simulations of plasticity in diamond nanoparticles showing ultrahigh strength",
+        "year": "2022",
+        "authors": "GG Vidable, RI Gonzalez, FJ Valencia, N Amigo, D Tramontina, EM Bringa",
+        "journal": "Diamond and Related Materials",
+        "volume": "126, 109109",
+        "url": "https://www.researchgate.net/profile/Diego-Tramontina/publication/360679149_Simulations_of_plasticity_in_diamond_nanoparticles_showing_ultrahigh_strength/links/628d4c3b345118162aa2fd38/Simulations-of-plasticity-in-diamond-nanoparticles-showing-ultrahigh-strength.pdf"
+    },
+    {
+        "title": "Simulation of tantalum nanocrystals under shock-wave loading: Dislocations and twinning",
+        "year": "2017",
+        "authors": "DR Tramontina, EN Hahn, MA Meyers, EM Bringa",
+        "journal": "AIP Conference Proceedings",
+        "volume": "1793 (1), 070002",
+        "url": "https://pubs.aip.org/aip/acp/article-pdf/doi/10.1063/1.4971590/13733526/070002_1_online.pdf"
+    },
+    {
+        "title": "Hydrogen storage in palladium hollow nanoparticles",
+        "year": "2016",
+        "authors": "FJ Valencia, RI González, D Tramontina, J Rogan, JA Valdivia, M Kiwi, EM Bringa",
+        "journal": "The Journal of Physical Chemistry C",
+        "volume": "120 (41), 23836-23841",
+        "url": "https://ri.conicet.gov.ar/bitstream/handle/11336/59505/CONICET_Digital_Nro.c6c56af9-59a9-4381-8f71-5b84e846ba23_A.pdf?sequence=2"
+    },
+    {
+        "title": "Nucleation of plasticity in nanoparticle collisions",
+        "year": "2016",
+        "authors": "EN Millán, DR Tramontina, HM Urbassek, EM Bringa",
+        "journal": "Physical Review E",
+        "volume": "93 (6), 063004",
+        "url": "https://ri.conicet.gov.ar/bitstream/handle/11336/56501/CONICET_Digital_Nro.113f1286-878d-4b20-9b99-d3bd73ee2c87_B.pdf?sequence=11&isAllowed=y"
+    },
+    {
+        "title": "The elastic–plastic transition in nanoparticle collisions",
+        "year": "2016",
+        "authors": "EN Millán, DR Tramontina, HM Urbassek, EM Bringa",
+        "journal": "Physical Chemistry Chemical Physics",
+        "volume": "18 (5), 3423-3429",
+        "url": "https://pubs.rsc.org/en/content/articlepdf/2015/cp/c5cp05150a"
+    },
+    {
+        "title": "Confinement effects of ion tracks in ultrathin polymer films",
+        "year": "2015",
+        "authors": "RM Papaléo, R Thomaz, LI Gutierres, VM De Menezes, D Severin, C Trautmann, D Tramontina, EM Bringa, MG Del Pópolo",
+        "journal": "Physical Review Letters",
+        "volume": "114 (11), 118302",
+        "url": "https://repositorio.pucrs.br/dspace/bitstream/10923/12676/2/Confinement_Effects_of_Ion_Tracks_in_Ultrathin_Polymer_Films.pdf"
+    },
+    {
+        "title": "Comparative simulation study of the structure of the plastic zone produced by nanoindentation",
+        "year": "2015",
+        "authors": "Y Gao, CJ Ruestes, DR Tramontina, HM Urbassek",
+        "journal": "Journal of the Mechanics and Physics of Solids",
+        "volume": "75, 58-75",
+        "url": ""
+    },
+    {
+        "title": "Morphological changes in polycrystalline Fe after compression and release",
+        "year": "2015",
+        "authors": "N Gunkelmann, DR Tramontina, EM Bringa, HM Urbassek",
+        "journal": "Journal of Applied Physics",
+        "volume": "117 (8)",
+        "url": "https://ri.conicet.gov.ar/bitstream/handle/11336/40045/CONICET_Digital_Nro.a9a7eebd-eb04-49e0-b03d-f589ce097f18_A.pdf?sequence=2&isAllowed=y"
+    },
+    {
+        "title": "Mechanical properties of irradiated nanowires–a molecular dynamics study",
+        "year": "2015",
+        "authors": "E Figueroa, D Tramontina, G Gutiérrez, E Bringa",
+        "journal": "Journal of Nuclear Materials",
+        "volume": "467, 677-682",
+        "url": ""
+    }
+];
+  const state = { publications: [], query: "", year: "" };
+  const el = { list: document.getElementById("publications"), count: document.getElementById("pub-count"), range: document.getElementById("pub-range"), search: document.getElementById("search"), year: document.getElementById("year-filter") };
+  function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"}[char])); }
+  function renderYearOptions(publications) { const years = [...new Set(publications.map(pub => pub.year))].sort((a, b) => b - a); el.year.innerHTML = '<option value="">Todos los años</option>' + years.map(year => '<option value="' + year + '">' + year + '</option>').join(""); }
+  function highlightInvestigator(authors) {
+    const parts = researcherName.replace(/^(Dr\.? Ing\.?|Dr\.?|Lic\.?|Ing\.?)\s*/i, "").split(/\s+/).filter(Boolean);
+    const last = (parts[parts.length - 1] || "").toLowerCase();
+    return escapeHtml(authors).split(",").map(author => {
+      const trimmed = author.trim();
+      return last && trimmed.toLowerCase().includes(last) ? "<strong>" + trimmed + "</strong>" : trimmed;
+    }).join(", ");
+  }
+  function publicationHtml(pub) { const url = pub.url ? '<span class="sep">·</span><a class="pdf-link" href="' + escapeHtml(pub.url) + '" target="_blank" rel="noopener">PDF / DOI ↗</a>' : ""; const volume = pub.volume ? '<span class="sep">·</span><span>' + escapeHtml(pub.volume) + '</span>' : ""; return '<article class="publication"><h2>' + escapeHtml(pub.title) + '</h2><div class="authors">' + highlightInvestigator(pub.authors) + '</div><div class="meta"><span class="venue">' + escapeHtml(pub.journal || "Publicación") + '</span>' + volume + url + '</div></article>'; }
+  function render() { const query = state.query.trim().toLowerCase(); const filtered = state.publications.filter(pub => { const matchesYear = !state.year || String(pub.year) === state.year; const haystack = [pub.title, pub.authors, pub.journal, pub.volume, pub.year].join(" ").toLowerCase(); return matchesYear && (!query || haystack.includes(query)); }); el.count.textContent = filtered.length + " publicaciones"; if (!filtered.length) { el.list.className = "empty"; el.list.innerHTML = "No hay publicaciones que coincidan con ese filtro."; return; } const groups = filtered.reduce((acc, pub) => { (acc[pub.year] ||= []).push(pub); return acc; }, {}); el.list.className = ""; el.list.innerHTML = Object.keys(groups).sort((a, b) => b - a).map(year => '<div class="year-block"><div class="year">' + year + '</div><div class="items">' + groups[year].map(publicationHtml).join("") + '</div></div>').join(""); }
+  function init() { state.publications = embeddedPublications.map(pub => ({ title:String(pub.title || "Sin título"), authors:String(pub.authors || ""), journal:String(pub.journal || ""), year:Number(pub.year) || 0, volume:String(pub.volume || ""), url:String(pub.url || "") })).filter(pub => pub.title && pub.year).sort((a, b) => b.year - a.year || a.title.localeCompare(b.title)); const years = state.publications.map(pub => pub.year).filter(Boolean); el.range.textContent = state.publications.length ? Math.min(...years) + "-" + Math.max(...years) + " · HTML" : "Sin publicaciones"; renderYearOptions(state.publications); render(); }
+  el.search.addEventListener("input", event => { state.query = event.target.value; render(); }); el.year.addEventListener("change", event => { state.year = event.target.value; render(); }); init();
+</script>
+</body>
+</html>
