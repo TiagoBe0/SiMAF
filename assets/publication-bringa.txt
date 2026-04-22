@@ -377,4 +377,108 @@
                 available: true,
                 url: "https://ri.conicet.gov.ar/bitstream/handle/11336/32239/CONICET_Digital_Nro.9d9f1861-105d-49b2-baea-880e362cb27e_A.pdf?sequence=2&isAllowed=y"
             }
+
+
+
+            {
+    title: "Cluster impact into high-entropy alloys: Deformation, hardness changes, and subgrain formation",
+    authors: "IA Alhafez, OR Deluigi, N Merkert, HM Urbassek, EM Bringa",
+    journal: "Journal of Materials Research and Technology",
+    year: 2026,
+    volume: "",
+    available: false,
+    url: ""
+},
+{
+    title: "Mechanical properties of nanoporous TiO2: Atomistic simulations and experiments",
+    authors: "JI Ramallo, RI Gonzalez, MC Fuertes, EM Bringa",
+    journal: "Journal of the American Ceramic Society",
+    year: 2026,
+    volume: "109 (1), e70333",
+    available: false,
+    url: ""
+},
+{
+    title: "Dynamic strength measurement of iron at 450 GPa using direct laser-driven Rayleigh-Taylor instability",
+    authors: "YJ Kim, G Righi, OR Deluigi, CJ Ruestes, MA Meyers, RE Rudd",
+    journal: "DPP 2025",
+    year: 2025,
+    volume: "",
+    available: false,
+    url: ""
+},
+{
+    title: "Dust collisions in protoplanetary disks: From monodisperse to bidisperse grain aggregates",
+    authors: "F Parizek, MB Planes, EN Millán, MG Parisi, EM Bringa",
+    journal: "Astronomy & Astrophysics",
+    year: 2025,
+    volume: "703, A180",
+    available: false,
+    url: ""
+},
+{
+    title: "Dynamic strength of iron under pressure-temperature conditions of Earth’s inner core",
+    authors: "YJ Kim, G Righi, O Deluigi, E Bringa, T Lockard, R Rudd, C Ruestes",
+    journal: "",
+    year: 2025,
+    volume: "",
+    available: false,
+    url: ""
+},
+{
+    title: "Atomic-scale simulations of solar wind sputtering of airless bodies by solar wind ions",
+    authors: "A Georgiou, BA Clouter-Gergen, K Nordlund, F Djurabekova, EM Bringa",
+    journal: "EPSC-DPS2025",
+    year: 2025,
+    volume: "",
+    available: false,
+    url: ""
+},
+{
+    title: "Nanoindentation into a dual-phase bicontinuous lamellar high-entropy alloy",
+    authors: "IA Alhafez, OR Deluigi, D Tramontina, F Valencia, N Merkert, D Farkas",
+    journal: "Journal of Materials Research and Technology",
+    year: 2025,
+    volume: "37, 1406-1417",
+    available: false,
+    url: ""
+},
+{
+    title: "Nanohorns de carbono de pared simple como contenedores de hidrógeno molecular",
+    authors: "EA Crespo, JM González, MA Orozco, EM Bringa",
+    journal: "Tecnología y Ciencia",
+    year: 2025,
+    volume: "15-25",
+    available: false,
+    url: ""
+},
+{
+    title: "Comparación mediante experimentos numéricos de metales amorfos y cristalinos empleados en geometrías planas con imperfecciones",
+    authors: "CA Careglio, AE Mirasso, M Grioni, EM Bringa",
+    journal: "XLI Congreso Argentino de Mecánica Computacional",
+    year: 2025,
+    volume: "",
+    available: false,
+    url: ""
+},
+{
+    title: "Simulation of the mechanical properties of crystalline diamond nanoparticles with an amorphous carbon shell",
+    authors: "G García-Vidable, N Amigo, FE Palay, RI González, F Aquistapace",
+    journal: "Diamond and Related Materials",
+    year: 2025,
+    volume: "154, 112188",
+    available: false,
+    url: ""
+},
+{
+    title: "Mechanical behaviour of hydrogenated nanoporous palladium",
+    authors: "W Schmidt, T Castro, E Bringa, M Ramírez, J Rogan, F Valencia",
+    journal: "Physical Chemistry Chemical Physics",
+    year: 2025,
+    volume: "27 (22), 11830-11841",
+    available: false,
+    url: ""
+}
         ];
+
+

@@ -7,11 +7,20 @@
 <style>
   html, body { margin:0; padding:0; background: var(--bg); color: var(--fg); }
   body { font-family: var(--font-sans); position:relative; min-height:100vh; }
+  body {
+    --simaf-bg-image: url("img/logo-final.png");
+  }
+  body[data-bg-variant="a"] {
+    --simaf-bg-image: url("img/logo_final_a.png");
+  }
+  body[data-bg-variant="b"] {
+    --simaf-bg-image: url("img/logo_final_b.png");
+  }
   body::before {
     content:"";
     position:fixed;
     inset:-35vmax;
-    background:url("img/logo-final.png") center / cover no-repeat;
+    background:var(--simaf-bg-image) center / cover no-repeat;
     opacity:0.12;
     pointer-events:none;
     z-index:0;
@@ -26,6 +35,41 @@
   * { box-sizing: border-box; }
   a { color: var(--accent); }
   [data-screen-label] { scroll-margin-top: 80px; }
+  .bg-variant-picker {
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:20;
+    display:flex;
+    gap:4px;
+    padding:5px;
+    border:1px solid var(--border);
+    border-radius:4px;
+    background:color-mix(in srgb, var(--bg) 92%, white);
+    box-shadow:0 12px 24px rgba(12,15,26,0.14);
+  }
+  .bg-variant-picker button {
+    width:36px;
+    height:32px;
+    border:1px solid transparent;
+    border-radius:3px;
+    background:transparent;
+    color:var(--fg-muted);
+    font:600 12px/1 var(--font-sans);
+    cursor:pointer;
+  }
+  .bg-variant-picker button:hover {
+    background:var(--bg-sunken);
+    color:var(--fg);
+  }
+  .bg-variant-picker button[aria-pressed="true"] {
+    border-color:var(--accent);
+    background:color-mix(in srgb, var(--accent) 12%, transparent);
+    color:var(--accent);
+  }
+  @media (max-width: 720px) {
+    .bg-variant-picker { right:12px; bottom:12px; }
+  }
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -42,19 +86,52 @@
 <script src="../../pappers/manifest.js"></script>
 <script type="text/babel" src="FeaturedArticle.jsx"></script>
 <script type="text/babel">
-const { useState } = React;
+const { useEffect, useState } = React;
+
+const bgVariants = [
+  { id: 'original', label: 'O' },
+  { id: 'a', label: 'A' },
+  { id: 'b', label: 'B' }
+];
 
 function App() {
   const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_screen')) || 'home';
   const savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_lang')) || 'es';
+  const savedBg = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_bg_variant')) || 'original';
   const [screen, _setScreen] = useState(saved);
   const [lang, _setLang] = useState(savedLang);
+  const [bgVariant, _setBgVariant] = useState(savedBg);
   const setScreen = s => { _setScreen(s); try { localStorage.setItem('simaf_screen', s);} catch(e){} window.scrollTo({top:0, behavior:'instant'}); };
   const setLang = l => { _setLang(l); try { localStorage.setItem('simaf_lang', l);} catch(e){} };
+  const setBgVariant = variant => {
+    _setBgVariant(variant);
+    try { localStorage.setItem('simaf_bg_variant', variant); } catch(e){}
+  };
+
+  useEffect(() => {
+    if (bgVariant === 'original') {
+      document.body.removeAttribute('data-bg-variant');
+    } else {
+      document.body.setAttribute('data-bg-variant', bgVariant);
+    }
+  }, [bgVariant]);
 
   return (
     <>
       <Header screen={screen} setScreen={setScreen} lang={lang} setLang={setLang} />
+      <div className="bg-variant-picker" aria-label={lang==='es'?'Variantes de fondo':'Background variants'}>
+        {bgVariants.map(variant => (
+          <button
+            key={variant.id}
+            type="button"
+            aria-pressed={bgVariant === variant.id}
+            title={lang==='es' ? `Fondo ${variant.label}` : `Background ${variant.label}`}
+            onClick={() => setBgVariant(variant.id)}
+          >
+            {variant.label}
+          </button>
+        ))}
+      </div>
       {screen==='home' && (
         <main data-screen-label="01 Home">
           <FeaturedArticle lang={lang} />
