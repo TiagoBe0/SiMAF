@@ -16,6 +16,9 @@
   body[data-bg-variant="b"] {
     --simaf-bg-image: url("img/logo_final_b.png");
   }
+  body[data-bg-variant="c"] {
+    --simaf-bg-image: url("img/logo_final_c.png");
+  }
   body::before {
     content:"";
     position:fixed;
@@ -89,15 +92,16 @@
 const { useEffect, useState } = React;
 
 const bgVariants = [
-  { id: 'original', label: 'O' },
   { id: 'a', label: 'A' },
-  { id: 'b', label: 'B' }
+  { id: 'b', label: 'B' },
+  { id: 'c', label: 'C' }
 ];
 
 function App() {
   const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_screen')) || 'home';
   const savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_lang')) || 'es';
-  const savedBg = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_bg_variant')) || 'original';
+  const storedBg = (typeof localStorage !== 'undefined' && localStorage.getItem('simaf_bg_variant')) || 'a';
+  const savedBg = bgVariants.some(variant => variant.id === storedBg) ? storedBg : 'a';
   const [screen, _setScreen] = useState(saved);
   const [lang, _setLang] = useState(savedLang);
   const [bgVariant, _setBgVariant] = useState(savedBg);
