@@ -1,4 +1,12 @@
 window.Hero = function Hero({ lang }) {
+  const withSrcFallback = (nextSources) => (e) => {
+    const img = e.currentTarget;
+    const pending = img.dataset.fallbacks ? img.dataset.fallbacks.split('|') : nextSources.slice();
+    const next = pending.shift();
+    img.dataset.fallbacks = pending.join('|');
+    if (next) img.src = next;
+  };
+
   const copy = {
     es: {
       eye: 'SiMAF · Universidad de Mendoza',
@@ -28,7 +36,14 @@ window.Hero = function Hero({ lang }) {
           <h1 style={heroStyles.h}>{copy.h}</h1>
           <p style={heroStyles.lead}>{copy.lead}</p>
         </div>
-        <img src="../../assets/simaf-atom.svg" style={heroStyles.heroGif} alt="Animación científica de SiMAF" loading="lazy" />
+        <img
+          src="/assets/simaf-atom.svg"
+          data-fallbacks="../../assets/simaf-atom.svg|assets/simaf-atom.svg"
+          onError={withSrcFallback(['../../assets/simaf-atom.svg', 'assets/simaf-atom.svg'])}
+          style={heroStyles.heroGif}
+          alt="Animación científica de SiMAF"
+          loading="lazy"
+        />
       </div>
       <div style={heroStyles.stats}>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>15+</div><div style={heroStyles.statL}>{lang==='es'?'Años':'Years'}</div></div>
@@ -40,7 +55,13 @@ window.Hero = function Hero({ lang }) {
         <button style={heroStyles.primary}>{copy.cta1}</button>
         <button style={heroStyles.ghost}>{copy.cta2}</button>
       </div>
-      <img src="../../img/logo-final.png" style={heroStyles.watermark} alt="" />
+      <img
+        src="/img/logo-final.png"
+        data-fallbacks="../../img/logo-final.png|img/logo-final.png"
+        onError={withSrcFallback(['../../img/logo-final.png', 'img/logo-final.png'])}
+        style={heroStyles.watermark}
+        alt=""
+      />
     </section>
   );
 };

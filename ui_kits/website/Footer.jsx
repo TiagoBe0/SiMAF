@@ -1,9 +1,25 @@
+function withSrcFallback(nextSources) {
+  return function onImageError(e) {
+    const img = e.currentTarget;
+    const pending = img.dataset.fallbacks ? img.dataset.fallbacks.split('|') : nextSources.slice();
+    const next = pending.shift();
+    img.dataset.fallbacks = pending.join('|');
+    if (next) img.src = next;
+  };
+}
+
 window.Footer = function Footer({ lang }) {
   return (
     <footer style={ftStyles.wrap}>
       <div style={ftStyles.inner}>
         <div style={ftStyles.brand}>
-          <img src="../../img/logo-final.png" alt="" style={ftStyles.mark} />
+          <img
+            src="/img/logo-final.png"
+            data-fallbacks="../../img/logo-final.png|img/logo-final.png"
+            onError={withSrcFallback(['../../img/logo-final.png', 'img/logo-final.png'])}
+            alt=""
+            style={ftStyles.mark}
+          />
           <div>
             <div style={ftStyles.wm}>SiMAF</div>
             <div style={ftStyles.sub}>{lang==='es'?'Laboratorio de Simulaciones en Materiales, Astrofísica y Física · Universidad de Mendoza':'Laboratory of Simulations in Materials, Astrophysics & Physics · Universidad de Mendoza'}</div>
