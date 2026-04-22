@@ -37,43 +37,35 @@ window.Hero = function Hero({ lang }) {
           <p style={heroStyles.lead}>{copy.lead}</p>
         </div>
         <img
-          src="/assets/simaf-atom.svg"
-          data-fallbacks="../../assets/simaf-atom.svg|assets/simaf-atom.svg"
-          onError={withSrcFallback(['../../assets/simaf-atom.svg', 'assets/simaf-atom.svg'])}
+          src="img/nanowire_3700.gif"
+          data-fallbacks="../../img/nanowire_3700.gif|/img/nanowire_3700.gif"
+          onError={withSrcFallback(['../../img/nanowire_3700.gif', '/img/nanowire_3700.gif'])}
           style={heroStyles.heroGif}
-          alt="Animación científica de SiMAF"
+          alt="Simulación atomística de nanohilo"
           loading="lazy"
         />
       </div>
       <div style={heroStyles.stats}>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>15+</div><div style={heroStyles.statL}>{lang==='es'?'Años':'Years'}</div></div>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>100+</div><div style={heroStyles.statL}>{lang==='es'?'Publicaciones':'Publications'}</div></div>
-        <div style={heroStyles.stat}><div style={heroStyles.statN}>9</div><div style={heroStyles.statL}>{lang==='es'?'Investigadores':'Researchers'}</div></div>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>30+</div><div style={heroStyles.statL}>{lang==='es'?'Colaboraciones int.':'Int. collaborations'}</div></div>
       </div>
       <div style={heroStyles.ctas}>
         <button style={heroStyles.primary}>{copy.cta1}</button>
         <button style={heroStyles.ghost}>{copy.cta2}</button>
       </div>
-      <img
-        src="img/logo-final.png"
-        data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
-        onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
-        style={heroStyles.watermark}
-        alt=""
-      />
     </section>
   );
 };
 
 const heroStyles = {
-  wrap: { position:'relative', padding:'80px 48px 72px', maxWidth:1280, margin:'0 auto', overflow:'hidden' },
+  wrap: { position:'relative', padding:'80px 48px 72px', maxWidth:1280, margin:'0 auto' },
   masthead: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
   intro: { display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40, margin:'40px 0 36px' },
   copy: { flex:'1 1 680px', minWidth:0 },
   h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 28px', maxWidth:'20ch' },
   lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
-  heroGif: { width:'min(27vw, 270px)', minWidth:170, height:'auto', borderRadius:18, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
+  heroGif: { width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', objectFit:'cover', borderRadius:8, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
   stats: { display:'flex', gap:40, marginBottom:36 },
   stat: { },
   statN: { fontFamily:'var(--font-serif)', fontSize:36, fontWeight:500, color:'var(--fg)', lineHeight:1 },
@@ -81,5 +73,4 @@ const heroStyles = {
   ctas: { display:'flex', gap:16, alignItems:'center' },
   primary: { fontFamily:'var(--font-sans)', fontSize:14, fontWeight:500, padding:'12px 22px', background:'var(--accent)', color:'#fff', border:'1px solid var(--accent)', borderRadius:4, cursor:'pointer' },
   ghost: { fontFamily:'var(--font-sans)', fontSize:14, fontWeight:500, padding:'12px 4px', background:'transparent', color:'var(--fg)', border:'none', borderBottom:'1px solid var(--fg)', borderRadius:0, cursor:'pointer' },
-  watermark: { position:'absolute', right:-140, top:-60, width:520, height:520, opacity:0.28, pointerEvents:'none', zIndex:-1, borderRadius:'50%' },
 };

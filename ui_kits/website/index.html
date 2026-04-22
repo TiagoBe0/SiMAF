@@ -6,7 +6,17 @@
 <link rel="stylesheet" href="../../colors_and_type.css" />
 <style>
   html, body { margin:0; padding:0; background: var(--bg); color: var(--fg); }
-  body { font-family: var(--font-sans); }
+  body { font-family: var(--font-sans); position:relative; min-height:100vh; }
+  body::before {
+    content:"";
+    position:fixed;
+    inset:-12vw;
+    background:url("img/logo-final.png") center / cover no-repeat;
+    opacity:0.12;
+    pointer-events:none;
+    z-index:0;
+  }
+  #root { position:relative; z-index:1; }
   * { box-sizing: border-box; }
   a { color: var(--accent); }
   [data-screen-label] { scroll-margin-top: 80px; }
