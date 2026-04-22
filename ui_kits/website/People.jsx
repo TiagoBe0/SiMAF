@@ -1,6 +1,6 @@
 window.People = function People({ lang }) {
   const members = [
-    { img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'simaf_publications_bringa.html' },
+    { img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'publicaciones-ebringa.html' },
     { img:'img/avatar1.jpg', name:'Dr. Gonzalo Dos Santos', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#f02850', pubs:'gonzalo_dos_santos_publications.html' },
     { img:'img/avatar7jpg', name:'Dr. Ing. Diego R. Tramontina', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#7828c8', pubs:'diego_tramontina_publications.html' },
     { img:'img/avatar6.jpg', name:'Dr. Geraudys Mora Barzaga', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#00a050', pubs:'gera_mora_publications.html' },
@@ -31,11 +31,14 @@ window.People = function People({ lang }) {
               <div style={pplStyles.name}>{m.name}</div>
               <div style={pplStyles.role}>{m.role[lang]}</div>
               <div style={pplStyles.tag}>{m.tag}</div>
-              {m.pubs && (
-                <a href="#" onClick={e=>e.preventDefault()} style={pplStyles.link}>
-                  {lang==='es'?'Publicaciones →':'Publications →'}
-                </a>
-              )}
+              {m.pubs && (() => {
+                const hasPage = m.pubs === 'publicaciones-ebringa.html';
+                return (
+                  <a href={hasPage ? m.pubs : '#'} onClick={hasPage ? undefined : e=>e.preventDefault()} style={pplStyles.link}>
+                    {lang==='es'?'Publicaciones →':'Publications →'}
+                  </a>
+                );
+              })()}
             </div>
           </div>
         ))}
