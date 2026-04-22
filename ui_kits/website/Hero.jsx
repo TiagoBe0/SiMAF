@@ -1,12 +1,4 @@
 window.Hero = function Hero({ lang }) {
-  const withSrcFallback = (nextSources) => (e) => {
-    const img = e.currentTarget;
-    const pending = img.dataset.fallbacks ? img.dataset.fallbacks.split('|') : nextSources.slice();
-    const next = pending.shift();
-    img.dataset.fallbacks = pending.join('|');
-    if (next) img.src = next;
-  };
-
   const copy = {
     es: {
       eye: 'SiMAF · Universidad de Mendoza',
@@ -44,14 +36,18 @@ window.Hero = function Hero({ lang }) {
           <h1 style={heroStyles.h}>{copy.h}</h1>
           <p style={heroStyles.lead}>{copy.lead}</p>
         </div>
-        <img
-          src="img/nanowire_3700.gif"
-          data-fallbacks="../../img/nanowire_3700.gif|/img/nanowire_3700.gif"
-          onError={withSrcFallback(['../../img/nanowire_3700.gif', '/img/nanowire_3700.gif'])}
-          style={heroStyles.heroGif}
-          alt="Simulación atomística de nanohilo"
-          loading="lazy"
-        />
+        <video
+          style={heroStyles.heroMedia}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Simulación atomística SiMAF"
+        >
+          <source src="img/simaf_web.mp4" type="video/mp4" />
+          <source src="../../img/simaf_web.mp4" type="video/mp4" />
+        </video>
       </div>
       <div style={heroStyles.stats}>
         {[
@@ -76,7 +72,7 @@ const heroStyles = {
   copy: { flex:'1 1 680px', minWidth:0 },
   h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 28px', maxWidth:'20ch' },
   lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
-  heroGif: { display:'block', width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', objectFit:'cover', overflow:'hidden', borderRadius:170, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
+  heroMedia: { display:'block', width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', objectFit:'cover', overflow:'hidden', borderRadius:170, border:'1px solid var(--border)', boxShadow:'0 14px 30px rgba(15,53,111,0.18)' },
   stats: { display:'flex', gap:40, marginBottom:0 },
   stat: { display:'inline-block' },
   statN: { fontFamily:'var(--font-serif)', fontSize:36, fontWeight:500, color:'var(--fg)', lineHeight:1, display:'inline-block', animation:'simaf-stat-gold 4.8s ease-in-out infinite' },
