@@ -3,7 +3,7 @@ window.Footer = function Footer({ lang }) {
     <footer style={ftStyles.wrap}>
       <div style={ftStyles.inner}>
         <div style={ftStyles.brand}>
-          <img src="../../assets/logo-final.png" alt="" style={ftStyles.mark} />
+          <img src="../../img/logo-final.png" alt="" style={ftStyles.mark} />
           <div>
             <div style={ftStyles.wm}>SiMAF</div>
             <div style={ftStyles.sub}>{lang==='es'?'Laboratorio de Simulaciones en Materiales, Astrofísica y Física · Universidad de Mendoza':'Laboratory of Simulations in Materials, Astrophysics & Physics · Universidad de Mendoza'}</div>

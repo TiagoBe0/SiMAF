@@ -11,7 +11,7 @@ window.Header = function Header({ screen, setScreen, lang, setLang }) {
     <header style={headerStyles.bar}>
       <div style={headerStyles.inner}>
         <a href="#" onClick={(e)=>{e.preventDefault();setScreen('home');}} style={headerStyles.brand}>
-          <img src="../../assets/logo-final.png" alt="" style={headerStyles.mark} />
+          <img src="../../img/logo-final.png" alt="" style={headerStyles.mark} />
           <div>
             <a href="#" onClick={(e)=>{e.preventDefault();setScreen('home');}} style={{...headerStyles.wm, textDecoration:'none', color:'inherit'}}>SiMAF</a>
             <div style={headerStyles.wmSub}>{lang==='es'?'Universidad de Mendoza':'Universidad de Mendoza'}</div>

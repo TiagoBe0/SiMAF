@@ -28,7 +28,7 @@ window.Hero = function Hero({ lang }) {
           <h1 style={heroStyles.h}>{copy.h}</h1>
           <p style={heroStyles.lead}>{copy.lead}</p>
         </div>
-        <img src="https://media.giphy.com/media/3o7TKsQ8UQ4f4fW7Ru/giphy.gif" style={heroStyles.heroGif} alt="Animación científica de SiMAF" loading="lazy" />
+        <img src="../../assets/simaf-atom.svg" style={heroStyles.heroGif} alt="Animación científica de SiMAF" loading="lazy" />
       </div>
       <div style={heroStyles.stats}>
         <div style={heroStyles.stat}><div style={heroStyles.statN}>15+</div><div style={heroStyles.statL}>{lang==='es'?'Años':'Years'}</div></div>
@@ -40,7 +40,7 @@ window.Hero = function Hero({ lang }) {
         <button style={heroStyles.primary}>{copy.cta1}</button>
         <button style={heroStyles.ghost}>{copy.cta2}</button>
       </div>
-      <img src="../../assets/logo-final.png" style={heroStyles.watermark} alt="" />
+      <img src="../../img/logo-final.png" style={heroStyles.watermark} alt="" />
     </section>
   );
 };
