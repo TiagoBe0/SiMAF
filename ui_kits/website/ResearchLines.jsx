@@ -16,15 +16,14 @@ window.ResearchLines = function ResearchLines({ lang }) {
       </div>
       <div style={rlStyles.list}>
         {lines.map(l => (
-          <a key={l.n} href="#" onClick={e=>e.preventDefault()} style={rlStyles.row}>
+          <article key={l.n} className="research-line-row" style={rlStyles.row}>
             <span style={rlStyles.num}>{l.n}</span>
             <span style={{...rlStyles.dot, background:l.hue}} />
             <div style={rlStyles.body}>
               <div style={rlStyles.title}>{l[lang].t}</div>
               <div style={rlStyles.desc}>{l[lang].d}</div>
             </div>
-            <span style={rlStyles.arrow}>→</span>
-          </a>
+          </article>
         ))}
       </div>
     </section>
@@ -35,11 +34,10 @@ const rlStyles = {
   head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
   eye: { fontWeight:600, color:'var(--fg)' },
   list: { display:'flex', flexDirection:'column' },
-  row: { display:'grid', gridTemplateColumns:'80px 24px 1fr 40px', alignItems:'center', gap:20, padding:'28px 0', borderBottom:'1px solid var(--border)', textDecoration:'none', color:'var(--fg)', transition:'background 120ms' },
+  row: { display:'grid', gridTemplateColumns:'80px 24px 1fr', alignItems:'center', gap:20, padding:'28px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
   num: { fontFamily:'var(--font-mono)', fontSize:13, color:'var(--fg-muted)', letterSpacing:'0.1em' },
   dot: { width:14, height:14, borderRadius:'50%' },
   body: {},
   title: { fontFamily:'var(--font-serif)', fontSize:26, fontWeight:500, lineHeight:1.2, letterSpacing:'-0.01em' },
   desc: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:16, color:'var(--fg-muted)', marginTop:6, maxWidth:'70ch' },
-  arrow: { fontFamily:'var(--font-sans)', fontSize:20, color:'var(--fg-muted)', textAlign:'right' },
 };
