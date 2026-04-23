@@ -120,11 +120,76 @@ window.ResearchLines = function ResearchLines({ lang }) {
           transform-origin: center;
           will-change: transform, opacity, filter;
         }
+        @keyframes simaf-compute-thumb {
+          0%, 100% {
+            opacity: 0.92;
+            transform: translateY(0) scale(1);
+            box-shadow: 0 10px 18px rgba(10, 26, 60, 0.16);
+          }
+          40% {
+            opacity: 1;
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 0 14px 22px rgba(10, 26, 60, 0.2);
+          }
+        }
+        @keyframes simaf-compute-drop {
+          0%, 18%, 100% {
+            opacity: 0;
+            transform: translate3d(0, -8px, 0) scale(0.72);
+          }
+          32% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          52% {
+            opacity: 1;
+            transform: translate3d(1px, 3px, 0) scale(0.96);
+          }
+          66% {
+            opacity: 0.84;
+            transform: translate3d(0, 5px, 0) scale(0.9);
+          }
+        }
+        .simaf-compute-title {
+          display: inline-flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.55rem;
+        }
+        .simaf-compute-visual {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+        }
+        .simaf-compute-image {
+          width: 56px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 12px;
+          border: 1px solid rgba(18, 44, 90, 0.12);
+          animation: simaf-compute-thumb 5.2s ease-in-out infinite;
+        }
+        .simaf-compute-drop {
+          position: absolute;
+          right: -5px;
+          top: -7px;
+          width: 13px;
+          height: 17px;
+          background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.95) 0 18%, rgba(144, 212, 255, 0.95) 19% 58%, rgba(57, 154, 235, 0.98) 59% 100%);
+          border-radius: 50% 50% 58% 58% / 36% 36% 68% 68%;
+          transform: rotate(22deg);
+          box-shadow: 0 0 12px rgba(87, 177, 245, 0.28);
+          animation: simaf-compute-drop 5.2s ease-in-out infinite;
+          pointer-events: none;
+        }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
           .research-line-row { grid-template-columns: 48px 18px 1fr !important; gap: 14px !important; }
           .research-line-title { font-size: 22px !important; }
+          .simaf-compute-image { width: 48px; height: 34px; }
         }
       `}</style>
       <div className="research-lines-head" style={rlStyles.head}>
@@ -144,6 +209,18 @@ window.ResearchLines = function ResearchLines({ lang }) {
                     <span className="simaf-extreme-fragment is-left">bajo</span>
                     <span className="simaf-extreme-fragment is-right">condiciones</span>
                     <span>extremas</span>
+                  </span>
+                ) : l.n === '03' ? (
+                  <span className="simaf-compute-title">
+                    <span>{l[lang].t}</span>
+                    <span className="simaf-compute-visual" aria-hidden="true">
+                      <img
+                        className="simaf-compute-image"
+                        src="img/animacion_computacion.jpeg"
+                        alt=""
+                      />
+                      <span className="simaf-compute-drop" />
+                    </span>
                   </span>
                 ) : l.n === '05' && lang === 'es' ? (
                   <span className="simaf-radiation-title">Daño por radiación en materiales</span>
