@@ -173,8 +173,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
         }
         .simaf-compute-drop {
           position: absolute;
-          right: 2px;
-          top: -7px;
+          right: 3px;
+          top: -6px;
           width: 14px;
           height: 19px;
           background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.95) 0 18%, rgba(144, 212, 255, 0.95) 19% 58%, rgba(57, 154, 235, 0.98) 59% 100%);
