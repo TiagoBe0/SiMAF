@@ -167,6 +167,26 @@ window.ResearchLines = function ResearchLines({ lang }) {
           transform-origin: center;
           will-change: transform, color, text-shadow, filter;
         }
+        @keyframes simaf-nano-compress {
+          0%, 20%, 100% {
+            transform: scaleX(1) scaleY(1);
+            letter-spacing: -0.01em;
+          }
+          36%, 58% {
+            transform: scaleX(0.82) scaleY(0.72);
+            letter-spacing: -0.05em;
+          }
+          74% {
+            transform: scaleX(1) scaleY(1);
+            letter-spacing: -0.01em;
+          }
+        }
+        .simaf-nano-title {
+          display: inline-block;
+          animation: simaf-nano-compress 7s ease-in-out infinite;
+          transform-origin: center;
+          will-change: transform, letter-spacing;
+        }
         @keyframes simaf-magnet-letter {
           0%, 100% {
             opacity: 1;
@@ -326,6 +346,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
                       <span className="simaf-compute-drop" />
                     </span>
                   </span>
+                ) : l.n === '04' ? (
+                  <span className="simaf-nano-title">{l[lang].t}</span>
                 ) : l.n === '06' ? (
                   <span className="simaf-compute-title">
                     <span>{l[lang].t}</span>
