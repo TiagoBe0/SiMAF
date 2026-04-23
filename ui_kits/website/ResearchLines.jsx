@@ -167,7 +167,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
           width: 73px;
           height: 52px;
           object-fit: cover;
-          border-radius: 20px;
+          border-radius: 26px;
           border: 1px solid rgba(18, 44, 90, 0.12);
           animation: simaf-compute-thumb 5.2s ease-in-out infinite;
         }
