@@ -184,7 +184,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
         .simaf-nano-title {
           display: inline-block;
           animation: simaf-nano-compress 7s ease-in-out infinite;
-          transform-origin: center;
+          transform-origin: center bottom;
           will-change: transform, letter-spacing;
         }
         @keyframes simaf-magnet-letter {
