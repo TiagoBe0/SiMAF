@@ -85,21 +85,25 @@ window.ResearchLines = function ResearchLines({ lang }) {
         @keyframes simaf-magnet-letter {
           0%, 100% {
             opacity: 1;
+            color: var(--magnet-color, var(--fg));
             transform: translate3d(0, 0, 0) scale(1);
             filter: blur(0);
           }
           18% {
             opacity: 0;
+            color: var(--magnet-color, var(--fg));
             transform: translate3d(var(--magnet-x), 0, -180px) scale(1.9);
             filter: blur(8px);
           }
           58% {
             opacity: 0.72;
+            color: var(--magnet-color, var(--fg));
             transform: translate3d(calc(var(--magnet-x) * 0.18), 0, -42px) scale(1.16);
             filter: blur(1.6px);
           }
           78% {
             opacity: 1;
+            color: var(--magnet-color, var(--fg));
             transform: translate3d(0, 0, 0) scale(1);
             filter: blur(0);
           }
@@ -146,21 +150,21 @@ window.ResearchLines = function ResearchLines({ lang }) {
                 ) : l.n === '07' && lang === 'es' ? (
                   <span className="simaf-magnet-title" aria-label="Magnetismo">
                     {[
-                      ['M', '-5.2em', '0ms'],
-                      ['a', '-3.9em', '90ms'],
-                      ['g', '-2.6em', '180ms'],
-                      ['n', '-1.3em', '270ms'],
-                      ['e', '1.3em', '360ms'],
-                      ['t', '2.6em', '450ms'],
-                      ['i', '3.9em', '540ms'],
-                      ['s', '5.2em', '630ms'],
-                      ['m', '6.4em', '720ms'],
-                      ['o', '7.6em', '810ms'],
-                    ].map(([char, offset, delay], i) => (
+                      ['M', '-5.2em', '0ms', '#d96a1d'],
+                      ['a', '-3.9em', '90ms', '#d96a1d'],
+                      ['g', '-2.6em', '180ms', '#d96a1d'],
+                      ['n', '-1.3em', '270ms', '#d96a1d'],
+                      ['e', '1.3em', '360ms', '#d96a1d'],
+                      ['t', '2.6em', '450ms', '#1d63d9'],
+                      ['i', '3.9em', '540ms', '#1d63d9'],
+                      ['s', '5.2em', '630ms', '#1d63d9'],
+                      ['m', '6.4em', '720ms', '#1d63d9'],
+                      ['o', '7.6em', '810ms', '#1d63d9'],
+                    ].map(([char, offset, delay, color], i) => (
                       <span
                         key={`${char}-${i}`}
                         className="simaf-magnet-letter"
-                        style={{ '--magnet-x': offset, animationDelay: delay }}
+                        style={{ '--magnet-x': offset, '--magnet-color': color, animationDelay: delay }}
                       >
                         {char}
                       </span>
