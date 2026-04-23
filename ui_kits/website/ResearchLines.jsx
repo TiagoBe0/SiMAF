@@ -164,10 +164,10 @@ window.ResearchLines = function ResearchLines({ lang }) {
           flex: 0 0 auto;
         }
         .simaf-compute-image {
-          width: 56px;
-          height: 40px;
+          width: 73px;
+          height: 52px;
           object-fit: cover;
-          border-radius: 12px;
+          border-radius: 14px;
           border: 1px solid rgba(18, 44, 90, 0.12);
           animation: simaf-compute-thumb 5.2s ease-in-out infinite;
         }
@@ -175,8 +175,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
           position: absolute;
           right: -5px;
           top: -7px;
-          width: 13px;
-          height: 17px;
+          width: 14px;
+          height: 19px;
           background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.95) 0 18%, rgba(144, 212, 255, 0.95) 19% 58%, rgba(57, 154, 235, 0.98) 59% 100%);
           border-radius: 50% 50% 58% 58% / 36% 36% 68% 68%;
           transform: rotate(22deg);
@@ -189,7 +189,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
           .research-line-row { grid-template-columns: 48px 18px 1fr !important; gap: 14px !important; }
           .research-line-title { font-size: 22px !important; }
-          .simaf-compute-image { width: 48px; height: 34px; }
+          .simaf-compute-image { width: 62px; height: 44px; }
         }
       `}</style>
       <div className="research-lines-head" style={rlStyles.head}>
