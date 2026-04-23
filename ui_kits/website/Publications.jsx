@@ -14,8 +14,9 @@ function PublicationMiniature({ title }) {
   const [index, setIndex] = React.useState(0);
   const src = candidates[index];
   if (!src) return null;
+  const floatDelay = `${(title.length % 7) * -0.45}s`;
   return (
-    <div style={pubStyles.thumbWrap}>
+    <div className="publication-miniature" style={{...pubStyles.thumbWrap, animationDelay:floatDelay}}>
       <img
         src={src}
         alt=""
@@ -911,6 +912,25 @@ window.Publications = function Publications({ lang, limit }) {
 
   return (
     <section style={pubStyles.wrap}>
+      <style>{`
+        @keyframes simaf-paper-float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        .publication-miniature {
+          animation: simaf-paper-float 5.8s ease-in-out infinite;
+          will-change: transform;
+        }
+        .publication-miniature:hover {
+          animation-play-state: paused;
+          transform: translateY(-8px) scale(1.02);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .publication-miniature {
+            animation: none;
+          }
+        }
+      `}</style>
       <div style={pubStyles.head}>
         <span style={{fontWeight:600, color:'var(--fg)'}}>{lang==='es'?'Publicaciones':'Publications'}</span>
         <span>{limit ? (lang==='es'?'Más recientes':'Most recent') : `${filtered.length} / ${allPubs.length} · ${years[years.length-1]}–${years[0]}`}</span>
