@@ -11,97 +11,17 @@ window.ResearchLines = function ResearchLines({ lang }) {
   return (
     <section className="research-lines-wrap" style={rlStyles.wrap}>
       <style>{`
-        @keyframes simaf-extreme-word {
-          0%, 8%, 100% {
-            color: var(--fg);
-            text-shadow: none;
-            filter: saturate(1);
-          }
-          16% {
-            color: #f0a028;
-            text-shadow: 0 0 18px rgba(240, 160, 40, 0.34);
-            filter: saturate(1.15);
-          }
-          28% {
-            color: #ff6a1f;
-            text-shadow: 0 0 28px rgba(255, 106, 31, 0.38);
-            filter: saturate(1.25);
-          }
-          40% {
-            color: #cf1d14;
-            text-shadow: 0 0 26px rgba(207, 29, 20, 0.32);
-            filter: saturate(1.35);
-          }
-          58% {
-            color: #a81512;
-            text-shadow: 0 0 14px rgba(168, 21, 18, 0.2);
-            filter: saturate(1.1);
-          }
+        @keyframes simaf-word-left {
+          0%, 18%, 100% { color: inherit; transform: translateX(0); }
+          32%, 58% { color: #c61f1f; transform: translateX(-0.5em); }
+          74% { color: inherit; transform: translateX(0); }
         }
-        @keyframes simaf-extreme-left {
-          0%, 30%, 100% {
-            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
-            letter-spacing: 0;
-          }
-          40% {
-            transform: translate3d(-0.12em, -0.02em, 0) rotate(-2deg) skewX(-3deg);
-            letter-spacing: 0.02em;
-          }
-          52% {
-            transform: translate3d(-0.42em, -0.08em, 0) rotate(-7deg) skewX(-8deg);
-            letter-spacing: 0.05em;
-          }
-          64% {
-            transform: translate3d(-0.78em, -0.14em, 0) rotate(-11deg) skewX(-11deg);
-            letter-spacing: 0.08em;
-          }
-          78% {
-            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
-            letter-spacing: 0;
-          }
-        }
-        @keyframes simaf-extreme-right {
-          0%, 30%, 100% {
-            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
-            letter-spacing: 0;
-          }
-          40% {
-            transform: translate3d(0.12em, 0.02em, 0) rotate(2deg) skewX(3deg);
-            letter-spacing: 0.02em;
-          }
-          52% {
-            transform: translate3d(0.42em, 0.08em, 0) rotate(7deg) skewX(8deg);
-            letter-spacing: 0.05em;
-          }
-          64% {
-            transform: translate3d(0.78em, 0.14em, 0) rotate(11deg) skewX(11deg);
-            letter-spacing: 0.08em;
-          }
-          78% {
-            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
-            letter-spacing: 0;
-          }
-        }
-        @keyframes simaf-extreme-cut {
-          0%, 34%, 100% {
-            opacity: 0;
-            transform: translateY(-50%) scaleY(0.3) rotate(14deg);
-          }
-          44% {
-            opacity: 0.35;
-            transform: translateY(-50%) scaleY(0.9) rotate(14deg);
-          }
-          56% {
-            opacity: 0.92;
-            transform: translateY(-50%) scaleY(1.18) rotate(14deg);
-          }
-          70% {
-            opacity: 0.18;
-            transform: translateY(-50%) scaleY(0.5) rotate(14deg);
-          }
+        @keyframes simaf-word-right {
+          0%, 18%, 100% { color: inherit; transform: translateX(0); }
+          32%, 58% { color: #c61f1f; transform: translateX(0.5em); }
+          74% { color: inherit; transform: translateX(0); }
         }
         .simaf-extreme-title {
-          position: relative;
           display: inline-flex;
           flex-wrap: wrap;
           align-items: baseline;
@@ -109,46 +29,146 @@ window.ResearchLines = function ResearchLines({ lang }) {
         }
         .simaf-extreme-fragment {
           display: inline-block;
-          animation: simaf-extreme-word 10s ease-in-out infinite;
           transform-origin: center;
-          transition: none;
-          will-change: transform, color, letter-spacing, filter;
+          will-change: transform, color;
         }
         .simaf-extreme-fragment.is-left {
-          animation:
-            simaf-extreme-word 10s ease-in-out infinite,
-            simaf-extreme-left 10s ease-in-out infinite;
+          animation: simaf-word-left 6s ease-in-out infinite;
         }
         .simaf-extreme-fragment.is-right {
-          animation:
-            simaf-extreme-word 10s ease-in-out infinite,
-            simaf-extreme-right 10s ease-in-out infinite;
+          animation: simaf-word-right 6s ease-in-out infinite;
         }
-        .simaf-extreme-cut {
+        @keyframes simaf-hpc-chip {
+          0%, 100% { opacity: 0.34; transform: scale(0.92); background: rgba(76, 159, 255, 0.18); }
+          45% { opacity: 1; transform: scale(1); background: rgba(76, 159, 255, 0.88); }
+          70% { opacity: 0.72; transform: scale(0.96); background: rgba(255, 122, 28, 0.72); }
+        }
+        @keyframes simaf-hpc-stream {
+          from { transform: translateX(-110%); }
+          to { transform: translateX(230%); }
+        }
+        @keyframes simaf-hpc-particle {
+          0% { transform: translateX(-120%) scaleX(0.7); opacity: 0; }
+          15% { opacity: 1; }
+          100% { transform: translateX(360%) scaleX(1.15); opacity: 0; }
+        }
+        @keyframes simaf-hpc-bar {
+          0%, 100% { transform: scaleX(0.16); opacity: 0.42; }
+          40% { transform: scaleX(0.96); opacity: 1; }
+          68% { transform: scaleX(0.58); opacity: 0.85; }
+        }
+        .simaf-hpc-card {
+          background: linear-gradient(135deg, #07111f 0%, #0e1f39 52%, #091427 100%);
+          border: 1px solid rgba(97, 149, 226, 0.24);
+          border-radius: 22px;
+          padding: 22px 24px 20px;
+          box-shadow: 0 18px 36px rgba(4, 14, 31, 0.18);
+          overflow: hidden;
+        }
+        .simaf-hpc-title {
+          display: block;
+          color: #f6f8ff;
+          margin-bottom: 16px;
+        }
+        .simaf-hpc-gpu {
           position: relative;
-          display: inline-block;
-          margin: 0 0.02em;
-          padding: 0 0.04em;
+          width: min(100%, 220px);
+          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+          border: 1px solid rgba(151, 190, 255, 0.28);
+          border-radius: 16px;
+          padding: 16px;
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
         }
-        .simaf-extreme-cut::after {
+        .simaf-hpc-gpu::before,
+        .simaf-hpc-gpu::after {
           content: "";
           position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 3px;
-          height: 1.55em;
+          top: 16px;
+          bottom: 16px;
+          width: 8px;
+          background:
+            repeating-linear-gradient(
+              to bottom,
+              rgba(97, 149, 226, 0.22) 0 8px,
+              transparent 8px 14px
+            );
+        }
+        .simaf-hpc-gpu::before { left: -9px; }
+        .simaf-hpc-gpu::after { right: -9px; }
+        .simaf-hpc-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 8px;
+        }
+        .simaf-hpc-cell {
+          aspect-ratio: 1 / 1;
+          border-radius: 6px;
+          border: 1px solid rgba(145, 190, 255, 0.14);
+          animation: simaf-hpc-chip 1.8s ease-in-out infinite;
+          box-shadow: 0 0 10px rgba(76, 159, 255, 0.14);
+        }
+        .simaf-hpc-lane {
+          position: relative;
+          margin-top: 16px;
+          height: 12px;
           border-radius: 999px;
-          background: linear-gradient(180deg, rgba(255, 180, 60, 0) 0%, rgba(255, 134, 48, 0.9) 20%, rgba(204, 25, 24, 0.98) 52%, rgba(255, 134, 48, 0.7) 80%, rgba(255, 180, 60, 0) 100%);
-          box-shadow: 0 0 18px rgba(207, 29, 20, 0.36);
-          transform-origin: center;
-          animation: simaf-extreme-cut 10s ease-in-out infinite;
-          pointer-events: none;
+          background: rgba(255,255,255,0.06);
+          overflow: hidden;
+        }
+        .simaf-hpc-lane::before {
+          content: "";
+          position: absolute;
+          inset: 2px auto 2px 0;
+          width: 34%;
+          border-radius: 999px;
+          background: linear-gradient(90deg, rgba(76,159,255,0) 0%, rgba(76,159,255,0.9) 45%, rgba(255,122,28,0.95) 100%);
+          animation: simaf-hpc-stream 2.6s linear infinite;
+        }
+        .simaf-hpc-particles {
+          position: relative;
+          margin-top: 12px;
+          height: 10px;
+          overflow: hidden;
+        }
+        .simaf-hpc-particle {
+          position: absolute;
+          top: 1px;
+          width: 26px;
+          height: 8px;
+          border-radius: 999px;
+          background: linear-gradient(90deg, rgba(76,159,255,0) 0%, rgba(76,159,255,0.88) 40%, rgba(255,122,28,0.92) 100%);
+          animation: simaf-hpc-particle 2.8s linear infinite;
+        }
+        .simaf-hpc-bars {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          margin-top: 18px;
+        }
+        .simaf-hpc-bar-track {
+          height: 8px;
+          background: rgba(255,255,255,0.08);
+          border-radius: 999px;
+          overflow: hidden;
+        }
+        .simaf-hpc-bar-fill {
+          height: 100%;
+          width: 100%;
+          transform-origin: left center;
+          border-radius: inherit;
+          background: linear-gradient(90deg, #4c9fff 0%, #84b9ff 48%, #ff7a1c 100%);
+          animation: simaf-hpc-bar 2.4s ease-in-out infinite;
+        }
+        .simaf-hpc-card:hover .simaf-hpc-bar-fill,
+        .simaf-hpc-card:hover .simaf-hpc-cell {
+          animation-duration: 1.2s;
         }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
           .research-line-row { grid-template-columns: 48px 18px 1fr !important; gap: 14px !important; }
           .research-line-title { font-size: 22px !important; }
+          .simaf-hpc-card { padding: 18px 18px 16px; }
         }
       `}</style>
       <div className="research-lines-head" style={rlStyles.head}>
@@ -161,20 +181,55 @@ window.ResearchLines = function ResearchLines({ lang }) {
             <span style={rlStyles.num}>{l.n}</span>
             <span style={{...rlStyles.dot, background:l.hue}} />
             <div style={rlStyles.body}>
-              <div className="research-line-title" style={rlStyles.title}>
-                {l.n === '01' && lang === 'es' ? (
+              {l.n === '03' ? (
+                <div className="simaf-hpc-card">
+                  <div className="research-line-title simaf-hpc-title" style={rlStyles.title}>{l[lang].t}</div>
+                  <div className="simaf-hpc-gpu">
+                    <div className="simaf-hpc-grid">
+                      {Array.from({ length: 16 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className="simaf-hpc-cell"
+                          style={{ animationDelay: `${i * 120}ms` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="simaf-hpc-lane" />
+                  <div className="simaf-hpc-particles">
+                    {[0, 1, 2].map((i) => (
+                      <span
+                        key={i}
+                        className="simaf-hpc-particle"
+                        style={{ animationDelay: `${i * 0.72}s` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="simaf-hpc-bars">
+                    {[0, 1, 2].map((i) => (
+                      <div key={i} className="simaf-hpc-bar-track">
+                        <div
+                          className="simaf-hpc-bar-fill"
+                          style={{ animationDelay: `${i * 220}ms` }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="research-line-title" style={rlStyles.title}>
+                  {l.n === '01' && lang === 'es' ? (
                   <span className="simaf-extreme-title">
                     <span>Materiales</span>
-                    <span className="simaf-extreme-cut">
-                      <span className="simaf-extreme-fragment is-left">bajo</span>
-                      <span className="simaf-extreme-fragment is-right">condiciones</span>
-                    </span>
+                    <span className="simaf-extreme-fragment is-left">bajo</span>
+                    <span className="simaf-extreme-fragment is-right">condiciones</span>
                     <span>extremas</span>
                   </span>
                 ) : (
                   l[lang].t
                 )}
-              </div>
+                </div>
+              )}
               <div style={rlStyles.desc}>{l[lang].d}</div>
             </div>
           </article>
