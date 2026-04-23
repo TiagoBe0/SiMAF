@@ -911,7 +911,7 @@ window.Publications = function Publications({ lang, limit }) {
   filtered.forEach(p => (grouped[p.year] ||= []).push(p));
 
   return (
-    <section style={pubStyles.wrap}>
+    <section className="publications-wrap" style={pubStyles.wrap}>
       <style>{`
         @keyframes simaf-paper-float {
           0%, 100% { transform: translateY(0); }
@@ -930,13 +930,23 @@ window.Publications = function Publications({ lang, limit }) {
             animation: none;
           }
         }
+        @media (max-width: 900px) {
+          .publication-filters { grid-template-columns: 1fr !important; }
+          .publication-item { align-items: stretch !important; flex-direction: column; }
+          .publication-miniature { width: min(100%, 320px) !important; flex-basis: auto !important; border-radius: 32px !important; }
+        }
+        @media (max-width: 680px) {
+          .publications-wrap { padding: 48px 22px !important; }
+          .publications-head { align-items: flex-start; flex-direction: column; gap: 6px !important; }
+          .publication-year-block { grid-template-columns: 1fr !important; gap: 12px !important; }
+        }
       `}</style>
-      <div style={pubStyles.head}>
+      <div className="publications-head" style={pubStyles.head}>
         <span style={{fontWeight:600, color:'var(--fg)'}}>{lang==='es'?'Publicaciones':'Publications'}</span>
         <span>{limit ? (lang==='es'?'Más recientes':'Most recent') : `${filtered.length} / ${allPubs.length} · ${years[years.length-1]}–${years[0]}`}</span>
       </div>
       {!limit && (
-        <div style={pubStyles.filters}>
+        <div className="publication-filters" style={pubStyles.filters}>
           <input
             value={query}
             onChange={e => setQuery(e.target.value)}
@@ -955,11 +965,11 @@ window.Publications = function Publications({ lang, limit }) {
       )}
       {filtered.length === 0 && <div style={pubStyles.empty}>{lang==='es'?'No hay publicaciones para esos filtros.':'No publications match those filters.'}</div>}
       {Object.entries(grouped).sort(([a], [b]) => Number(b)-Number(a)).map(([y, items]) => (
-        <div key={y} style={limit ? pubStyles.yearBlockCompact : pubStyles.yearBlock}>
+        <div key={y} className="publication-year-block" style={limit ? pubStyles.yearBlockCompact : pubStyles.yearBlock}>
           <div style={limit ? pubStyles.yearCompact : pubStyles.year}>{y}</div>
           <div style={pubStyles.items}>
             {items.map((p,i) => (
-              <article key={`${p.year}-${p.title}-${i}`} style={pubStyles.item}>
+              <article key={`${p.year}-${p.title}-${i}`} className="publication-item" style={pubStyles.item}>
                 <div style={pubStyles.itemBody}>
                   <h3 style={pubStyles.title}>{p.title}</h3>
                   <div style={pubStyles.auth}>{p.authors}</div>

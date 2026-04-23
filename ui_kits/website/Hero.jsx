@@ -15,7 +15,7 @@ window.Hero = function Hero({ lang }) {
   }[lang];
 
   return (
-    <section style={heroStyles.wrap}>
+    <section className="hero-wrap" style={heroStyles.wrap}>
       <style>{`
         @keyframes simaf-stat-gold {
           0%, 100% { color: var(--fg); transform: translateY(0); text-shadow: none; }
@@ -27,16 +27,29 @@ window.Hero = function Hero({ lang }) {
           45% { color: #9a6a00; transform: translateY(-4px); }
           70% { color: #b88918; transform: translateY(2px); }
         }
+        @media (max-width: 900px) {
+          .hero-intro { flex-direction: column; gap: 28px !important; }
+          .hero-media { width: min(62vw, 320px) !important; }
+        }
+        @media (max-width: 680px) {
+          .hero-wrap { padding: 44px 22px 48px !important; }
+          .hero-masthead { align-items: flex-start; flex-direction: column; gap: 6px; }
+          .hero-lead { font-size: 19px !important; }
+          .hero-stats { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 14px !important; }
+          .hero-stat-number { font-size: 28px !important; }
+          .hero-stat-label { font-size: 9px !important; }
+        }
       `}</style>
-      <div style={heroStyles.masthead}>
+      <div className="hero-masthead" style={heroStyles.masthead}>
         <span>{copy.eye}</span><span>{copy.badge}</span>
       </div>
-      <div style={heroStyles.intro}>
+      <div className="hero-intro" style={heroStyles.intro}>
         <div style={heroStyles.copy}>
           <h1 style={heroStyles.h}>{copy.h}</h1>
-          <p style={heroStyles.lead}>{copy.lead}</p>
+          <p className="hero-lead" style={heroStyles.lead}>{copy.lead}</p>
         </div>
         <video
+          className="hero-media"
           style={heroStyles.heroMedia}
           autoPlay
           muted
@@ -49,15 +62,15 @@ window.Hero = function Hero({ lang }) {
           <source src="../../img/simaf_web.mp4" type="video/mp4" />
         </video>
       </div>
-      <div style={heroStyles.stats}>
+      <div className="hero-stats" style={heroStyles.stats}>
         {[
           ['15+', lang==='es'?'Años':'Years'],
           ['100+', lang==='es'?'Publicaciones':'Publications'],
           ['30+', lang==='es'?'Colaboraciones int.':'Int. collaborations'],
         ].map(([n, label], i) => (
           <div key={n} style={{...heroStyles.stat, animationDelay:`${i * 420}ms`}}>
-            <div style={{...heroStyles.statN, animationDelay:`${i * 420}ms`}}>{n}</div>
-            <div style={{...heroStyles.statL, animationDelay:`${i * 420 + 120}ms`}}>{label}</div>
+            <div className="hero-stat-number" style={{...heroStyles.statN, animationDelay:`${i * 420}ms`}}>{n}</div>
+            <div className="hero-stat-label" style={{...heroStyles.statL, animationDelay:`${i * 420 + 120}ms`}}>{label}</div>
           </div>
         ))}
       </div>

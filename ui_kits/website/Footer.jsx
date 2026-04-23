@@ -10,8 +10,18 @@ function withSrcFallback(nextSources) {
 
 window.Footer = function Footer({ lang }) {
   return (
-    <footer style={ftStyles.wrap}>
-      <div style={ftStyles.inner}>
+    <footer className="site-footer" style={ftStyles.wrap}>
+      <style>{`
+        @media (max-width: 820px) {
+          .site-footer-inner { grid-template-columns: 1fr !important; gap: 34px !important; }
+          .site-footer-cols { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .site-footer-rule { align-items: flex-start; flex-direction: column; gap: 8px; }
+        }
+        @media (max-width: 680px) {
+          .site-footer { padding: 48px 22px 28px !important; }
+        }
+      `}</style>
+      <div className="site-footer-inner" style={ftStyles.inner}>
         <div style={ftStyles.brand}>
           <img
             src="img/logo-final.png"
@@ -25,11 +35,11 @@ window.Footer = function Footer({ lang }) {
             <div style={ftStyles.sub}>{lang==='es'?'Laboratorio de Simulaciones en Materiales, Astrofísica y Física · Universidad de Mendoza':'Laboratory of Simulations in Materials, Astrophysics & Physics · Universidad de Mendoza'}</div>
           </div>
         </div>
-        <div style={ftStyles.cols}>
+        <div className="site-footer-cols" style={ftStyles.cols}>
           <div>
             <div style={ftStyles.ch}>{lang==='es'?'Contacto':'Contact'}</div>
-            <div style={ftStyles.item}>simaf@uncu.edu.ar</div>
-            <div style={ftStyles.item}>ebringa@mendoza-conicet.gob.ar</div>
+            <div style={ftStyles.item}><a style={ftStyles.link} href="mailto:simaf@uncu.edu.ar">simaf@uncu.edu.ar</a></div>
+            <div style={ftStyles.item}><a style={ftStyles.link} href="mailto:ebringa@mendoza-conicet.gob.ar">ebringa@mendoza-conicet.gob.ar</a></div>
           </div>
           <div>
             <div style={ftStyles.ch}>{lang==='es'?'Dirección':'Address'}</div>
@@ -38,13 +48,13 @@ window.Footer = function Footer({ lang }) {
           </div>
           <div>
             <div style={ftStyles.ch}>{lang==='es'?'Enlaces':'Links'}</div>
-            <div style={ftStyles.item}><a style={ftStyles.link} href="#" onClick={e=>e.preventDefault()}>arXiv</a></div>
-            <div style={ftStyles.item}><a style={ftStyles.link} href="#" onClick={e=>e.preventDefault()}>GitHub</a></div>
-            <div style={ftStyles.item}><a style={ftStyles.link} href="#" onClick={e=>e.preventDefault()}>ORCID</a></div>
+            <div style={ftStyles.itemMuted}>arXiv · {lang==='es'?'pendiente':'pending'}</div>
+            <div style={ftStyles.itemMuted}>GitHub · {lang==='es'?'pendiente':'pending'}</div>
+            <div style={ftStyles.itemMuted}>ORCID · {lang==='es'?'pendiente':'pending'}</div>
           </div>
         </div>
       </div>
-      <div style={ftStyles.rule}>
+      <div className="site-footer-rule" style={ftStyles.rule}>
         <span>© SiMAF 2019–2026</span>
         <span style={{fontFamily:'var(--font-serif)', fontStyle:'italic'}}>Vol. XII · №04</span>
       </div>
@@ -61,6 +71,7 @@ const ftStyles = {
   cols: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:32 },
   ch: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, letterSpacing:'0.14em', textTransform:'uppercase', color:'#a8b3d1', marginBottom:12 },
   item: { fontFamily:'var(--font-sans)', fontSize:13, color:'#e9edf7', marginTop:6 },
+  itemMuted: { fontFamily:'var(--font-sans)', fontSize:13, color:'#a8b3d1', marginTop:6 },
   link: { color:'#e9edf7', textDecoration:'none', borderBottom:'1px solid #4d88ff' },
   rule: { maxWidth:1280, margin:'48px auto 0', paddingTop:16, borderTop:'1px solid #0f356f', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.12em', color:'#a8b3d1' },
 };

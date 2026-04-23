@@ -72,13 +72,23 @@ window.Collaborations = function Collaborations({ lang }) {
   const mailHref = `mailto:${contacts.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return (
-    <main data-screen-label="05 Collaborations" style={collabStyles.wrap}>
+    <main className="collab-wrap" data-screen-label="05 Collaborations" style={collabStyles.wrap}>
+      <style>{`
+        @media (max-width: 900px) {
+          .collab-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 680px) {
+          .collab-wrap { padding: 40px 22px 0 !important; }
+          .collab-title { font-size: 40px !important; }
+          .collab-lead { font-size: 19px !important; }
+        }
+      `}</style>
       <section style={collabStyles.head}>
         <div style={collabStyles.eye}>{copy.eye}</div>
-        <h1 style={collabStyles.h}>{copy.h}</h1>
-        <p style={collabStyles.lead}>{copy.lead}</p>
+        <h1 className="collab-title" style={collabStyles.h}>{copy.h}</h1>
+        <p className="collab-lead" style={collabStyles.lead}>{copy.lead}</p>
       </section>
-      <section style={collabStyles.grid}>
+      <section className="collab-grid" style={collabStyles.grid}>
         <div style={collabStyles.panel}>
           <div style={collabStyles.kicker}>{copy.areas}</div>
           <ul style={collabStyles.list}>

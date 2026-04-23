@@ -9,8 +9,16 @@ window.ResearchLines = function ResearchLines({ lang }) {
     { n:'07', hue:'#c84080', es:{t:'Magnetismo', d:'Simulación y análisis de propiedades magnéticas en materiales, incluyendo efectos de estructura, defectos y condiciones externas.'}, en:{t:'Magnetism', d:'Simulation and analysis of magnetic properties in materials, including the effects of structure, defects, and external conditions.'} },
   ];
   return (
-    <section style={rlStyles.wrap}>
-      <div style={rlStyles.head}>
+    <section className="research-lines-wrap" style={rlStyles.wrap}>
+      <style>{`
+        @media (max-width: 680px) {
+          .research-lines-wrap { padding: 48px 22px !important; }
+          .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
+          .research-line-row { grid-template-columns: 48px 18px 1fr !important; gap: 14px !important; }
+          .research-line-title { font-size: 22px !important; }
+        }
+      `}</style>
+      <div className="research-lines-head" style={rlStyles.head}>
         <span style={rlStyles.eye}>{lang==='es'?'Líneas de investigación':'Research lines'}</span>
         <span>0{lines.length}</span>
       </div>
@@ -20,7 +28,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
             <span style={rlStyles.num}>{l.n}</span>
             <span style={{...rlStyles.dot, background:l.hue}} />
             <div style={rlStyles.body}>
-              <div style={rlStyles.title}>{l[lang].t}</div>
+              <div className="research-line-title" style={rlStyles.title}>{l[lang].t}</div>
               <div style={rlStyles.desc}>{l[lang].d}</div>
             </div>
           </article>

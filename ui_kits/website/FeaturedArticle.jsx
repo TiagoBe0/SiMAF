@@ -1,6 +1,7 @@
 window.FeaturedArticle = function FeaturedArticle({ lang }) {
   const a = window.FEATURED_ARTICLE;
   if (!a) return null;
+  const [copied, setCopied] = React.useState(false);
 
   const eyebrow = lang==='es' ? a.eyebrow_es : a.eyebrow_en;
   const title   = lang==='es' ? a.title_es   : a.title_en;
@@ -24,15 +25,38 @@ window.FeaturedArticle = function FeaturedArticle({ lang }) {
   // If the image fails to load (file not uploaded yet), fall back to placeholder.
   const [imgIndex, setImgIndex] = React.useState(0);
   const showImg = imgCandidates[imgIndex];
+  const citation = `${a.authors.map(au => au.name).join(', ')} (${a.year}). ${title}. ${a.venue}${a.doi ? `. doi:${a.doi}` : ''}`;
+  const copyCitation = () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(citation).then(() => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 1800);
+      });
+    } else {
+      window.prompt(lang==='es'?'Copiar cita':'Copy citation', citation);
+    }
+  };
 
   return (
-    <section style={faStyles.wrap}>
-      <div style={faStyles.masthead}>
+    <section className="featured-article" style={faStyles.wrap}>
+      <style>{`
+        @media (max-width: 920px) {
+          .featured-article-banner { grid-template-columns: 1fr !important; gap: 28px !important; }
+          .featured-article-figure { min-height: 280px !important; }
+        }
+        @media (max-width: 680px) {
+          .featured-article { padding: 36px 22px 12px !important; }
+          .featured-article-masthead { align-items: flex-start; flex-direction: column; gap: 6px; }
+          .featured-article-title { font-size: 30px !important; }
+          .featured-article-ctas { flex-wrap: wrap; }
+        }
+      `}</style>
+      <div className="featured-article-masthead" style={faStyles.masthead}>
         <span style={{fontWeight:600, color:'var(--fg)'}}>{eyebrow}</span>
         <span>{a.year} · {a.venue}</span>
       </div>
-      <div style={faStyles.banner}>
-        <div style={faStyles.figure}>
+      <div className="featured-article-banner" style={faStyles.banner}>
+        <div className="featured-article-figure" style={faStyles.figure}>
           {showImg ? (
             <img
               src={showImg}
@@ -61,7 +85,7 @@ window.FeaturedArticle = function FeaturedArticle({ lang }) {
             {lang==='es'?'Publicado':'Published'} · {a.year}
           </div>
 
-          <h2 style={faStyles.title}>{title}</h2>
+          <h2 className="featured-article-title" style={faStyles.title}>{title}</h2>
 
           <div style={faStyles.authors}>
             {a.authors.map((au, i) => (
@@ -81,15 +105,15 @@ window.FeaturedArticle = function FeaturedArticle({ lang }) {
             {a.arxiv && <><span style={faStyles.dot}>·</span><span>arXiv:{a.arxiv}</span></>}
           </div>
 
-          <div style={faStyles.ctas}>
+          <div className="featured-article-ctas" style={faStyles.ctas}>
             {pdfHref && (
               <a href={pdfHref} target="_blank" rel="noopener" style={faStyles.primary}>
                 {lang==='es'?'Leer PDF':'Read PDF'} <span style={{marginLeft:8}}>↗</span>
               </a>
             )}
-            <a href="#" onClick={e=>e.preventDefault()} style={faStyles.ghost}>
-              {lang==='es'?'Ver cita':'View citation'}
-            </a>
+            <button type="button" onClick={copyCitation} style={faStyles.ghostButton}>
+              {copied ? (lang==='es'?'Cita copiada':'Citation copied') : (lang==='es'?'Copiar cita':'Copy citation')}
+            </button>
           </div>
         </div>
       </div>
@@ -179,5 +203,11 @@ const faStyles = {
     padding:'10px 4px', color:'var(--fg)', textDecoration:'none',
     borderBottom:'1px solid var(--fg)',
     whiteSpace:'nowrap',
+  },
+  ghostButton: {
+    fontFamily:'var(--font-sans)', fontSize:13, fontWeight:500,
+    padding:'10px 4px', color:'var(--fg)', background:'transparent',
+    border:'none', borderBottom:'1px solid var(--fg)',
+    whiteSpace:'nowrap', cursor:'pointer',
   },
 };
