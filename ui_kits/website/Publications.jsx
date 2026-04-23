@@ -1,3 +1,31 @@
+function publicationMiniatureCandidates(title) {
+  const slug = value => value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+  const full = slug(title);
+  const short = full.split('_').filter(Boolean).slice(0, 3).join('_');
+  return [...new Set([short, full].filter(Boolean).map(name => `img/miniatures/${name}.png`))];
+}
+
+function PublicationMiniature({ title }) {
+  const candidates = publicationMiniatureCandidates(title);
+  const [index, setIndex] = React.useState(0);
+  const src = candidates[index];
+  if (!src) return null;
+  return (
+    <div style={pubStyles.thumbWrap}>
+      <img
+        src={src}
+        alt=""
+        style={pubStyles.thumb}
+        onError={() => setIndex(current => current + 1)}
+      />
+    </div>
+  );
+}
+
 window.Publications = function Publications({ lang, limit }) {
   const allPubs = [
   {
@@ -912,15 +940,18 @@ window.Publications = function Publications({ lang, limit }) {
           <div style={pubStyles.items}>
             {items.map((p,i) => (
               <article key={`${p.year}-${p.title}-${i}`} style={pubStyles.item}>
-                <h3 style={pubStyles.title}>{p.title}</h3>
-                <div style={pubStyles.auth}>{p.authors}</div>
-                <div style={pubStyles.meta}>
-                  <span style={pubStyles.venue}>{p.venue || 'Publicación'}</span>
-                  {p.volume && <><span style={pubStyles.sep}>·</span><span>{p.volume}</span></>}
-                  {p.url && <><span style={pubStyles.sep}>·</span><a href={p.url} target="_blank" rel="noopener" onClick={e=>e.stopPropagation()} style={pubStyles.link}>PDF / DOI ↗</a></>}
-                </div>
-                <div style={pubStyles.tags}>
-                  {p.investigators.map(name => <button key={name} type="button" onClick={() => !limit && setInvestigatorFilter(name)} style={pubStyles.tag}>{name}</button>)}
+                <PublicationMiniature title={p.title} />
+                <div style={pubStyles.itemBody}>
+                  <h3 style={pubStyles.title}>{p.title}</h3>
+                  <div style={pubStyles.auth}>{p.authors}</div>
+                  <div style={pubStyles.meta}>
+                    <span style={pubStyles.venue}>{p.venue || 'Publicación'}</span>
+                    {p.volume && <><span style={pubStyles.sep}>·</span><span>{p.volume}</span></>}
+                    {p.url && <><span style={pubStyles.sep}>·</span><a href={p.url} target="_blank" rel="noopener" onClick={e=>e.stopPropagation()} style={pubStyles.link}>PDF / DOI ↗</a></>}
+                  </div>
+                  <div style={pubStyles.tags}>
+                    {p.investigators.map(name => <button key={name} type="button" onClick={() => !limit && setInvestigatorFilter(name)} style={pubStyles.tag}>{name}</button>)}
+                  </div>
                 </div>
               </article>
             ))}
@@ -939,7 +970,10 @@ const pubStyles = {
   yearBlock: { display:'grid', gridTemplateColumns:'160px 1fr', gap:40, padding:'28px 0', borderBottom:'1px solid var(--border)' },
   year: { fontFamily:'var(--font-sans)', fontSize:13, fontWeight:600, letterSpacing:'0.14em', color:'var(--fg-muted)' },
   items: { display:'flex', flexDirection:'column', gap:24 },
-  item: {},
+  item: { display:'flex', alignItems:'flex-start', gap:18 },
+  itemBody: { minWidth:0, flex:1 },
+  thumbWrap: { width:116, aspectRatio:'4 / 3', flex:'0 0 116px', border:'1px solid var(--border)', background:'#fff', borderRadius:2, overflow:'hidden' },
+  thumb: { width:'100%', height:'100%', display:'block', objectFit:'cover' },
   title: { fontFamily:'var(--font-serif)', fontSize:21, fontWeight:500, lineHeight:1.3, color:'var(--fg)', margin:'0 0 6px', letterSpacing:'-0.005em' },
   auth: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:15, color:'var(--fg-muted)' },
   meta: { marginTop:8, display:'flex', gap:10, alignItems:'center', fontFamily:'var(--font-mono)', fontSize:12, color:'var(--fg-muted)', flexWrap:'wrap' },

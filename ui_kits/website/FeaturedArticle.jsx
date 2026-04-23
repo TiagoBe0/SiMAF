@@ -9,11 +9,21 @@ window.FeaturedArticle = function FeaturedArticle({ lang }) {
   // Resolve paths relative to ui_kits/website/index.html (../../ from there)
   const prefix = '../../';
   const pdfHref = a.pdf      ? prefix + a.pdf      : null;
-  const imgSrc  = a.abstract ? prefix + a.abstract : null;
+  const slug = value => value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+  const shortSlug = value => slug(value).split('_').filter(Boolean).slice(0, 3).join('_');
+  const imgCandidates = [
+    a.abstract ? prefix + a.abstract : null,
+    `img/miniatures/${shortSlug(title)}.png`,
+    `img/miniatures/${slug(title)}.png`,
+  ].filter(Boolean);
 
   // If the image fails to load (file not uploaded yet), fall back to placeholder.
-  const [imgBroken, setImgBroken] = React.useState(false);
-  const showImg = imgSrc && !imgBroken;
+  const [imgIndex, setImgIndex] = React.useState(0);
+  const showImg = imgCandidates[imgIndex];
 
   return (
     <section style={faStyles.wrap}>
@@ -25,10 +35,10 @@ window.FeaturedArticle = function FeaturedArticle({ lang }) {
         <div style={faStyles.figure}>
           {showImg ? (
             <img
-              src={imgSrc}
+              src={showImg}
               alt=""
               style={faStyles.img}
-              onError={() => setImgBroken(true)}
+              onError={() => setImgIndex(current => current + 1)}
             />
           ) : (
             <div style={faStyles.placeholder}>
