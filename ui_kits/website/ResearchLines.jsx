@@ -12,47 +12,137 @@ window.ResearchLines = function ResearchLines({ lang }) {
     <section className="research-lines-wrap" style={rlStyles.wrap}>
       <style>{`
         @keyframes simaf-extreme-word {
-          0%, 10%, 100% { color: inherit; text-shadow: none; }
-          18% { color: #f0a028; text-shadow: 0 0 18px rgba(240, 160, 40, 0.18); }
-          30% { color: #d83a20; text-shadow: 0 0 24px rgba(216, 58, 32, 0.22); }
-          42% { color: #c61f1f; text-shadow: 0 0 20px rgba(198, 31, 31, 0.18); }
-          100% { color: inherit; text-shadow: none; }
+          0%, 8%, 100% {
+            color: var(--fg);
+            text-shadow: none;
+            filter: saturate(1);
+          }
+          16% {
+            color: #f0a028;
+            text-shadow: 0 0 18px rgba(240, 160, 40, 0.34);
+            filter: saturate(1.15);
+          }
+          28% {
+            color: #ff6a1f;
+            text-shadow: 0 0 28px rgba(255, 106, 31, 0.38);
+            filter: saturate(1.25);
+          }
+          40% {
+            color: #cf1d14;
+            text-shadow: 0 0 26px rgba(207, 29, 20, 0.32);
+            filter: saturate(1.35);
+          }
+          58% {
+            color: #a81512;
+            text-shadow: 0 0 14px rgba(168, 21, 18, 0.2);
+            filter: saturate(1.1);
+          }
         }
         @keyframes simaf-extreme-left {
-          0%, 34%, 100% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
-          44% { transform: translateX(-0.04em) rotate(-1deg); letter-spacing: 0.01em; }
-          54% { transform: translateX(-0.2em) rotate(-3deg); letter-spacing: 0.025em; }
-          66% { transform: translateX(-0.34em) rotate(-5deg); letter-spacing: 0.04em; }
-          78% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+          0%, 30%, 100% {
+            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
+            letter-spacing: 0;
+          }
+          40% {
+            transform: translate3d(-0.12em, -0.02em, 0) rotate(-2deg) skewX(-3deg);
+            letter-spacing: 0.02em;
+          }
+          52% {
+            transform: translate3d(-0.42em, -0.08em, 0) rotate(-7deg) skewX(-8deg);
+            letter-spacing: 0.05em;
+          }
+          64% {
+            transform: translate3d(-0.78em, -0.14em, 0) rotate(-11deg) skewX(-11deg);
+            letter-spacing: 0.08em;
+          }
+          78% {
+            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
+            letter-spacing: 0;
+          }
         }
         @keyframes simaf-extreme-right {
-          0%, 34%, 100% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
-          44% { transform: translateX(0.04em) rotate(1deg); letter-spacing: 0.01em; }
-          54% { transform: translateX(0.2em) rotate(3deg); letter-spacing: 0.025em; }
-          66% { transform: translateX(0.34em) rotate(5deg); letter-spacing: 0.04em; }
-          78% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+          0%, 30%, 100% {
+            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
+            letter-spacing: 0;
+          }
+          40% {
+            transform: translate3d(0.12em, 0.02em, 0) rotate(2deg) skewX(3deg);
+            letter-spacing: 0.02em;
+          }
+          52% {
+            transform: translate3d(0.42em, 0.08em, 0) rotate(7deg) skewX(8deg);
+            letter-spacing: 0.05em;
+          }
+          64% {
+            transform: translate3d(0.78em, 0.14em, 0) rotate(11deg) skewX(11deg);
+            letter-spacing: 0.08em;
+          }
+          78% {
+            transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
+            letter-spacing: 0;
+          }
+        }
+        @keyframes simaf-extreme-cut {
+          0%, 34%, 100% {
+            opacity: 0;
+            transform: translateY(-50%) scaleY(0.3) rotate(14deg);
+          }
+          44% {
+            opacity: 0.35;
+            transform: translateY(-50%) scaleY(0.9) rotate(14deg);
+          }
+          56% {
+            opacity: 0.92;
+            transform: translateY(-50%) scaleY(1.18) rotate(14deg);
+          }
+          70% {
+            opacity: 0.18;
+            transform: translateY(-50%) scaleY(0.5) rotate(14deg);
+          }
         }
         .simaf-extreme-title {
+          position: relative;
           display: inline-flex;
           flex-wrap: wrap;
           align-items: baseline;
-          gap: 0.22em;
+          gap: 0.28em;
         }
         .simaf-extreme-fragment {
           display: inline-block;
-          animation: simaf-extreme-word 12s ease-in-out infinite;
+          animation: simaf-extreme-word 10s ease-in-out infinite;
           transform-origin: center;
-          will-change: transform, color, letter-spacing;
+          transition: none;
+          will-change: transform, color, letter-spacing, filter;
         }
         .simaf-extreme-fragment.is-left {
           animation:
-            simaf-extreme-word 12s ease-in-out infinite,
-            simaf-extreme-left 12s ease-in-out infinite;
+            simaf-extreme-word 10s ease-in-out infinite,
+            simaf-extreme-left 10s ease-in-out infinite;
         }
         .simaf-extreme-fragment.is-right {
           animation:
-            simaf-extreme-word 12s ease-in-out infinite,
-            simaf-extreme-right 12s ease-in-out infinite;
+            simaf-extreme-word 10s ease-in-out infinite,
+            simaf-extreme-right 10s ease-in-out infinite;
+        }
+        .simaf-extreme-cut {
+          position: relative;
+          display: inline-block;
+          margin: 0 0.02em;
+          padding: 0 0.04em;
+        }
+        .simaf-extreme-cut::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 3px;
+          height: 1.55em;
+          border-radius: 999px;
+          background: linear-gradient(180deg, rgba(255, 180, 60, 0) 0%, rgba(255, 134, 48, 0.9) 20%, rgba(204, 25, 24, 0.98) 52%, rgba(255, 134, 48, 0.7) 80%, rgba(255, 180, 60, 0) 100%);
+          box-shadow: 0 0 18px rgba(207, 29, 20, 0.36);
+          transform-origin: center;
+          animation: simaf-extreme-cut 10s ease-in-out infinite;
+          pointer-events: none;
         }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
@@ -75,8 +165,10 @@ window.ResearchLines = function ResearchLines({ lang }) {
                 {l.n === '01' && lang === 'es' ? (
                   <span className="simaf-extreme-title">
                     <span>Materiales</span>
-                    <span className="simaf-extreme-fragment is-left">bajo</span>
-                    <span className="simaf-extreme-fragment is-right">condiciones</span>
+                    <span className="simaf-extreme-cut">
+                      <span className="simaf-extreme-fragment is-left">bajo</span>
+                      <span className="simaf-extreme-fragment is-right">condiciones</span>
+                    </span>
                     <span>extremas</span>
                   </span>
                 ) : (
