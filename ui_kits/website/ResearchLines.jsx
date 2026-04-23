@@ -220,6 +220,13 @@ window.ResearchLines = function ResearchLines({ lang }) {
                     <span className="simaf-extreme-fragment is-right">condiciones</span>
                     <span>extremas</span>
                   </span>
+                ) : l.n === '01' && lang === 'en' ? (
+                  <span className="simaf-extreme-title">
+                    <span>Materials</span>
+                    <span className="simaf-extreme-fragment is-left">under</span>
+                    <span className="simaf-extreme-fragment is-right">extreme</span>
+                    <span>conditions</span>
+                  </span>
                 ) : l.n === '03' ? (
                   <span className="simaf-compute-title">
                     <span>{l[lang].t}</span>
@@ -234,6 +241,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
                   </span>
                 ) : l.n === '05' && lang === 'es' ? (
                   <span className="simaf-radiation-title">Daño por radiación en materiales</span>
+                ) : l.n === '05' && lang === 'en' ? (
+                  <span className="simaf-radiation-title">Radiation damage in materials</span>
                 ) : l.n === '07' && lang === 'es' ? (
                   <span className="simaf-magnet-title" aria-label="Magnetismo">
                     {[
@@ -247,6 +256,28 @@ window.ResearchLines = function ResearchLines({ lang }) {
                       ['s', '5.2em', '630ms', '#1d63d9'],
                       ['m', '6.4em', '720ms', '#1d63d9'],
                       ['o', '7.6em', '810ms', '#1d63d9'],
+                    ].map(([char, offset, delay, color], i) => (
+                      <span
+                        key={`${char}-${i}`}
+                        className="simaf-magnet-letter"
+                        style={{ '--magnet-x': offset, '--magnet-color': color, animationDelay: delay }}
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </span>
+                ) : l.n === '07' && lang === 'en' ? (
+                  <span className="simaf-magnet-title" aria-label="Magnetism">
+                    {[
+                      ['M', '-5.2em', '0ms', '#d96a1d'],
+                      ['a', '-3.9em', '90ms', '#d96a1d'],
+                      ['g', '-2.6em', '180ms', '#d96a1d'],
+                      ['n', '-1.3em', '270ms', '#d96a1d'],
+                      ['e', '1.3em', '360ms', '#d96a1d'],
+                      ['t', '2.6em', '450ms', '#1d63d9'],
+                      ['i', '3.9em', '540ms', '#1d63d9'],
+                      ['s', '5.2em', '630ms', '#1d63d9'],
+                      ['m', '6.4em', '720ms', '#1d63d9'],
                     ].map(([char, offset, delay, color], i) => (
                       <span
                         key={`${char}-${i}`}
