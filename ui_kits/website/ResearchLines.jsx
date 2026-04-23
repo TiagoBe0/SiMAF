@@ -326,6 +326,18 @@ window.ResearchLines = function ResearchLines({ lang }) {
                       <span className="simaf-compute-drop" />
                     </span>
                   </span>
+                ) : l.n === '06' ? (
+                  <span className="simaf-compute-title">
+                    <span>{l[lang].t}</span>
+                    <span className="simaf-compute-visual" aria-hidden="true">
+                      <img
+                        className="simaf-compute-image"
+                        src="img/materiales_nanoporosos.jpeg"
+                        alt=""
+                      />
+                      <span className="simaf-compute-drop" />
+                    </span>
+                  </span>
                 ) : l.n === '05' && lang === 'es' ? (
                   <span className="simaf-radiation-title">Daño por radiación en materiales</span>
                 ) : l.n === '05' && lang === 'en' ? (
