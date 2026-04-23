@@ -169,15 +169,15 @@ window.ResearchLines = function ResearchLines({ lang }) {
         }
         @keyframes simaf-nano-compress {
           0%, 20%, 100% {
-            transform: scaleX(1) scaleY(1);
+            transform: scaleY(1);
             letter-spacing: -0.01em;
           }
           36%, 58% {
-            transform: scaleX(0.82) scaleY(0.72);
-            letter-spacing: -0.05em;
+            transform: scaleY(0.72);
+            letter-spacing: -0.01em;
           }
           74% {
-            transform: scaleX(1) scaleY(1);
+            transform: scaleY(1);
             letter-spacing: -0.01em;
           }
         }
