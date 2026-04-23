@@ -1,28 +1,31 @@
 window.Network = function Network({ lang }) {
   const people = [
-    { id:'eduardo', x:50, y:8, img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'publicaciones-ebringa.html' },
-    { id:'gonzalo', x:18, y:22, img:'img/avatar1.jpg', name:'Dr. Gonzalo Dos Santos', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#f02850', pubs:'gonzalo_dos_santos_publications.html' },
-    { id:'diego', x:80, y:22, img:'img/avatardiegod.jpg', name:'Dr. Ing. Diego R. Tramontina', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#7828c8', pubs:'diego_tramontina_publications.html' },
-    { id:'geraudys', x:8, y:44, img:'img/avatar6.jpg', name:'Dr. Geraudys Mora Barzaga', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#00a050', pubs:'gera_mora_publications.html' },
-    { id:'orlando', x:32, y:44, img:'img/avatar4.jpg', name:'Dr. Orlando Deluigi', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#f0a028', pubs:'orlando_deluigi_publications.html' },
-    { id:'federico', x:68, y:44, img:'img/avatar9.jpg', name:'Lic. Federico A. Cartellone', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#00a0c8', pubs:'fede_cartellone_publications.html' },
-    { id:'santiago', x:88, y:44, img:'img/avatar5.jpg', name:'Lic. Santiago Bergamin Saua', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#78c828', pubs:null },
-    { id:'tomas', x:38, y:68, img:'img/avatar8.jpg', name:'Lic. Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null },
-    { id:'maria', x:62, y:68, img:'img/avatar3.jpg', name:'Lic. María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null },
-    { id:'enrique', x:14, y:82, img:null, name:'Enrique Miranda', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#c84080', pubs:null },
-    { id:'fiorella', x:30, y:92, img:null, name:'Fiorella Di Rocco', role:{es:'Colaboradora', en:'Collaborator'}, tag:'Red', hue:'#00a0c8', pubs:null },
-    { id:'micaela', x:46, y:86, img:null, name:'Micaela Moron', role:{es:'Colaboradora', en:'Collaborator'}, tag:'Red', hue:'#00a050', pubs:null },
-    { id:'carlos', x:62, y:92, img:null, name:'Carlos Ruestes', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#f0a028', pubs:null },
-    { id:'emmanuel', x:78, y:86, img:null, name:'Emmanuel Millan', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#7828c8', pubs:null },
-    { id:'nadhir', x:90, y:82, img:null, name:'Nadhir Naciff', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#f02850', pubs:null },
+    { id:'enrique', x:12, y:12, img:null, name:'Enrique Miranda', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#c84080', pubs:null },
+    { id:'fiorella', x:28, y:28, img:null, name:'Fiorella Di Rocco', role:{es:'Colaboradora', en:'Collaborator'}, tag:'Red', hue:'#00a0c8', pubs:null },
+    { id:'micaela', x:44, y:12, img:null, name:'Micaela Moron', role:{es:'Colaboradora', en:'Collaborator'}, tag:'Red', hue:'#00a050', pubs:null },
+    { id:'carlos', x:60, y:28, img:null, name:'Carlos Ruestes', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#f0a028', pubs:null },
+    { id:'emmanuel', x:76, y:12, img:null, name:'Emmanuel Millan', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#7828c8', pubs:null },
+    { id:'nadhir', x:88, y:28, img:null, name:'Nadhir Naciff', role:{es:'Colaborador', en:'Collaborator'}, tag:'Red', hue:'#f02850', pubs:null },
+    { id:'eduardo', x:50, y:48, img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'publicaciones-ebringa.html' },
+    { id:'gonzalo', x:16, y:54, img:'img/avatar1.jpg', name:'Dr. Gonzalo Dos Santos', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#f02850', pubs:'gonzalo_dos_santos_publications.html' },
+    { id:'diego', x:84, y:54, img:'img/avatardiegod.jpg', name:'Dr. Ing. Diego R. Tramontina', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#7828c8', pubs:'diego_tramontina_publications.html' },
+    { id:'geraudys', x:16, y:72, img:'img/avatar6.jpg', name:'Dr. Geraudys Mora Barzaga', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#00a050', pubs:'gera_mora_publications.html' },
+    { id:'orlando', x:50, y:68, img:'img/avatar4.jpg', name:'Dr. Orlando Deluigi', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#f0a028', pubs:'orlando_deluigi_publications.html' },
+    { id:'federico', x:84, y:72, img:'img/avatar9.jpg', name:'Lic. Federico A. Cartellone', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#00a0c8', pubs:'fede_cartellone_publications.html' },
+    { id:'santiago', x:16, y:90, img:'img/avatar5.jpg', name:'Lic. Santiago Bergamin Saua', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#78c828', pubs:null },
+    { id:'tomas', x:50, y:88, img:'img/avatar8.jpg', name:'Lic. Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null },
+    { id:'maria', x:84, y:90, img:'img/avatar3.jpg', name:'Lic. María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null },
   ];
   const byId = Object.fromEntries(people.map(person => [person.id, person]));
   const links = [
-    ['eduardo','gonzalo'], ['eduardo','diego'], ['eduardo','orlando'], ['eduardo','federico'], ['eduardo','maria'],
-    ['gonzalo','geraudys'], ['gonzalo','orlando'], ['diego','federico'], ['diego','santiago'], ['orlando','tomas'],
-    ['federico','maria'], ['tomas','micaela'], ['maria','carlos'], ['geraudys','enrique'], ['orlando','fiorella'],
-    ['santiago','emmanuel'], ['santiago','nadhir'], ['enrique','fiorella'], ['fiorella','micaela'], ['micaela','carlos'],
-    ['carlos','emmanuel'], ['emmanuel','nadhir'],
+    ['enrique','fiorella'], ['enrique','micaela'], ['fiorella','micaela'], ['fiorella','carlos'], ['micaela','carlos'],
+    ['micaela','emmanuel'], ['carlos','emmanuel'], ['carlos','nadhir'], ['emmanuel','nadhir'], ['enrique','carlos'],
+    ['eduardo','gonzalo'], ['eduardo','diego'], ['eduardo','geraudys'], ['eduardo','orlando'], ['eduardo','federico'],
+    ['eduardo','tomas'], ['eduardo','maria'], ['gonzalo','geraudys'], ['gonzalo','orlando'], ['gonzalo','santiago'],
+    ['diego','federico'], ['diego','orlando'], ['diego','maria'], ['geraudys','orlando'], ['geraudys','santiago'],
+    ['orlando','federico'], ['orlando','tomas'], ['federico','maria'], ['santiago','tomas'], ['tomas','maria'],
+    ['enrique','gonzalo'], ['fiorella','geraudys'], ['micaela','orlando'], ['carlos','federico'], ['emmanuel','diego'],
+    ['nadhir','maria'], ['nadhir','santiago'],
   ];
   const avatarFallbacks = img => {
     const file = img.replace('img/', '');
@@ -84,7 +87,10 @@ window.Network = function Network({ lang }) {
       <section className="network-map" style={netStyles.map}>
         <svg className="network-lines" viewBox="0 0 100 100" preserveAspectRatio="none" style={netStyles.lines} aria-hidden="true">
           {links.map(([from, to]) => (
-            <line key={`${from}-${to}`} x1={byId[from].x} y1={byId[from].y} x2={byId[to].x} y2={byId[to].y} style={netStyles.line} />
+            <g key={`${from}-${to}`}>
+              <line x1={byId[from].x} y1={byId[from].y} x2={byId[to].x} y2={byId[to].y} style={netStyles.bondGlow} />
+              <line x1={byId[from].x} y1={byId[from].y} x2={byId[to].x} y2={byId[to].y} style={netStyles.line} />
+            </g>
           ))}
         </svg>
         {people.map(person => (
@@ -128,7 +134,8 @@ const netStyles = {
   head: { borderTop:'1px solid var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:26 },
   map: { position:'relative', height:820, margin:'0 auto', overflow:'visible' },
   lines: { position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none' },
-  line: { stroke:'color-mix(in srgb, var(--accent) 36%, var(--border))', strokeWidth:0.16, vectorEffect:'non-scaling-stroke' },
+  bondGlow: { stroke:'color-mix(in srgb, var(--accent) 22%, transparent)', strokeWidth:0.58, vectorEffect:'non-scaling-stroke' },
+  line: { stroke:'color-mix(in srgb, var(--accent) 58%, var(--border))', strokeWidth:0.22, vectorEffect:'non-scaling-stroke' },
   card: { width:218, minHeight:124, display:'flex', gap:14, alignItems:'flex-start', padding:'18px 16px', border:'1px solid var(--border)', background:'color-mix(in srgb, #fff 94%, var(--bg))', borderRadius:2, zIndex:2 },
   avatarWrap: { width:52, height:52, borderRadius:'50%', overflow:'hidden', flexShrink:0 },
   avatarImg: { width:52, height:52, objectFit:'cover', borderRadius:'50%', display:'block' },
