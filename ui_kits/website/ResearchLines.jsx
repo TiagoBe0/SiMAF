@@ -173,7 +173,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
         }
         .simaf-compute-drop {
           position: absolute;
-          right: -5px;
+          right: 2px;
           top: -7px;
           width: 14px;
           height: 19px;
