@@ -12,14 +12,14 @@ window.ResearchLines = function ResearchLines({ lang }) {
     <section className="research-lines-wrap" style={rlStyles.wrap}>
       <style>{`
         @keyframes simaf-word-left {
-          0%, 18%, 100% { color: inherit; transform: translateX(0); }
-          32%, 58% { color: #c61f1f; transform: translateX(-0.5em); }
-          74% { color: inherit; transform: translateX(0); }
+          0%, 18%, 100% { color: inherit; transform: translateX(0) rotate(0deg) skewX(0deg); }
+          32%, 58% { color: #c61f1f; transform: translateX(-0.5em) rotate(-7deg) skewX(-8deg); }
+          74% { color: inherit; transform: translateX(0) rotate(0deg) skewX(0deg); }
         }
         @keyframes simaf-word-right {
-          0%, 18%, 100% { color: inherit; transform: translateX(0); }
-          32%, 58% { color: #c61f1f; transform: translateX(0.5em); }
-          74% { color: inherit; transform: translateX(0); }
+          0%, 18%, 100% { color: inherit; transform: translateX(0) rotate(0deg) skewX(0deg); }
+          32%, 58% { color: #c61f1f; transform: translateX(0.5em) rotate(7deg) skewX(8deg); }
+          74% { color: inherit; transform: translateX(0) rotate(0deg) skewX(0deg); }
         }
         .simaf-extreme-title {
           display: inline-flex;
