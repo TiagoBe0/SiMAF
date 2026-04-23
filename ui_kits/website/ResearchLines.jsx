@@ -38,6 +38,91 @@ window.ResearchLines = function ResearchLines({ lang }) {
         .simaf-extreme-fragment.is-right {
           animation: simaf-word-right 6s ease-in-out infinite;
         }
+        @keyframes simaf-blackhole-title {
+          0%, 18%, 100% {
+            letter-spacing: -0.01em;
+            transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+            color: inherit;
+            text-shadow: none;
+            filter: blur(0);
+          }
+          30% {
+            letter-spacing: -0.04em;
+            transform: translate3d(0, 0, 0) scale(0.98) rotate(-0.6deg);
+            color: #44338d;
+            text-shadow: 0 0 12px rgba(86, 59, 158, 0.2);
+            filter: blur(0.2px);
+          }
+          42% {
+            letter-spacing: -0.08em;
+            transform: translate3d(0, 0, 0) scale(0.94) rotate(1deg);
+            color: #2b215f;
+            text-shadow:
+              0 0 14px rgba(67, 38, 122, 0.22),
+              0 0 26px rgba(138, 104, 215, 0.18);
+            filter: blur(0.35px);
+          }
+          56% {
+            letter-spacing: -0.12em;
+            transform: translate3d(0, 0, 0) scale(0.89) rotate(-1.4deg);
+            color: #1a1630;
+            text-shadow:
+              0 0 16px rgba(26, 22, 48, 0.32),
+              0 0 30px rgba(120, 78, 200, 0.18);
+            filter: blur(0.55px);
+          }
+          68% {
+            letter-spacing: -0.05em;
+            transform: translate3d(0, 0, 0) scale(0.96) rotate(0.5deg);
+            color: #3d2f76;
+            text-shadow: 0 0 10px rgba(86, 59, 158, 0.14);
+            filter: blur(0.15px);
+          }
+        }
+        @keyframes simaf-blackhole-core {
+          0%, 24%, 100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.4);
+            box-shadow: 0 0 0 0 rgba(120, 78, 200, 0);
+          }
+          40% {
+            opacity: 0.45;
+            transform: translate(-50%, -50%) scale(0.85);
+            box-shadow: 0 0 0 5px rgba(120, 78, 200, 0.08);
+          }
+          56% {
+            opacity: 0.82;
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow:
+              0 0 0 8px rgba(120, 78, 200, 0.1),
+              0 0 18px rgba(120, 78, 200, 0.2);
+          }
+          72% {
+            opacity: 0.18;
+            transform: translate(-50%, -50%) scale(0.62);
+            box-shadow: 0 0 0 2px rgba(120, 78, 200, 0.04);
+          }
+        }
+        .simaf-blackhole-title {
+          position: relative;
+          display: inline-block;
+          animation: simaf-blackhole-title 8.5s ease-in-out infinite;
+          transform-origin: center;
+          will-change: transform, letter-spacing, color, text-shadow, filter;
+        }
+        .simaf-blackhole-title::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 0.72em;
+          height: 0.72em;
+          border-radius: 999px;
+          background: radial-gradient(circle, rgba(10,10,18,0.96) 0 44%, rgba(72, 44, 140, 0.72) 58%, rgba(152, 112, 232, 0.22) 100%);
+          animation: simaf-blackhole-core 8.5s ease-in-out infinite;
+          pointer-events: none;
+          mix-blend-mode: multiply;
+        }
         @keyframes simaf-radiation-pulse {
           0%, 18%, 100% {
             color: inherit;
@@ -227,6 +312,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
                     <span className="simaf-extreme-fragment is-right">extreme</span>
                     <span>conditions</span>
                   </span>
+                ) : l.n === '02' ? (
+                  <span className="simaf-blackhole-title">{l[lang].t}</span>
                 ) : l.n === '03' ? (
                   <span className="simaf-compute-title">
                     <span>{l[lang].t}</span>
