@@ -38,137 +38,55 @@ window.ResearchLines = function ResearchLines({ lang }) {
         .simaf-extreme-fragment.is-right {
           animation: simaf-word-right 6s ease-in-out infinite;
         }
-        @keyframes simaf-hpc-chip {
-          0%, 100% { opacity: 0.34; transform: scale(0.92); background: rgba(76, 159, 255, 0.18); }
-          45% { opacity: 1; transform: scale(1); background: rgba(76, 159, 255, 0.88); }
-          70% { opacity: 0.72; transform: scale(0.96); background: rgba(255, 122, 28, 0.72); }
+        @keyframes simaf-radiation-pulse {
+          0%, 18%, 100% {
+            color: inherit;
+            text-shadow: none;
+            filter: saturate(1) brightness(1);
+          }
+          30% {
+            color: #d6ff3f;
+            text-shadow:
+              0 0 8px rgba(214, 255, 63, 0.5),
+              0 0 20px rgba(168, 255, 63, 0.3);
+            filter: saturate(1.2) brightness(1.05);
+          }
+          42% {
+            color: #baff1b;
+            text-shadow:
+              0 0 12px rgba(186, 255, 27, 0.7),
+              0 0 28px rgba(121, 255, 48, 0.4);
+            filter: saturate(1.35) brightness(1.1);
+          }
+          56% {
+            color: #efff96;
+            text-shadow:
+              0 0 10px rgba(239, 255, 150, 0.45),
+              0 0 18px rgba(186, 255, 27, 0.25);
+            filter: saturate(1.08) brightness(1.04);
+          }
         }
-        @keyframes simaf-hpc-stream {
-          from { transform: translateX(-110%); }
-          to { transform: translateX(230%); }
+        @keyframes simaf-radiation-jitter {
+          0%, 22%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+          32% { transform: translate3d(-0.04em, 0, 0) rotate(-0.7deg); }
+          38% { transform: translate3d(0.05em, -0.01em, 0) rotate(0.9deg); }
+          44% { transform: translate3d(-0.03em, 0.01em, 0) rotate(-0.6deg); }
+          50% { transform: translate3d(0.04em, 0, 0) rotate(0.5deg); }
+          58% { transform: translate3d(0, 0, 0) rotate(0deg); }
         }
-        @keyframes simaf-hpc-particle {
-          0% { transform: translateX(-120%) scaleX(0.7); opacity: 0; }
-          15% { opacity: 1; }
-          100% { transform: translateX(360%) scaleX(1.15); opacity: 0; }
-        }
-        @keyframes simaf-hpc-bar {
-          0%, 100% { transform: scaleX(0.16); opacity: 0.42; }
-          40% { transform: scaleX(0.96); opacity: 1; }
-          68% { transform: scaleX(0.58); opacity: 0.85; }
-        }
-        .simaf-hpc-card {
-          background: linear-gradient(135deg, #07111f 0%, #0e1f39 52%, #091427 100%);
-          border: 1px solid rgba(97, 149, 226, 0.24);
-          border-radius: 22px;
-          padding: 22px 24px 20px;
-          box-shadow: 0 18px 36px rgba(4, 14, 31, 0.18);
-          overflow: hidden;
-        }
-        .simaf-hpc-title {
-          display: block;
-          color: #f6f8ff;
-          margin-bottom: 16px;
-        }
-        .simaf-hpc-gpu {
-          position: relative;
-          width: min(100%, 220px);
-          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-          border: 1px solid rgba(151, 190, 255, 0.28);
-          border-radius: 16px;
-          padding: 16px;
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-        }
-        .simaf-hpc-gpu::before,
-        .simaf-hpc-gpu::after {
-          content: "";
-          position: absolute;
-          top: 16px;
-          bottom: 16px;
-          width: 8px;
-          background:
-            repeating-linear-gradient(
-              to bottom,
-              rgba(97, 149, 226, 0.22) 0 8px,
-              transparent 8px 14px
-            );
-        }
-        .simaf-hpc-gpu::before { left: -9px; }
-        .simaf-hpc-gpu::after { right: -9px; }
-        .simaf-hpc-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 8px;
-        }
-        .simaf-hpc-cell {
-          aspect-ratio: 1 / 1;
-          border-radius: 6px;
-          border: 1px solid rgba(145, 190, 255, 0.14);
-          animation: simaf-hpc-chip 1.8s ease-in-out infinite;
-          box-shadow: 0 0 10px rgba(76, 159, 255, 0.14);
-        }
-        .simaf-hpc-lane {
-          position: relative;
-          margin-top: 16px;
-          height: 12px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.06);
-          overflow: hidden;
-        }
-        .simaf-hpc-lane::before {
-          content: "";
-          position: absolute;
-          inset: 2px auto 2px 0;
-          width: 34%;
-          border-radius: 999px;
-          background: linear-gradient(90deg, rgba(76,159,255,0) 0%, rgba(76,159,255,0.9) 45%, rgba(255,122,28,0.95) 100%);
-          animation: simaf-hpc-stream 2.6s linear infinite;
-        }
-        .simaf-hpc-particles {
-          position: relative;
-          margin-top: 12px;
-          height: 10px;
-          overflow: hidden;
-        }
-        .simaf-hpc-particle {
-          position: absolute;
-          top: 1px;
-          width: 26px;
-          height: 8px;
-          border-radius: 999px;
-          background: linear-gradient(90deg, rgba(76,159,255,0) 0%, rgba(76,159,255,0.88) 40%, rgba(255,122,28,0.92) 100%);
-          animation: simaf-hpc-particle 2.8s linear infinite;
-        }
-        .simaf-hpc-bars {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 10px;
-          margin-top: 18px;
-        }
-        .simaf-hpc-bar-track {
-          height: 8px;
-          background: rgba(255,255,255,0.08);
-          border-radius: 999px;
-          overflow: hidden;
-        }
-        .simaf-hpc-bar-fill {
-          height: 100%;
-          width: 100%;
-          transform-origin: left center;
-          border-radius: inherit;
-          background: linear-gradient(90deg, #4c9fff 0%, #84b9ff 48%, #ff7a1c 100%);
-          animation: simaf-hpc-bar 2.4s ease-in-out infinite;
-        }
-        .simaf-hpc-card:hover .simaf-hpc-bar-fill,
-        .simaf-hpc-card:hover .simaf-hpc-cell {
-          animation-duration: 1.2s;
+        .simaf-radiation-title {
+          display: inline-block;
+          animation:
+            simaf-radiation-pulse 7.5s ease-in-out infinite,
+            simaf-radiation-jitter 7.5s ease-in-out infinite;
+          transform-origin: center;
+          will-change: transform, color, text-shadow, filter;
         }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
           .research-line-row { grid-template-columns: 48px 18px 1fr !important; gap: 14px !important; }
           .research-line-title { font-size: 22px !important; }
-          .simaf-hpc-card { padding: 18px 18px 16px; }
         }
       `}</style>
       <div className="research-lines-head" style={rlStyles.head}>
@@ -181,55 +99,20 @@ window.ResearchLines = function ResearchLines({ lang }) {
             <span style={rlStyles.num}>{l.n}</span>
             <span style={{...rlStyles.dot, background:l.hue}} />
             <div style={rlStyles.body}>
-              {l.n === '03' ? (
-                <div className="simaf-hpc-card">
-                  <div className="research-line-title simaf-hpc-title" style={rlStyles.title}>{l[lang].t}</div>
-                  <div className="simaf-hpc-gpu">
-                    <div className="simaf-hpc-grid">
-                      {Array.from({ length: 16 }).map((_, i) => (
-                        <span
-                          key={i}
-                          className="simaf-hpc-cell"
-                          style={{ animationDelay: `${i * 120}ms` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="simaf-hpc-lane" />
-                  <div className="simaf-hpc-particles">
-                    {[0, 1, 2].map((i) => (
-                      <span
-                        key={i}
-                        className="simaf-hpc-particle"
-                        style={{ animationDelay: `${i * 0.72}s` }}
-                      />
-                    ))}
-                  </div>
-                  <div className="simaf-hpc-bars">
-                    {[0, 1, 2].map((i) => (
-                      <div key={i} className="simaf-hpc-bar-track">
-                        <div
-                          className="simaf-hpc-bar-fill"
-                          style={{ animationDelay: `${i * 220}ms` }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="research-line-title" style={rlStyles.title}>
-                  {l.n === '01' && lang === 'es' ? (
+              <div className="research-line-title" style={rlStyles.title}>
+                {l.n === '01' && lang === 'es' ? (
                   <span className="simaf-extreme-title">
                     <span>Materiales</span>
                     <span className="simaf-extreme-fragment is-left">bajo</span>
                     <span className="simaf-extreme-fragment is-right">condiciones</span>
                     <span>extremas</span>
                   </span>
+                ) : l.n === '05' && lang === 'es' ? (
+                  <span className="simaf-radiation-title">Daño por radiación en materiales</span>
                 ) : (
                   l[lang].t
                 )}
-                </div>
-              )}
+              </div>
               <div style={rlStyles.desc}>{l[lang].d}</div>
             </div>
           </article>
