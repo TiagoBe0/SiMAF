@@ -955,8 +955,8 @@ window.Publications = function Publications({ lang, limit }) {
       )}
       {filtered.length === 0 && <div style={pubStyles.empty}>{lang==='es'?'No hay publicaciones para esos filtros.':'No publications match those filters.'}</div>}
       {Object.entries(grouped).sort(([a], [b]) => Number(b)-Number(a)).map(([y, items]) => (
-        <div key={y} style={pubStyles.yearBlock}>
-          <div style={pubStyles.year}>{y}</div>
+        <div key={y} style={limit ? pubStyles.yearBlockCompact : pubStyles.yearBlock}>
+          <div style={limit ? pubStyles.yearCompact : pubStyles.year}>{y}</div>
           <div style={pubStyles.items}>
             {items.map((p,i) => (
               <article key={`${p.year}-${p.title}-${i}`} style={pubStyles.item}>
@@ -988,7 +988,9 @@ const pubStyles = {
   input: { width:'100%', border:'1px solid var(--border-strong)', borderRadius:4, background:'color-mix(in srgb, var(--bg) 84%, white)', color:'var(--fg)', fontFamily:'var(--font-sans)', fontSize:14, padding:'12px 14px' },
   select: { width:'100%', border:'1px solid var(--border-strong)', borderRadius:4, background:'color-mix(in srgb, var(--bg) 84%, white)', color:'var(--fg)', fontFamily:'var(--font-sans)', fontSize:14, padding:'12px 14px' },
   yearBlock: { display:'grid', gridTemplateColumns:'16px 1fr', gap:4, padding:'28px 0', borderBottom:'1px solid var(--border)' },
+  yearBlockCompact: { display:'grid', gridTemplateColumns:'1fr', gap:12, padding:'28px 0', borderBottom:'1px solid var(--border)' },
   year: { fontFamily:'var(--font-sans)', fontSize:13, fontWeight:600, letterSpacing:'0.14em', color:'var(--fg-muted)' },
+  yearCompact: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:'var(--fg-muted)', textTransform:'uppercase' },
   items: { display:'flex', flexDirection:'column', gap:24 },
   item: { display:'flex', alignItems:'flex-start', gap:18 },
   itemBody: { minWidth:0, flex:1 },
