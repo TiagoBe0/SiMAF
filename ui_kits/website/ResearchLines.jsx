@@ -82,6 +82,40 @@ window.ResearchLines = function ResearchLines({ lang }) {
           transform-origin: center;
           will-change: transform, color, text-shadow, filter;
         }
+        @keyframes simaf-magnet-letter {
+          0%, 100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            filter: blur(0);
+          }
+          18% {
+            opacity: 0;
+            transform: translate3d(var(--magnet-x), 0, -180px) scale(1.9);
+            filter: blur(8px);
+          }
+          58% {
+            opacity: 0.72;
+            transform: translate3d(calc(var(--magnet-x) * 0.18), 0, -42px) scale(1.16);
+            filter: blur(1.6px);
+          }
+          78% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            filter: blur(0);
+          }
+        }
+        .simaf-magnet-title {
+          display: inline-flex;
+          gap: 0.01em;
+          perspective: 900px;
+          transform-style: preserve-3d;
+        }
+        .simaf-magnet-letter {
+          display: inline-block;
+          animation: simaf-magnet-letter 8.5s cubic-bezier(0.2, 0.7, 0.18, 1) infinite;
+          transform-origin: center;
+          will-change: transform, opacity, filter;
+        }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
@@ -109,6 +143,29 @@ window.ResearchLines = function ResearchLines({ lang }) {
                   </span>
                 ) : l.n === '05' && lang === 'es' ? (
                   <span className="simaf-radiation-title">Daño por radiación en materiales</span>
+                ) : l.n === '07' && lang === 'es' ? (
+                  <span className="simaf-magnet-title" aria-label="Magnetismo">
+                    {[
+                      ['M', '-5.2em', '0ms'],
+                      ['a', '-3.9em', '90ms'],
+                      ['g', '-2.6em', '180ms'],
+                      ['n', '-1.3em', '270ms'],
+                      ['e', '1.3em', '360ms'],
+                      ['t', '2.6em', '450ms'],
+                      ['i', '3.9em', '540ms'],
+                      ['s', '5.2em', '630ms'],
+                      ['m', '6.4em', '720ms'],
+                      ['o', '7.6em', '810ms'],
+                    ].map(([char, offset, delay], i) => (
+                      <span
+                        key={`${char}-${i}`}
+                        className="simaf-magnet-letter"
+                        style={{ '--magnet-x': offset, animationDelay: delay }}
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </span>
                 ) : (
                   l[lang].t
                 )}
