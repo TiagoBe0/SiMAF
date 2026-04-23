@@ -940,7 +940,6 @@ window.Publications = function Publications({ lang, limit }) {
           <div style={pubStyles.items}>
             {items.map((p,i) => (
               <article key={`${p.year}-${p.title}-${i}`} style={pubStyles.item}>
-                <PublicationMiniature title={p.title} />
                 <div style={pubStyles.itemBody}>
                   <h3 style={pubStyles.title}>{p.title}</h3>
                   <div style={pubStyles.auth}>{p.authors}</div>
@@ -953,6 +952,7 @@ window.Publications = function Publications({ lang, limit }) {
                     {p.investigators.map(name => <button key={name} type="button" onClick={() => !limit && setInvestigatorFilter(name)} style={pubStyles.tag}>{name}</button>)}
                   </div>
                 </div>
+                <PublicationMiniature title={p.title} />
               </article>
             ))}
           </div>
@@ -972,7 +972,7 @@ const pubStyles = {
   items: { display:'flex', flexDirection:'column', gap:24 },
   item: { display:'flex', alignItems:'flex-start', gap:18 },
   itemBody: { minWidth:0, flex:1 },
-  thumbWrap: { width:116, aspectRatio:'4 / 3', flex:'0 0 116px', border:'1px solid var(--border)', background:'#fff', borderRadius:2, overflow:'hidden' },
+  thumbWrap: { width:174, aspectRatio:'4 / 3', flex:'0 0 174px', border:'1px solid var(--border)', background:'#fff', borderRadius:60, overflow:'hidden' },
   thumb: { width:'100%', height:'100%', display:'block', objectFit:'cover' },
   title: { fontFamily:'var(--font-serif)', fontSize:21, fontWeight:500, lineHeight:1.3, color:'var(--fg)', margin:'0 0 6px', letterSpacing:'-0.005em' },
   auth: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:15, color:'var(--fg-muted)' },
