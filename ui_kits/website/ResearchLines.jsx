@@ -11,6 +11,49 @@ window.ResearchLines = function ResearchLines({ lang }) {
   return (
     <section className="research-lines-wrap" style={rlStyles.wrap}>
       <style>{`
+        @keyframes simaf-extreme-word {
+          0%, 10%, 100% { color: inherit; text-shadow: none; }
+          18% { color: #f0a028; text-shadow: 0 0 18px rgba(240, 160, 40, 0.18); }
+          30% { color: #d83a20; text-shadow: 0 0 24px rgba(216, 58, 32, 0.22); }
+          42% { color: #c61f1f; text-shadow: 0 0 20px rgba(198, 31, 31, 0.18); }
+          100% { color: inherit; text-shadow: none; }
+        }
+        @keyframes simaf-extreme-left {
+          0%, 34%, 100% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+          44% { transform: translateX(-0.04em) rotate(-1deg); letter-spacing: 0.01em; }
+          54% { transform: translateX(-0.2em) rotate(-3deg); letter-spacing: 0.025em; }
+          66% { transform: translateX(-0.34em) rotate(-5deg); letter-spacing: 0.04em; }
+          78% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+        }
+        @keyframes simaf-extreme-right {
+          0%, 34%, 100% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+          44% { transform: translateX(0.04em) rotate(1deg); letter-spacing: 0.01em; }
+          54% { transform: translateX(0.2em) rotate(3deg); letter-spacing: 0.025em; }
+          66% { transform: translateX(0.34em) rotate(5deg); letter-spacing: 0.04em; }
+          78% { transform: translateX(0) rotate(0deg); letter-spacing: 0; }
+        }
+        .simaf-extreme-title {
+          display: inline-flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          gap: 0.22em;
+        }
+        .simaf-extreme-fragment {
+          display: inline-block;
+          animation: simaf-extreme-word 12s ease-in-out infinite;
+          transform-origin: center;
+          will-change: transform, color, letter-spacing;
+        }
+        .simaf-extreme-fragment.is-left {
+          animation:
+            simaf-extreme-word 12s ease-in-out infinite,
+            simaf-extreme-left 12s ease-in-out infinite;
+        }
+        .simaf-extreme-fragment.is-right {
+          animation:
+            simaf-extreme-word 12s ease-in-out infinite,
+            simaf-extreme-right 12s ease-in-out infinite;
+        }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
@@ -28,7 +71,18 @@ window.ResearchLines = function ResearchLines({ lang }) {
             <span style={rlStyles.num}>{l.n}</span>
             <span style={{...rlStyles.dot, background:l.hue}} />
             <div style={rlStyles.body}>
-              <div className="research-line-title" style={rlStyles.title}>{l[lang].t}</div>
+              <div className="research-line-title" style={rlStyles.title}>
+                {l.n === '01' && lang === 'es' ? (
+                  <span className="simaf-extreme-title">
+                    <span>Materiales</span>
+                    <span className="simaf-extreme-fragment is-left">bajo</span>
+                    <span className="simaf-extreme-fragment is-right">condiciones</span>
+                    <span>extremas</span>
+                  </span>
+                ) : (
+                  l[lang].t
+                )}
+              </div>
               <div style={rlStyles.desc}>{l[lang].d}</div>
             </div>
           </article>
