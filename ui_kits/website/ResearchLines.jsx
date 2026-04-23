@@ -172,11 +172,11 @@ window.ResearchLines = function ResearchLines({ lang }) {
             transform: scaleY(1);
             letter-spacing: -0.01em;
           }
-          36%, 58% {
-            transform: scaleY(0.72);
+          32%, 66% {
+            transform: scaleY(0.61);
             letter-spacing: -0.01em;
           }
-          74% {
+          80% {
             transform: scaleY(1);
             letter-spacing: -0.01em;
           }
