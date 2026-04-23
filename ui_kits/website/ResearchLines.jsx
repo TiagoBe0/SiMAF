@@ -121,31 +121,41 @@ window.ResearchLines = function ResearchLines({ lang }) {
           will-change: transform, opacity, filter;
         }
         @keyframes simaf-compute-thumb {
-          0%, 100% {
+          0%, 61.5%, 100% {
+            opacity: 0;
+            transform: translateY(0) scale(0.96);
+            box-shadow: 0 10px 18px rgba(10, 26, 60, 0);
+          }
+          66% {
             opacity: 0.92;
             transform: translateY(0) scale(1);
             box-shadow: 0 10px 18px rgba(10, 26, 60, 0.16);
           }
-          40% {
+          80% {
             opacity: 1;
             transform: translateY(-1px) scale(1.02);
             box-shadow: 0 14px 22px rgba(10, 26, 60, 0.2);
           }
+          92% {
+            opacity: 0.92;
+            transform: translateY(0) scale(1);
+            box-shadow: 0 10px 18px rgba(10, 26, 60, 0.16);
+          }
         }
         @keyframes simaf-compute-drop {
-          0%, 18%, 100% {
+          0%, 63%, 100% {
             opacity: 0;
             transform: translate3d(0, -8px, 0) scale(0.72);
           }
-          32% {
+          69% {
             opacity: 1;
             transform: translate3d(0, 0, 0) scale(1);
           }
-          52% {
+          80% {
             opacity: 1;
             transform: translate3d(1px, 3px, 0) scale(0.96);
           }
-          66% {
+          90% {
             opacity: 0.84;
             transform: translate3d(0, 5px, 0) scale(0.9);
           }
