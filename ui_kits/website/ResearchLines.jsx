@@ -167,13 +167,13 @@ window.ResearchLines = function ResearchLines({ lang }) {
           width: 73px;
           height: 52px;
           object-fit: cover;
-          border-radius: 14px;
+          border-radius: 20px;
           border: 1px solid rgba(18, 44, 90, 0.12);
           animation: simaf-compute-thumb 5.2s ease-in-out infinite;
         }
         .simaf-compute-drop {
           position: absolute;
-          right: 3px;
+          right: 7px;
           top: -6px;
           width: 14px;
           height: 19px;
