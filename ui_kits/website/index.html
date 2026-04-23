@@ -84,7 +84,8 @@
 <script type="text/babel" src="Hero.jsx"></script>
 <script type="text/babel" src="ResearchLines.jsx"></script>
 <script type="text/babel" src="Publications.jsx"></script>
-<script type="text/babel" src="People.jsx?v=20260422-people-avatars"></script>
+<script type="text/babel" src="People.jsx?v=20260423-network"></script>
+<script type="text/babel" src="Network.jsx"></script>
 <script type="text/babel" src="Collaborations.jsx"></script>
 <script type="text/babel" src="Footer.jsx"></script>
 <script src="../../pappers/manifest.js"></script>
@@ -150,7 +151,7 @@ function App() {
         <main data-screen-label="02 Research">
           <div style={{padding:'64px 48px 0', maxWidth:1280, margin:'0 auto'}}>
             <div style={{fontFamily:'var(--font-sans)',fontSize:11,letterSpacing:'0.14em',textTransform:'uppercase',color:'var(--fg-muted)'}}>{lang==='es'?'Investigación':'Research'}</div>
-            <h1 style={{fontFamily:'var(--font-serif)',fontSize:56,fontWeight:500,letterSpacing:'-0.02em',lineHeight:1.1,margin:'12px 0 0',maxWidth:'18ch'}}>{lang==='es'?'Cinco líneas activas. Un solo objeto: la materia simulada.':'Five active lines. One object: simulated matter.'}</h1>
+            <h1 style={{fontFamily:'var(--font-serif)',fontSize:56,fontWeight:500,letterSpacing:'-0.02em',lineHeight:1.1,margin:'12px 0 0',maxWidth:'18ch'}}>{lang==='es'?'Siete líneas activas. Un solo objeto: la materia simulada.':'Seven active lines. One object: simulated matter.'}</h1>
           </div>
           <ResearchLines lang={lang} />
           <Footer lang={lang} />
@@ -172,9 +173,15 @@ function App() {
             <div style={{fontFamily:'var(--font-sans)',fontSize:11,letterSpacing:'0.14em',textTransform:'uppercase',color:'var(--fg-muted)'}}>{lang==='es'?'Personas':'People'}</div>
             <h1 style={{fontFamily:'var(--font-serif)',fontSize:56,fontWeight:500,letterSpacing:'-0.02em',lineHeight:1.1,margin:'12px 0 0'}}>{lang==='es'?'Ocho miembros. Un laboratorio.':'Eight members. One laboratory.'}</h1>
           </div>
-          <People lang={lang} />
+          <People lang={lang} setScreen={setScreen} />
           <Footer lang={lang} />
         </main>
+      )}
+      {screen==='network' && (
+        <>
+          <Network lang={lang} />
+          <Footer lang={lang} />
+        </>
       )}
       {screen==='collaborations' && (
         <>

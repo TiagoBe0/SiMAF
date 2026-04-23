@@ -1,4 +1,4 @@
-window.People = function People({ lang }) {
+window.People = function People({ lang, setScreen }) {
   const avatarFallbacks = img => {
     const file = img.replace('img/', '');
     return [`../../img/${file}`, `/img/${file}`];
@@ -23,8 +23,8 @@ window.People = function People({ lang }) {
     { img:'img/avatar4.jpg', name:'Dr. Orlando Deluigi', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#f0a028', pubs:'orlando_deluigi_publications.html' },
     { img:'img/avatar9.jpg', name:'Lic. Federico A. Cartellone', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#00a0c8', pubs:'fede_cartellone_publications.html' },
     { img:'img/avatar5.jpg', name:'Lic. Santiago Bergamin Saua', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#78c828', pubs:null },
-    { img:'img/avatar8.jpg', name:'Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null },
-    { img:'img/avatar3.jpg', name:'María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null },
+    { img:'img/avatar8.jpg', name:'Lic. Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null },
+    { img:'img/avatar3.jpg', name:'Lic. María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null },
   ];
   return (
     <section style={pplStyles.wrap}>
@@ -59,7 +59,12 @@ window.People = function People({ lang }) {
       `}</style>
       <div className="people-head" style={pplStyles.head}>
         <span style={{fontWeight:600, color:'var(--fg)'}}>{lang==='es'?'Equipo de investigación':'Research team'}</span>
-        <span>{members.length} · {lang==='es'?'Universidad de Mendoza':'Universidad de Mendoza'}</span>
+        <span style={pplStyles.headActions}>
+          <span>{members.length} · {lang==='es'?'Universidad de Mendoza':'Universidad de Mendoza'}</span>
+          <button type="button" onClick={() => setScreen && setScreen('network')} style={pplStyles.networkLink}>
+            {lang==='es'?'Ver red de contactos':'View contact network'} →
+          </button>
+        </span>
       </div>
       <div className="people-grid" style={pplStyles.grid}>
         {members.map((m, i) => (
@@ -96,6 +101,8 @@ window.People = function People({ lang }) {
 const pplStyles = {
   wrap: { padding:'72px 48px', maxWidth:1280, margin:'0 auto' },
   head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
+  headActions: { display:'flex', alignItems:'center', gap:18 },
+  networkLink: { border:'none', background:'none', padding:0, color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase' },
   grid: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:24 },
   card: { display:'flex', gap:16, alignItems:'flex-start', padding:'20px 18px', border:'1px solid var(--border)', background:'#fff', borderRadius:2 },
   avatarWrap: { width:56, height:56, borderRadius:'50%', overflow:'hidden', flexShrink:0 },
