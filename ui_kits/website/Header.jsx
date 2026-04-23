@@ -31,9 +31,9 @@ window.Header = function Header({ screen, setScreen, lang, setLang }) {
       <div className="site-header-inner" style={headerStyles.inner}>
         <button type="button" onClick={()=>setScreen('home')} style={headerStyles.brand}>
           <img
-            src="../../assets/logo-mark.svg"
-            data-fallbacks="/assets/logo-mark.svg|../../assets/simaf-atom.svg|/assets/simaf-atom.svg|img/logo-final.png|../../img/logo-final.png|/img/logo-final.png"
-            onError={withSrcFallback(['/assets/logo-mark.svg', '../../assets/simaf-atom.svg', '/assets/simaf-atom.svg', 'img/logo-final.png', '../../img/logo-final.png', '/img/logo-final.png'])}
+            src="img/logo-final.png"
+            data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
+            onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
             alt=""
             style={headerStyles.mark}
           />
@@ -64,7 +64,7 @@ const headerStyles = {
   bar: { position:'sticky', top:0, zIndex:10, background:'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter:'blur(12px)', borderBottom:'1px solid var(--border)' },
   inner: { maxWidth:1280, margin:'0 auto', padding:'14px 48px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:32 },
   brand: { display:'flex', alignItems:'center', gap:14, border:'none', background:'transparent', padding:0, textAlign:'left', color:'var(--fg)', cursor:'pointer' },
-  mark: { width:40, height:40, objectFit:'contain', borderRadius:0 },
+  mark: { width:40, height:40, objectFit:'cover', borderRadius:'50%' },
   wm: { fontFamily:'var(--font-serif)', fontSize:22, fontWeight:500, letterSpacing:'0.02em', lineHeight:1 },
   wmSub: { fontFamily:'var(--font-sans)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:3 },
   nav: { display:'flex', alignItems:'center', gap:28 },

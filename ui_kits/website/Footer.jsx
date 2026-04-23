@@ -24,9 +24,9 @@ window.Footer = function Footer({ lang }) {
       <div className="site-footer-inner" style={ftStyles.inner}>
         <div style={ftStyles.brand}>
           <img
-            src="../../assets/logo-mark.svg"
-            data-fallbacks="/assets/logo-mark.svg|../../assets/simaf-atom.svg|/assets/simaf-atom.svg|img/logo-final.png|../../img/logo-final.png|/img/logo-final.png"
-            onError={withSrcFallback(['/assets/logo-mark.svg', '../../assets/simaf-atom.svg', '/assets/simaf-atom.svg', 'img/logo-final.png', '../../img/logo-final.png', '/img/logo-final.png'])}
+            src="img/logo-final.png"
+            data-fallbacks="../../img/logo-final.png|/img/logo-final.png|../../assets/logo-final.png|/assets/logo-final.png"
+            onError={withSrcFallback(['../../img/logo-final.png', '/img/logo-final.png', '../../assets/logo-final.png', '/assets/logo-final.png'])}
             alt=""
             style={ftStyles.mark}
           />
@@ -65,7 +65,7 @@ const ftStyles = {
   wrap: { background:'var(--navy-900)', color:'#e9edf7', marginTop:80, padding:'64px 48px 32px' },
   inner: { maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.2fr', gap:60 },
   brand: { display:'flex', gap:16, alignItems:'flex-start' },
-  mark: { width:56, height:56, objectFit:'contain', borderRadius:0 },
+  mark: { width:56, height:56, objectFit:'cover', borderRadius:'50%' },
   wm: { fontFamily:'var(--font-serif)', fontSize:26, fontWeight:500, color:'#fbf9f4' },
   sub: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:14, color:'#a8b3d1', marginTop:4, maxWidth:'32ch', lineHeight:1.4 },
   cols: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:32 },
