@@ -335,7 +335,6 @@ window.ResearchLines = function ResearchLines({ lang }) {
                         src="img/materiales_nanoporosos.jpeg"
                         alt=""
                       />
-                      <span className="simaf-compute-drop" />
                     </span>
                   </span>
                 ) : l.n === '05' && lang === 'es' ? (
