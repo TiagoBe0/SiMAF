@@ -172,7 +172,19 @@ window.People = function People({ lang, setScreen }) {
         .toggle-btn:hover {
           background: rgba(0,80,240,0.06) !important;
         }
-        .collab-country-card:hover {
+        @keyframes globe-spin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .globe-bg {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 110%;
+          opacity: 0.18;
+          pointer-events: none;
+          animation: globe-spin 60s linear infinite;
+        }
           border-color: rgba(0,60,180,0.35) !important;
           box-shadow: 0 4px 24px rgba(0,40,120,0.10);
         }
@@ -267,7 +279,10 @@ window.People = function People({ lang, setScreen }) {
       {showExtra && (
         <div className="extra-section" style={pplStyles.extraWrap}>
 
-          {/* Inner content padded inside overlay */}
+          {/* Rotating globe image — decorative, behind content */}
+          <img src="img/globe-network.jpg" alt="" className="globe-bg" aria-hidden="true" />
+
+          {/* Inner content */}
           <div style={pplStyles.extraInner}>
 
           {/* Previous members */}
@@ -377,22 +392,17 @@ const pplStyles = {
   tag: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:8 },
   link: { fontFamily:'var(--font-sans)', fontSize:12, color:'var(--accent)', textDecoration:'none', display:'inline-block' },
   toggleBtn: { fontFamily:'var(--font-sans)', fontSize:12, fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--accent)', background:'none', border:'1px solid var(--border)', borderRadius:2, padding:'10px 22px', cursor:'pointer', transition:'background 160ms ease' },
-  /* ── Globe background section (light image) ── */
+  /* ── Globe background section ── */
   extraWrap: {
     marginTop: 0,
     position: 'relative',
-    backgroundImage: 'url(img/globe-network.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center top',
-    backgroundRepeat: 'no-repeat',
+    background: '#fff',
     borderRadius: 4,
     overflow: 'hidden',
   },
   extraInner: {
     position: 'relative',
     zIndex: 1,
-    /* soft white fade so text stays readable over the light globe */
-    background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(245,247,252,0.88) 100%)',
     padding: '52px 48px 60px',
   },
   sectionBlock: { marginBottom: 48 },
