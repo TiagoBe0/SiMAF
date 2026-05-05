@@ -1,5 +1,4 @@
 window.People = function People({ lang, setScreen }) {
-  const [showExtra, setShowExtra] = React.useState(false);
 
   const avatarFallbacks = img => {
     const file = img.replace('img/', '');
@@ -258,34 +257,8 @@ window.People = function People({ lang, setScreen }) {
         ))}
       </div>
 
-      {/* ── Toggle button ── */}
-      <div style={{marginTop:48, textAlign:'center',
-        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(255,255,255,0.75) 100%)' : 'none',
-        borderRadius: showExtra ? '4px 4px 0 0' : 2,
-        padding: showExtra ? '20px 0 0' : 0,
-        transition: 'background 300ms ease',
-      }}>
-        <button
-          type="button"
-          className="toggle-btn"
-          onClick={() => setShowExtra(v => !v)}
-          style={{...pplStyles.toggleBtn,
-            ...(showExtra ? {
-              background:'rgba(255,255,255,0.70)',
-              color:'var(--accent)',
-              borderColor:'rgba(0,80,240,0.25)',
-            } : {}),
-          }}
-        >
-          {showExtra
-            ? (lang==='es' ? '▲ Ocultar colaboradores e integrantes previos' : '▲ Hide collaborators & previous members')
-            : (lang==='es' ? '▼ Ver colaboradores e integrantes previos' : '▼ Show collaborators & previous members')}
-        </button>
-      </div>
-
       {/* ── Extra sections ── */}
-      {showExtra && (
-        <div className="extra-section" style={pplStyles.extraWrap}>
+      <div className="extra-section" style={pplStyles.extraWrap}>
 
           {/* Rotating globe image — decorative, behind content */}
           <img src="img/globe-network.jpg" alt="" className="globe-bg" aria-hidden="true" />
@@ -364,7 +337,6 @@ window.People = function People({ lang, setScreen }) {
           </div>{/* /extraInner */}
 
         </div>
-      )}
     </section>
   );
 };
