@@ -31,105 +31,109 @@ window.People = function People({ lang, setScreen }) {
   ];
 
   const prevMembers = [
-    { name:'Dr. Carlos Javier Ruestes', scholar:'https://scholar.google.com/citations?hl=en&user=EKM6s_wAAAAJ' },
-    { name:'Dr. Emmanuel Nicolas Millán', scholar:'https://scholar.google.com/citations?hl=en&user=EN96EIEAAAAJ' },
-    { name:'Dra. Marian Belen Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ' },
-    { name:'Dr. Franco Aquistapace', scholar:'https://scholar.google.com/citations?hl=en&user=lFvk7zYAAAAJ' },
-    { name:'Dr. Joaquín Rodriguez Nieva', scholar:null },
-    { name:'Dr. Pablo Piaggi', scholar:'https://scholar.google.com/citations?hl=en&user=vaG5YHkAAAAJ' },
-    { name:'Dr. Jesus Martinez-Asencio', scholar:null },
-    { name:'Dr. Alejandro Prada Valverde', scholar:null },
-    { name:'Dr. Enrique Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ' },
-    { name:'Dra. Dalia Bertoldi', scholar:null },
-    { name:'Dr. Martin Parlanti', scholar:null },
-    { name:'Dr. Joas Grossi', scholar:'https://scholar.google.com/citations?hl=en&user=bciIxu4AAAAJ' },
-    { name:'Lic. Gonzalo Garcia Vidable', scholar:null },
-    { name:'Lic. Romina Aparicio', scholar:null },
-    { name:'Lic. Emiliano Aparicio', scholar:null },
+    { name:'Dr. Carlos Javier Ruestes', scholar:'https://scholar.google.com/citations?hl=en&user=EKM6s_wAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-javier-ruestes' },
+    { name:'Dr. Emmanuel Nicolas Millán', scholar:'https://scholar.google.com/citations?hl=en&user=EN96EIEAAAAJ', web:null },
+    { name:'Dra. Marian Belen Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/maria-belen-planes' },
+    { name:'Dr. Franco Aquistapace', scholar:'https://scholar.google.com/citations?hl=en&user=lFvk7zYAAAAJ', web:null },
+    { name:'Dr. Joaquín Rodriguez Nieva', scholar:null, web:null },
+    { name:'Dr. Pablo Piaggi', scholar:'https://scholar.google.com/citations?hl=en&user=vaG5YHkAAAAJ', web:null },
+    { name:'Dr. Jesus Martinez-Asencio', scholar:null, web:null },
+    { name:'Dr. Alejandro Prada Valverde', scholar:null, web:null },
+    { name:'Dr. Enrique Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ', web:null },
+    { name:'Dra. Dalia Bertoldi', scholar:null, web:null },
+    { name:'Dr. Martin Parlanti', scholar:null, web:null },
+    { name:'Dr. Joas Grossi', scholar:'https://scholar.google.com/citations?hl=en&user=bciIxu4AAAAJ', web:null },
+    { name:'Lic. Gonzalo Garcia Vidable', scholar:null, web:null },
+    { name:'Lic. Romina Aparicio', scholar:null, web:null },
+    { name:'Lic. Emiliano Aparicio', scholar:null, web:null },
   ];
 
   const gradThesis = [
-    { name:'Micaela Moron', scholar:null },
+    { name:'Micaela Moron', scholar:null, web:null },
   ];
 
   const gradStudents = [
-    { name:'Nadhir Naciff', scholar:null },
-    { name:'Facundo Gonzalez Cona', scholar:null },
+    { name:'Nadhir Naciff', scholar:null, web:null },
+    { name:'Facundo Gonzalez Cona', scholar:null, web:null },
   ];
 
   const collaborators = [
     {
       country: 'Argentina', flag: '🇦🇷',
       people: [
-        { name:'Carlos Catania', scholar:null },
-        { name:'Eduardo Crespo', scholar:'https://rtyc.utn.edu.ar/index.php/rtyc/article/view/1780' },
-        { name:'Susana Ramos', scholar:'https://scholar.google.com/citations?hl=en&user=OFOP-vIAAAAJ' },
-        { name:'Flavia Gomez Albarracin', scholar:'https://scholar.google.com/citations?view_op=search_authors&mauthors=Flavia+Gomez+Albarracin&hl=en&oi=ao' },
-        { name:'Diego Rosales', scholar:'https://scholar.google.com/citations?hl=en&user=PQCpApUAAAAJ' },
+        { name:'Carlos Catania', scholar:null, web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-adrian-catania' },
+        { name:'Eduardo Crespo', scholar:null, web:'https://rtyc.utn.edu.ar/index.php/rtyc/article/view/1780' },
+        { name:'Susana Ramos', scholar:'https://scholar.google.com/citations?hl=en&user=OFOP-vIAAAAJ', web:null },
+        { name:'Flavia Gomez Albarracin', scholar:'https://scholar.google.com/citations?view_op=search_authors&mauthors=Flavia+Gomez+Albarracin&hl=en&oi=ao', web:null },
+        { name:'Diego Rosales', scholar:'https://scholar.google.com/citations?hl=en&user=PQCpApUAAAAJ', web:null },
       ],
     },
     {
       country: 'Chile', flag: '🇨🇱',
       people: [
-        { name:'Felipe Valencia', scholar:'https://scholar.google.cl/citations?user=BC1CUIYAAAAJ&hl=en' },
-        { name:'Samuel Baltazar', scholar:'https://scholar.google.com/citations?user=K2adjKMAAAAJ&hl=es' },
-        { name:'Rafael Gonzalez', scholar:null },
-        { name:'Nicolás Amigo', scholar:'https://scholar.google.cl/citations?hl=en&user=LuBmnwYAAAAJ' },
-        { name:'Patricio Vargas', scholar:'https://scholar.google.cl/citations?hl=en&user=mYWIQd4AAAAJ' },
+        { name:'Felipe Valencia', scholar:'https://scholar.google.cl/citations?user=BC1CUIYAAAAJ&hl=en', web:null },
+        { name:'Samuel Baltazar', scholar:'https://scholar.google.com/citations?user=K2adjKMAAAAJ&hl=es', web:'https://fisica.usach.cl/es/academicos/samuel-baltazar-rojas' },
+        { name:'Rafael Gonzalez', scholar:null, web:null },
+        { name:'Nicolás Amigo', scholar:'https://scholar.google.cl/citations?hl=en&user=LuBmnwYAAAAJ', web:null },
+        { name:'Patricio Vargas', scholar:'https://scholar.google.cl/citations?hl=en&user=mYWIQd4AAAAJ', web:null },
       ],
     },
     {
       country: 'Brasil', flag: '🇧🇷',
       people: [
-        { name:'Ricardo Papaleo', scholar:'https://scholar.google.cl/citations?hl=en&user=Dj78Is8AAAAJ' },
+        { name:'Ricardo Papaleo', scholar:'https://scholar.google.cl/citations?hl=en&user=Dj78Is8AAAAJ', web:'https://www.pucrs.br/researchers/ricardo-meurer-papaleo/' },
       ],
     },
     {
       country: 'Panamá', flag: '🇵🇦',
       people: [
-        { name:'Reinhardt Pinzon', scholar:'https://scholar.google.cl/citations?hl=en&user=1TICxmUAAAAJ' },
+        { name:'Reinhardt Pinzon', scholar:'https://scholar.google.cl/citations?hl=en&user=1TICxmUAAAAJ', web:null },
       ],
     },
     {
       country: lang === 'es' ? 'Estados Unidos' : 'United States', flag: '🇺🇸',
       people: [
-        { name:'Marc Meyers', scholar:null },
-        { name:'Alfredo Caro', scholar:'https://scholar.google.cl/citations?hl=en&user=qDYJB-YAAAAJ' },
-        { name:'Diana Farkas', scholar:null },
-        { name:'Robert Rudd', scholar:'https://scholar.google.cl/citations?hl=en&user=Qt9wbtoAAAAJ' },
-        { name:'Svetoslav Nikolov', scholar:'https://scholar.google.cl/citations?hl=en&user=NPA5odkAAAAJ' },
+        { name:'Marc Meyers', scholar:'https://scholar.google.com/citations?user=hIlQFf4AAAAJ&hl=en&oi=ao', web:'https://www.imdb.com/es/name/nm1836315/' },
+        { name:'Alfredo Caro', scholar:'https://scholar.google.cl/citations?hl=en&user=qDYJB-YAAAAJ', web:null },
+        { name:'Diana Farkas', scholar:null, web:'https://sites.nationalacademies.org/pga/Jefferson/PGA_052040' },
+        { name:'Robert Rudd', scholar:'https://scholar.google.cl/citations?hl=en&user=Qt9wbtoAAAAJ', web:null },
+        { name:'Svetoslav Nikolov', scholar:'https://scholar.google.cl/citations?hl=en&user=NPA5odkAAAAJ', web:'https://www.sbi.uni-rostock.de/team/detail/svetoslav-nikolov' },
       ],
     },
     {
       country: lang === 'es' ? 'Alemania' : 'Germany', flag: '🇩🇪',
       people: [
-        { name:'Herbert Urbassek', scholar:null },
-        { name:'Nina Merkert', scholar:null },
-        { name:'Gustavo Pastor', scholar:null },
-        { name:'Ina Schubert', scholar:'https://scholar.google.cl/citations?hl=en&user=ZqBt1UEAAAAJ' },
-        { name:'María José Caturla', scholar:'https://scholar.google.cl/citations?hl=en&user=v6xdAEoAAAAJ' },
-        { name:'Raquel González Arrabal', scholar:'https://scholar.google.cl/citations?hl=en&user=q6i0jMwAAAAJ' },
+        { name:'Herbert Urbassek', scholar:null, web:null },
+        { name:'Nina Merkert', scholar:null, web:null },
+        { name:'Gustavo Pastor', scholar:null, web:null },
+        { name:'Ina Schubert', scholar:'https://scholar.google.cl/citations?hl=en&user=ZqBt1UEAAAAJ', web:null },
+        { name:'María José Caturla', scholar:'https://scholar.google.cl/citations?hl=en&user=v6xdAEoAAAAJ', web:null },
+        { name:'Raquel González Arrabal', scholar:'https://scholar.google.cl/citations?hl=en&user=q6i0jMwAAAAJ', web:null },
       ],
     },
     {
       country: lang === 'es' ? 'Francia' : 'France', flag: '🇫🇷',
       people: [
-        { name:'Julien Tranchida', scholar:'https://scholar.google.cl/citations?hl=en&user=Vu_dHNgAAAAJ' },
+        { name:'Julien Tranchida', scholar:'https://scholar.google.cl/citations?hl=en&user=Vu_dHNgAAAAJ', web:null },
       ],
     },
   ];
 
-  const ScholarLink = ({ url, label }) => url ? (
-    <a href={url} target="_blank" rel="noopener noreferrer" style={pplStyles.scholarLink} title="Google Scholar">
-      {label || (lang === 'es' ? 'Scholar →' : 'Scholar →')}
-    </a>
-  ) : null;
-
-  const PersonRow = ({ person }) => (
-    <div style={pplStyles.personRow}>
-      <span style={pplStyles.personRowName}>{person.name}</span>
-      {person.scholar && <ScholarLink url={person.scholar} />}
-    </div>
+  const PersonLinks = ({ p, dark }) => (
+    <span style={{display:'flex', gap:8, flexShrink:0}}>
+      {p.scholar && (
+        <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link"
+           style={dark ? pplStyles.scholarLinkDark : pplStyles.scholarLink}>
+          Scholar →
+        </a>
+      )}
+      {p.web && (
+        <a href={p.web} target="_blank" rel="noopener noreferrer" className="web-link"
+           style={dark ? pplStyles.webLinkDark : pplStyles.webLink}>
+          Web →
+        </a>
+      )}
+    </span>
   );
 
   return (
@@ -163,18 +167,34 @@ window.People = function People({ lang, setScreen }) {
           animation: simaf-section-in 420ms ease both;
         }
         .person-row:hover {
-          background: rgba(255,100,20,0.10);
+          background: rgba(0,50,120,0.06);
         }
         .scholar-link:hover {
           text-decoration: underline;
-          color: #ffb347 !important;
+          color: #003da0 !important;
+        }
+        .web-link:hover {
+          text-decoration: underline;
+          color: #5a007a !important;
         }
         .toggle-btn:hover {
-          background: rgba(0,80,240,0.07) !important;
+          background: rgba(0,80,240,0.06) !important;
         }
-        .collab-country-card:hover {
-          border-color: rgba(255,120,30,0.7) !important;
-          box-shadow: 0 4px 24px rgba(255,80,0,0.18);
+        @keyframes globe-spin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .globe-bg {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 110%;
+          opacity: 0.18;
+          pointer-events: none;
+          animation: globe-spin 60s linear infinite;
+        }
+          border-color: rgba(0,60,180,0.35) !important;
+          box-shadow: 0 4px 24px rgba(0,40,120,0.10);
         }
         @media (max-width: 980px) {
           .people-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -240,7 +260,7 @@ window.People = function People({ lang, setScreen }) {
 
       {/* ── Toggle button ── */}
       <div style={{marginTop:48, textAlign:'center',
-        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.55) 100%)' : 'none',
+        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(255,255,255,0.75) 100%)' : 'none',
         borderRadius: showExtra ? '4px 4px 0 0' : 2,
         padding: showExtra ? '20px 0 0' : 0,
         transition: 'background 300ms ease',
@@ -251,9 +271,9 @@ window.People = function People({ lang, setScreen }) {
           onClick={() => setShowExtra(v => !v)}
           style={{...pplStyles.toggleBtn,
             ...(showExtra ? {
-              background:'rgba(0,0,0,0.55)',
-              color:'#ff9933',
-              borderColor:'rgba(255,120,30,0.5)',
+              background:'rgba(255,255,255,0.70)',
+              color:'var(--accent)',
+              borderColor:'rgba(0,80,240,0.25)',
             } : {}),
           }}
         >
@@ -267,7 +287,10 @@ window.People = function People({ lang, setScreen }) {
       {showExtra && (
         <div className="extra-section" style={pplStyles.extraWrap}>
 
-          {/* Inner content padded inside overlay */}
+          {/* Rotating globe image — decorative, behind content */}
+          <img src="img/globe-network.jpg" alt="" className="globe-bg" aria-hidden="true" />
+
+          {/* Inner content */}
           <div style={pplStyles.extraInner}>
 
           {/* Previous members */}
@@ -279,11 +302,7 @@ window.People = function People({ lang, setScreen }) {
               {prevMembers.map(p => (
                 <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
                   <span style={pplStyles.personRowNameDark}>{p.name}</span>
-                  {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
-                      Scholar →
-                    </a>
-                  )}
+                  <PersonLinks p={p} dark />
                 </div>
               ))}
             </div>
@@ -298,11 +317,7 @@ window.People = function People({ lang, setScreen }) {
               {gradThesis.map(p => (
                 <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
                   <span style={pplStyles.personRowNameDark}>{p.name}</span>
-                  {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
-                      Scholar →
-                    </a>
-                  )}
+                  <PersonLinks p={p} dark />
                 </div>
               ))}
             </div>
@@ -317,11 +332,7 @@ window.People = function People({ lang, setScreen }) {
               {gradStudents.map(p => (
                 <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
                   <span style={pplStyles.personRowNameDark}>{p.name}</span>
-                  {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
-                      Scholar →
-                    </a>
-                  )}
+                  <PersonLinks p={p} dark />
                 </div>
               ))}
             </div>
@@ -342,11 +353,7 @@ window.People = function People({ lang, setScreen }) {
                   {group.people.map(p => (
                     <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
                       <span style={pplStyles.personRowNameDark}>{p.name}</span>
-                      {p.scholar && (
-                        <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
-                          Scholar →
-                        </a>
-                      )}
+                      <PersonLinks p={p} dark />
                     </div>
                   ))}
                 </div>
@@ -377,38 +384,36 @@ const pplStyles = {
   tag: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:8 },
   link: { fontFamily:'var(--font-sans)', fontSize:12, color:'var(--accent)', textDecoration:'none', display:'inline-block' },
   toggleBtn: { fontFamily:'var(--font-sans)', fontSize:12, fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--accent)', background:'none', border:'1px solid var(--border)', borderRadius:2, padding:'10px 22px', cursor:'pointer', transition:'background 160ms ease' },
-  /* ── Dark globe background section ── */
+  /* ── Globe background section ── */
   extraWrap: {
     marginTop: 0,
     position: 'relative',
-    backgroundImage: 'url(img/globe-network.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center top',
-    backgroundRepeat: 'no-repeat',
+    background: '#fff',
     borderRadius: 4,
     overflow: 'hidden',
   },
   extraInner: {
     position: 'relative',
     zIndex: 1,
-    background: 'linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(5,5,18,0.82) 100%)',
     padding: '52px 48px 60px',
   },
   sectionBlock: { marginBottom: 48 },
   sectionLabel: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid var(--rule)', paddingBottom:8, marginBottom:16 },
-  sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'rgba(255,160,60,0.9)', borderBottom:'1px solid rgba(255,120,30,0.30)', paddingBottom:8, marginBottom:16 },
+  sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid rgba(0,0,0,0.12)', paddingBottom:8, marginBottom:16 },
   listGrid: { display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'2px 24px' },
   personRow: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
   personRowDark: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
   personRowName: { fontFamily:'var(--font-serif)', fontSize:15, color:'var(--fg)' },
-  personRowNameDark: { fontFamily:'var(--font-serif)', fontSize:15, color:'rgba(255,245,230,0.92)' },
+  personRowNameDark: { fontFamily:'var(--font-serif)', fontSize:15, color:'var(--fg)' },
   scholarLink: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#1a6e3c', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0 },
-  scholarLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#ff9933', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
+  scholarLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'var(--accent)', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
+  webLink: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#6a0dad', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0 },
+  webLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#9b4dca', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
   collabGrid: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:24 },
   collabCountry: { border:'1px solid var(--border)', borderRadius:2, padding:'16px 18px', background:'#fff' },
-  collabCountryDark: { border:'1px solid rgba(255,120,30,0.30)', borderRadius:3, padding:'16px 18px', background:'rgba(0,0,0,0.42)', backdropFilter:'blur(4px)', transition:'border-color 180ms ease, box-shadow 180ms ease' },
+  collabCountryDark: { border:'1px solid rgba(0,0,0,0.12)', borderRadius:3, padding:'16px 18px', background:'rgba(255,255,255,0.62)', backdropFilter:'blur(6px)', transition:'border-color 180ms ease, box-shadow 180ms ease' },
   countryHeader: { display:'flex', alignItems:'center', gap:8, marginBottom:12, paddingBottom:8, borderBottom:'1px solid var(--rule)' },
   flag: { fontSize:22, lineHeight:1 },
   countryName: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
-  countryNameDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(255,200,120,0.85)' },
+  countryNameDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
 };
