@@ -31,21 +31,21 @@ window.People = function People({ lang, setScreen }) {
   ];
 
   const prevMembers = [
-    { name:'Dr. Carlos Javier Ruestes', scholar:'https://scholar.google.com/citations?hl=en&user=EKM6s_wAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-javier-ruestes' },
-    { name:'Dr. Emmanuel Nicolas Millán', scholar:'https://scholar.google.com/citations?hl=en&user=EN96EIEAAAAJ', web:null },
-    { name:'Dra. Marian Belen Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/maria-belen-planes' },
-    { name:'Dr. Franco Aquistapace', scholar:'https://scholar.google.com/citations?hl=en&user=lFvk7zYAAAAJ', web:null },
-    { name:'Dr. Joaquín Rodriguez Nieva', scholar:null, web:null },
-    { name:'Dr. Pablo Piaggi', scholar:'https://scholar.google.com/citations?hl=en&user=vaG5YHkAAAAJ', web:null },
-    { name:'Dr. Jesus Martinez-Asencio', scholar:null, web:null },
-    { name:'Dr. Alejandro Prada Valverde', scholar:null, web:null },
-    { name:'Dr. Enrique Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ', web:null },
-    { name:'Dra. Dalia Bertoldi', scholar:null, web:null },
-    { name:'Dr. Martin Parlanti', scholar:null, web:null },
-    { name:'Dr. Joas Grossi', scholar:'https://scholar.google.com/citations?hl=en&user=bciIxu4AAAAJ', web:null },
-    { name:'Lic. Gonzalo Garcia Vidable', scholar:null, web:null },
-    { name:'Lic. Romina Aparicio', scholar:null, web:null },
-    { name:'Lic. Emiliano Aparicio', scholar:null, web:null },
+    { name:'Carlos Javier Ruestes', scholar:'https://scholar.google.com/citations?hl=en&user=EKM6s_wAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-javier-ruestes' },
+    { name:'Emmanuel Nicolas Millán', scholar:'https://scholar.google.com/citations?hl=en&user=EN96EIEAAAAJ', web:null },
+    { name:'Marian Belen Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/maria-belen-planes' },
+    { name:'Franco Aquistapace', scholar:'https://scholar.google.com/citations?hl=en&user=lFvk7zYAAAAJ', web:null },
+    { name:'Joaquín Rodriguez Nieva', scholar:null, web:null },
+    { name:'Pablo Piaggi', scholar:'https://scholar.google.com/citations?hl=en&user=vaG5YHkAAAAJ', web:null },
+    { name:'Jesus Martinez-Asencio', scholar:null, web:null },
+    { name:'Alejandro Prada Valverde', scholar:null, web:null },
+    { name:' Enrique Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ', web:null },
+    { name:'Dalia Bertoldi', scholar:null, web:null },
+    { name:'Martin Parlanti', scholar:null, web:null },
+    { name:'Joas Grossi', scholar:'https://scholar.google.com/citations?hl=en&user=bciIxu4AAAAJ', web:null },
+    { name:'Gonzalo Garcia Vidable', scholar:null, web:null },
+    { name:'Romina Aparicio', scholar:null, web:null },
+    { name:'Emiliano Aparicio', scholar:null, web:null },
   ];
 
   const gradThesis = [
