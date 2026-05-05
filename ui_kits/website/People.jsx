@@ -163,18 +163,18 @@ window.People = function People({ lang, setScreen }) {
           animation: simaf-section-in 420ms ease both;
         }
         .person-row:hover {
-          background: rgba(255,100,20,0.10);
+          background: rgba(0,50,120,0.06);
         }
         .scholar-link:hover {
           text-decoration: underline;
-          color: #ffb347 !important;
+          color: #003da0 !important;
         }
         .toggle-btn:hover {
-          background: rgba(0,80,240,0.07) !important;
+          background: rgba(0,80,240,0.06) !important;
         }
         .collab-country-card:hover {
-          border-color: rgba(255,120,30,0.7) !important;
-          box-shadow: 0 4px 24px rgba(255,80,0,0.18);
+          border-color: rgba(0,60,180,0.35) !important;
+          box-shadow: 0 4px 24px rgba(0,40,120,0.10);
         }
         @media (max-width: 980px) {
           .people-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -240,7 +240,7 @@ window.People = function People({ lang, setScreen }) {
 
       {/* ── Toggle button ── */}
       <div style={{marginTop:48, textAlign:'center',
-        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.55) 100%)' : 'none',
+        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(255,255,255,0.75) 100%)' : 'none',
         borderRadius: showExtra ? '4px 4px 0 0' : 2,
         padding: showExtra ? '20px 0 0' : 0,
         transition: 'background 300ms ease',
@@ -251,9 +251,9 @@ window.People = function People({ lang, setScreen }) {
           onClick={() => setShowExtra(v => !v)}
           style={{...pplStyles.toggleBtn,
             ...(showExtra ? {
-              background:'rgba(0,0,0,0.55)',
-              color:'#ff9933',
-              borderColor:'rgba(255,120,30,0.5)',
+              background:'rgba(255,255,255,0.70)',
+              color:'var(--accent)',
+              borderColor:'rgba(0,80,240,0.25)',
             } : {}),
           }}
         >
@@ -377,7 +377,7 @@ const pplStyles = {
   tag: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:8 },
   link: { fontFamily:'var(--font-sans)', fontSize:12, color:'var(--accent)', textDecoration:'none', display:'inline-block' },
   toggleBtn: { fontFamily:'var(--font-sans)', fontSize:12, fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--accent)', background:'none', border:'1px solid var(--border)', borderRadius:2, padding:'10px 22px', cursor:'pointer', transition:'background 160ms ease' },
-  /* ── Dark globe background section ── */
+  /* ── Globe background section (light image) ── */
   extraWrap: {
     marginTop: 0,
     position: 'relative',
@@ -391,24 +391,25 @@ const pplStyles = {
   extraInner: {
     position: 'relative',
     zIndex: 1,
-    background: 'linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(5,5,18,0.82) 100%)',
+    /* soft white fade so text stays readable over the light globe */
+    background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(245,247,252,0.88) 100%)',
     padding: '52px 48px 60px',
   },
   sectionBlock: { marginBottom: 48 },
   sectionLabel: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid var(--rule)', paddingBottom:8, marginBottom:16 },
-  sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'rgba(255,160,60,0.9)', borderBottom:'1px solid rgba(255,120,30,0.30)', paddingBottom:8, marginBottom:16 },
+  sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid rgba(0,0,0,0.12)', paddingBottom:8, marginBottom:16 },
   listGrid: { display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'2px 24px' },
   personRow: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
   personRowDark: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
   personRowName: { fontFamily:'var(--font-serif)', fontSize:15, color:'var(--fg)' },
-  personRowNameDark: { fontFamily:'var(--font-serif)', fontSize:15, color:'rgba(255,245,230,0.92)' },
+  personRowNameDark: { fontFamily:'var(--font-serif)', fontSize:15, color:'var(--fg)' },
   scholarLink: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#1a6e3c', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0 },
-  scholarLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#ff9933', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
+  scholarLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'var(--accent)', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
   collabGrid: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:24 },
   collabCountry: { border:'1px solid var(--border)', borderRadius:2, padding:'16px 18px', background:'#fff' },
-  collabCountryDark: { border:'1px solid rgba(255,120,30,0.30)', borderRadius:3, padding:'16px 18px', background:'rgba(0,0,0,0.42)', backdropFilter:'blur(4px)', transition:'border-color 180ms ease, box-shadow 180ms ease' },
+  collabCountryDark: { border:'1px solid rgba(0,0,0,0.12)', borderRadius:3, padding:'16px 18px', background:'rgba(255,255,255,0.62)', backdropFilter:'blur(6px)', transition:'border-color 180ms ease, box-shadow 180ms ease' },
   countryHeader: { display:'flex', alignItems:'center', gap:8, marginBottom:12, paddingBottom:8, borderBottom:'1px solid var(--rule)' },
   flag: { fontSize:22, lineHeight:1 },
   countryName: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
-  countryNameDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(255,200,120,0.85)' },
+  countryNameDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
 };
