@@ -136,7 +136,9 @@ window.People = function People({ lang, setScreen }) {
   );
 
   return (
-    <section style={pplStyles.wrap}>
+    <section style={{...pplStyles.wrap, position:'relative', overflow:'hidden'}}>
+      {/* Rotating globe image — decorative background for full section */}
+      <img src="img/globe-network.jpg" alt="" className="globe-bg" aria-hidden="true" />
       <style>{`
         @keyframes simaf-person-card-in {
           from { opacity: 0; transform: translateY(18px); }
@@ -180,13 +182,13 @@ window.People = function People({ lang, setScreen }) {
           background: rgba(0,80,240,0.06) !important;
         }
         @keyframes globe-spin {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to   { transform: translate(-50%, -50%) rotate(360deg); }
+          from { transform: translate(-50%, -50%) scale(1.25) rotate(0deg); }
+          to   { transform: translate(-50%, -50%) scale(1.25) rotate(360deg); }
         }
         .globe-bg {
           position: absolute;
           top: 50%; left: 50%;
-          transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%) scale(1.25);
           width: 110%;
           opacity: 0.18;
           pointer-events: none;
@@ -259,9 +261,6 @@ window.People = function People({ lang, setScreen }) {
 
       {/* ── Extra sections ── */}
       <div className="extra-section" style={pplStyles.extraWrap}>
-
-          {/* Rotating globe image — decorative, behind content */}
-          <img src="img/globe-network.jpg" alt="" className="globe-bg" aria-hidden="true" />
 
           {/* Inner content */}
           <div style={pplStyles.extraInner}>
@@ -359,10 +358,7 @@ const pplStyles = {
   /* ── Globe background section ── */
   extraWrap: {
     marginTop: 0,
-    position: 'relative',
-    background: '#fff',
     borderRadius: 4,
-    overflow: 'hidden',
   },
   extraInner: {
     position: 'relative',
