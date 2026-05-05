@@ -163,13 +163,18 @@ window.People = function People({ lang, setScreen }) {
           animation: simaf-section-in 420ms ease both;
         }
         .person-row:hover {
-          background: rgba(0,0,0,0.025);
+          background: rgba(255,100,20,0.10);
         }
         .scholar-link:hover {
           text-decoration: underline;
+          color: #ffb347 !important;
         }
         .toggle-btn:hover {
           background: rgba(0,80,240,0.07) !important;
+        }
+        .collab-country-card:hover {
+          border-color: rgba(255,120,30,0.7) !important;
+          box-shadow: 0 4px 24px rgba(255,80,0,0.18);
         }
         @media (max-width: 980px) {
           .people-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -234,12 +239,23 @@ window.People = function People({ lang, setScreen }) {
       </div>
 
       {/* ── Toggle button ── */}
-      <div style={{marginTop:48, textAlign:'center'}}>
+      <div style={{marginTop:48, textAlign:'center',
+        background: showExtra ? 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.55) 100%)' : 'none',
+        borderRadius: showExtra ? '4px 4px 0 0' : 2,
+        padding: showExtra ? '20px 0 0' : 0,
+        transition: 'background 300ms ease',
+      }}>
         <button
           type="button"
           className="toggle-btn"
           onClick={() => setShowExtra(v => !v)}
-          style={pplStyles.toggleBtn}
+          style={{...pplStyles.toggleBtn,
+            ...(showExtra ? {
+              background:'rgba(0,0,0,0.55)',
+              color:'#ff9933',
+              borderColor:'rgba(255,120,30,0.5)',
+            } : {}),
+          }}
         >
           {showExtra
             ? (lang==='es' ? '▲ Ocultar colaboradores e integrantes previos' : '▲ Hide collaborators & previous members')
@@ -249,19 +265,22 @@ window.People = function People({ lang, setScreen }) {
 
       {/* ── Extra sections ── */}
       {showExtra && (
-        <div className="extra-section" style={{marginTop:48}}>
+        <div className="extra-section" style={pplStyles.extraWrap}>
+
+          {/* Inner content padded inside overlay */}
+          <div style={pplStyles.extraInner}>
 
           {/* Previous members */}
           <div style={pplStyles.sectionBlock}>
-            <div style={pplStyles.sectionLabel}>
+            <div style={pplStyles.sectionLabelDark}>
               {lang==='es' ? 'Integrantes previos' : 'Previous members'}
             </div>
             <div style={pplStyles.listGrid}>
               {prevMembers.map(p => (
-                <div key={p.name} className="person-row" style={pplStyles.personRow}>
-                  <span style={pplStyles.personRowName}>{p.name}</span>
+                <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
+                  <span style={pplStyles.personRowNameDark}>{p.name}</span>
                   {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLink}>
+                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
                       Scholar →
                     </a>
                   )}
@@ -272,15 +291,15 @@ window.People = function People({ lang, setScreen }) {
 
           {/* Thesis students */}
           <div style={pplStyles.sectionBlock}>
-            <div style={pplStyles.sectionLabel}>
+            <div style={pplStyles.sectionLabelDark}>
               {lang==='es' ? 'Tesistas de grado' : 'Undergraduate thesis students'}
             </div>
             <div style={pplStyles.listGrid}>
               {gradThesis.map(p => (
-                <div key={p.name} className="person-row" style={pplStyles.personRow}>
-                  <span style={pplStyles.personRowName}>{p.name}</span>
+                <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
+                  <span style={pplStyles.personRowNameDark}>{p.name}</span>
                   {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLink}>
+                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
                       Scholar →
                     </a>
                   )}
@@ -291,15 +310,15 @@ window.People = function People({ lang, setScreen }) {
 
           {/* Undergraduate students */}
           <div style={pplStyles.sectionBlock}>
-            <div style={pplStyles.sectionLabel}>
+            <div style={pplStyles.sectionLabelDark}>
               {lang==='es' ? 'Alumnos de grado' : 'Undergraduate students'}
             </div>
             <div style={pplStyles.listGrid}>
               {gradStudents.map(p => (
-                <div key={p.name} className="person-row" style={pplStyles.personRow}>
-                  <span style={pplStyles.personRowName}>{p.name}</span>
+                <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
+                  <span style={pplStyles.personRowNameDark}>{p.name}</span>
                   {p.scholar && (
-                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLink}>
+                    <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
                       Scholar →
                     </a>
                   )}
@@ -310,21 +329,21 @@ window.People = function People({ lang, setScreen }) {
 
           {/* Current collaborators by country */}
           <div style={pplStyles.sectionBlock}>
-            <div style={pplStyles.sectionLabel}>
+            <div style={pplStyles.sectionLabelDark}>
               {lang==='es' ? 'Colaboradores actuales' : 'Current collaborators'}
             </div>
             <div className="collab-grid" style={pplStyles.collabGrid}>
               {collaborators.map(group => (
-                <div key={group.country} style={pplStyles.collabCountry}>
+                <div key={group.country} className="collab-country-card" style={pplStyles.collabCountryDark}>
                   <div style={pplStyles.countryHeader}>
                     <span style={pplStyles.flag}>{group.flag}</span>
-                    <span style={pplStyles.countryName}>{group.country}</span>
+                    <span style={pplStyles.countryNameDark}>{group.country}</span>
                   </div>
                   {group.people.map(p => (
-                    <div key={p.name} className="person-row" style={pplStyles.personRow}>
-                      <span style={pplStyles.personRowName}>{p.name}</span>
+                    <div key={p.name} className="person-row" style={pplStyles.personRowDark}>
+                      <span style={pplStyles.personRowNameDark}>{p.name}</span>
                       {p.scholar && (
-                        <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLink}>
+                        <a href={p.scholar} target="_blank" rel="noopener noreferrer" className="scholar-link" style={pplStyles.scholarLinkDark}>
                           Scholar →
                         </a>
                       )}
@@ -334,6 +353,8 @@ window.People = function People({ lang, setScreen }) {
               ))}
             </div>
           </div>
+
+          </div>{/* /extraInner */}
 
         </div>
       )}
@@ -356,15 +377,38 @@ const pplStyles = {
   tag: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--fg-muted)', marginTop:8 },
   link: { fontFamily:'var(--font-sans)', fontSize:12, color:'var(--accent)', textDecoration:'none', display:'inline-block' },
   toggleBtn: { fontFamily:'var(--font-sans)', fontSize:12, fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--accent)', background:'none', border:'1px solid var(--border)', borderRadius:2, padding:'10px 22px', cursor:'pointer', transition:'background 160ms ease' },
-  sectionBlock: { marginBottom:48 },
+  /* ── Dark globe background section ── */
+  extraWrap: {
+    marginTop: 0,
+    position: 'relative',
+    backgroundImage: 'url(img/globe-network.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center top',
+    backgroundRepeat: 'no-repeat',
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  extraInner: {
+    position: 'relative',
+    zIndex: 1,
+    background: 'linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(5,5,18,0.82) 100%)',
+    padding: '52px 48px 60px',
+  },
+  sectionBlock: { marginBottom: 48 },
   sectionLabel: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid var(--rule)', paddingBottom:8, marginBottom:16 },
+  sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'rgba(255,160,60,0.9)', borderBottom:'1px solid rgba(255,120,30,0.30)', paddingBottom:8, marginBottom:16 },
   listGrid: { display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'2px 24px' },
   personRow: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
+  personRowDark: { display:'flex', alignItems:'center', justifyContent:'space-between', gap:8, padding:'7px 10px', borderRadius:2, transition:'background 140ms ease' },
   personRowName: { fontFamily:'var(--font-serif)', fontSize:15, color:'var(--fg)' },
+  personRowNameDark: { fontFamily:'var(--font-serif)', fontSize:15, color:'rgba(255,245,230,0.92)' },
   scholarLink: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#1a6e3c', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0 },
+  scholarLinkDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:600, color:'#ff9933', textDecoration:'none', letterSpacing:'0.06em', flexShrink:0, transition:'color 140ms ease' },
   collabGrid: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:24 },
   collabCountry: { border:'1px solid var(--border)', borderRadius:2, padding:'16px 18px', background:'#fff' },
+  collabCountryDark: { border:'1px solid rgba(255,120,30,0.30)', borderRadius:3, padding:'16px 18px', background:'rgba(0,0,0,0.42)', backdropFilter:'blur(4px)', transition:'border-color 180ms ease, box-shadow 180ms ease' },
   countryHeader: { display:'flex', alignItems:'center', gap:8, marginBottom:12, paddingBottom:8, borderBottom:'1px solid var(--rule)' },
   flag: { fontSize:22, lineHeight:1 },
   countryName: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
+  countryNameDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(255,200,120,0.85)' },
 };
