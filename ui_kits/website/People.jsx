@@ -18,27 +18,27 @@ window.People = function People({ lang, setScreen }) {
   };
 
   const members = [
-    { img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'publicaciones-ebringa.html', scholar:'https://scholar.google.com/citations?hl=en&user=qDYJB-YAAAAJ' },
-    { img:'img/avatar1.jpg', name:'Dr. Gonzalo Dos Santos', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#f02850', pubs:'gonzalo_dos_santos_publications.html', scholar:null },
-    { img:'img/avatardiegod.jpg', name:'Dr. Ing. Diego R. Tramontina', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#7828c8', pubs:'diego_tramontina_publications.html', scholar:null },
-    { img:'img/avatar6.jpg', name:'Dr. Geraudys Mora Barzaga', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#00a050', pubs:'gera_mora_publications.html', scholar:null },
-    { img:'img/avatar4.jpg', name:'Dr. Orlando Deluigi', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#f0a028', pubs:'orlando_deluigi_publications.html', scholar:null },
-    { img:'img/avatar9.jpg', name:'Lic. Federico A. Cartellone', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#00a0c8', pubs:'fede_cartellone_publications.html', scholar:null },
-    { img:'img/avatar5.jpg', name:'Lic. Santiago Bergamin Saua', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#78c828', pubs:null, scholar:null },
-    { img:'img/avatar8.jpg', name:'Lic. Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null, scholar:null },
-    { img:'img/avatar3.jpg', name:'Lic. María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null, scholar:null },
+    { img:'img/avatar2.jpg', name:'Dr. Eduardo Bringa', role:{es:'Director del Laboratorio · Investigador Principal CONICET', en:'Lab Director · Principal Investigator CONICET'}, tag:'PI', hue:'#0050f0', pubs:'publicaciones-ebringa.html', scholar:'https://scholar.google.com/citations?hl=en&user=Wy-8BgYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/eduardo-marcial-bringa' },
+    { img:'img/avatar1.jpg', name:'Dr. Gonzalo Dos Santos', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#f02850', pubs:'gonzalo_dos_santos_publications.html', scholar:'https://scholar.google.com/citations?hl=en&user=3D1TbpUAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/gonzalo-joaquin-dos-santos-mendez' },
+    { img:'img/avatardiegod.jpg', name:'Dr. Ing. Diego R. Tramontina', role:{es:'Investigador Adjunto CONICET', en:'Associate Researcher CONICET'}, tag:'Inv. Adj.', hue:'#7828c8', pubs:'diego_tramontina_publications.html', scholar:'https://scholar.google.com/citations?hl=en&user=K3WsuskAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/diego-ramiro-tramontina-videla' },
+    { img:'img/avatar6.jpg', name:'Dr. Geraudys Mora Barzaga', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#00a050', pubs:'gera_mora_publications.html', scholar:null, web:'https://www.conicet.gov.ar/new_scp/detalle.php?id=51224&datos_academicos=yes' },
+    { img:'img/avatar4.jpg', name:'Dr. Orlando Deluigi', role:{es:'Becario Postdoctoral CONICET', en:'Postdoctoral Fellow CONICET'}, tag:'Postdoc', hue:'#f0a028', pubs:'orlando_deluigi_publications.html', scholar:null, web:'https://bicyt.conicet.gov.ar/fichas/p/orlando-raul-deluigi' },
+    { img:'img/avatar9.jpg', name:'Lic. Federico A. Cartellone', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#00a0c8', pubs:'fede_cartellone_publications.html', scholar:null, web:null },
+    { img:'img/avatar5.jpg', name:'Lic. Santiago Bergamin Saua', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#78c828', pubs:null, scholar:null, web:null },
+    { img:'img/avatar8.jpg', name:'Lic. Tomás Agustín Escalante', role:{es:'Becario Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#f00078', pubs:null, scholar:null, web:null },
+    { img:'img/avatar3.jpg', name:'Lic. María José Buzzachi', role:{es:'Becaria Doctoral CONICET', en:'Doctoral Fellow CONICET'}, tag:'Doctoral', hue:'#2828f0', pubs:null, scholar:null, web:null },
   ];
 
   const prevMembers = [
     { name:'Carlos Javier Ruestes', scholar:'https://scholar.google.com/citations?hl=en&user=EKM6s_wAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-javier-ruestes' },
     { name:'Emmanuel Nicolas Millán', scholar:'https://scholar.google.com/citations?hl=en&user=EN96EIEAAAAJ', web:null },
-    { name:'Marian Belen Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/maria-belen-planes' },
+    { name:'María Belén Planes', scholar:'https://scholar.google.com/citations?hl=en&user=PLn6xOYAAAAJ', web:'https://bicyt.conicet.gov.ar/fichas/p/maria-belen-planes' },
     { name:'Franco Aquistapace', scholar:'https://scholar.google.com/citations?hl=en&user=lFvk7zYAAAAJ', web:null },
     { name:'Joaquín Rodriguez Nieva', scholar:null, web:null },
     { name:'Pablo Piaggi', scholar:'https://scholar.google.com/citations?hl=en&user=vaG5YHkAAAAJ', web:null },
     { name:'Jesus Martinez-Asencio', scholar:null, web:null },
     { name:'Alejandro Prada Valverde', scholar:null, web:null },
-    { name:' Enrique Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ', web:null },
+    { name:'Enrique N. Miranda', scholar:'https://scholar.google.com/citations?hl=en&user=a3IcBeEAAAAJ', web:null },
     { name:'Dalia Bertoldi', scholar:null, web:null },
     { name:'Martin Parlanti', scholar:null, web:null },
     { name:'Joas Grossi', scholar:'https://scholar.google.com/citations?hl=en&user=bciIxu4AAAAJ', web:null },
@@ -63,40 +63,40 @@ window.People = function People({ lang, setScreen }) {
         { name:'Carlos Catania', scholar:null, web:'https://bicyt.conicet.gov.ar/fichas/p/carlos-adrian-catania' },
         { name:'Eduardo Crespo', scholar:null, web:'https://rtyc.utn.edu.ar/index.php/rtyc/article/view/1780' },
         { name:'Susana Ramos', scholar:'https://scholar.google.com/citations?hl=en&user=OFOP-vIAAAAJ', web:null },
-        { name:'Flavia Gomez Albarracin', scholar:'https://scholar.google.com/citations?view_op=search_authors&mauthors=Flavia+Gomez+Albarracin&hl=en&oi=ao', web:null },
+        { name:'Flavia Gomez Albarracin', scholar:'https://scholar.google.com/citations?hl=en&user=fjzYz3IAAAAJ', web:null },
         { name:'Diego Rosales', scholar:'https://scholar.google.com/citations?hl=en&user=PQCpApUAAAAJ', web:null },
       ],
     },
     {
       country: 'Chile', flag: '🇨🇱',
       people: [
-        { name:'Felipe Valencia', scholar:'https://scholar.google.cl/citations?user=BC1CUIYAAAAJ&hl=en', web:null },
-        { name:'Samuel Baltazar', scholar:'https://scholar.google.com/citations?user=K2adjKMAAAAJ&hl=es', web:'https://fisica.usach.cl/es/academicos/samuel-baltazar-rojas' },
-        { name:'Rafael Gonzalez', scholar:null, web:null },
-        { name:'Nicolás Amigo', scholar:'https://scholar.google.cl/citations?hl=en&user=LuBmnwYAAAAJ', web:null },
-        { name:'Patricio Vargas', scholar:'https://scholar.google.cl/citations?hl=en&user=mYWIQd4AAAAJ', web:null },
+        { name:'Felipe Valencia', scholar:'https://scholar.google.com/citations?hl=en&user=BC1CUIYAAAAJ', web:null },
+        { name:'Samuel Baltazar', scholar:'https://scholar.google.com/citations?hl=en&user=K2adjKMAAAAJ', web:'https://fisica.usach.cl/es/academicos/samuel-baltazar-rojas' },
+        { name:'Rafael Gonzalez', scholar:'https://scholar.google.com/citations?hl=en&user=0K20J-QAAAAJ', web:null },
+        { name:'Nicolás Amigo', scholar:'https://scholar.google.com/citations?hl=en&user=LuBmnwYAAAAJ', web:null },
+        { name:'Patricio Vargas', scholar:'https://scholar.google.com/citations?hl=en&user=mYWIQd4AAAAJ', web:null },
       ],
     },
     {
       country: 'Brasil', flag: '🇧🇷',
       people: [
-        { name:'Ricardo Papaleo', scholar:'https://scholar.google.cl/citations?hl=en&user=Dj78Is8AAAAJ', web:'https://www.pucrs.br/researchers/ricardo-meurer-papaleo/' },
+        { name:'Ricardo Papaleo', scholar:'https://scholar.google.com/citations?hl=en&user=Dj78Is8AAAAJ', web:'https://www.pucrs.br/researchers/ricardo-meurer-papaleo/' },
       ],
     },
     {
       country: 'Panamá', flag: '🇵🇦',
       people: [
-        { name:'Reinhardt Pinzon', scholar:'https://scholar.google.cl/citations?hl=en&user=1TICxmUAAAAJ', web:null },
+        { name:'Reinhardt Pinzon', scholar:'https://scholar.google.com/citations?hl=en&user=1TICxmUAAAAJ', web:null },
       ],
     },
     {
       country: lang === 'es' ? 'Estados Unidos' : 'United States', flag: '🇺🇸',
       people: [
-        { name:'Marc Meyers', scholar:'https://scholar.google.com/citations?user=hIlQFf4AAAAJ&hl=en&oi=ao', web:'https://www.imdb.com/es/name/nm1836315/' },
-        { name:'Alfredo Caro', scholar:'https://scholar.google.cl/citations?hl=en&user=qDYJB-YAAAAJ', web:null },
-        { name:'Diana Farkas', scholar:null, web:'https://sites.nationalacademies.org/pga/Jefferson/PGA_052040' },
-        { name:'Robert Rudd', scholar:'https://scholar.google.cl/citations?hl=en&user=Qt9wbtoAAAAJ', web:null },
-        { name:'Svetoslav Nikolov', scholar:'https://scholar.google.cl/citations?hl=en&user=NPA5odkAAAAJ', web:'https://www.sbi.uni-rostock.de/team/detail/svetoslav-nikolov' },
+        { name:'Marc Meyers', scholar:'https://scholar.google.com/citations?hl=en&user=hIlQFf4AAAAJ', web:'https://jacobsschool.ucsd.edu/people/profile/marc-meyers' },
+        { name:'Alfredo Caro', scholar:'https://scholar.google.com/citations?hl=en&user=qDYJB-YAAAAJ', web:null },
+        { name:'Diana Farkas', scholar:null, web:'https://mse.vt.edu/faculty-staff/emeritus-faculty/diana-farkas.html' },
+        { name:'Robert Rudd', scholar:'https://scholar.google.com/citations?hl=en&user=Qt9wbtoAAAAJ', web:'https://people.llnl.gov/rudd1' },
+        { name:'Svetoslav Nikolov', scholar:'https://scholar.google.com/citations?hl=en&user=NPA5odkAAAAJ', web:null },
       ],
     },
     {
@@ -104,16 +104,21 @@ window.People = function People({ lang, setScreen }) {
       people: [
         { name:'Herbert Urbassek', scholar:null, web:null },
         { name:'Nina Merkert', scholar:null, web:null },
-        { name:'Gustavo Pastor', scholar:null, web:null },
-        { name:'Ina Schubert', scholar:'https://scholar.google.cl/citations?hl=en&user=ZqBt1UEAAAAJ', web:null },
-        { name:'María José Caturla', scholar:'https://scholar.google.cl/citations?hl=en&user=v6xdAEoAAAAJ', web:null },
-        { name:'Raquel González Arrabal', scholar:'https://scholar.google.cl/citations?hl=en&user=q6i0jMwAAAAJ', web:null },
+        { name:'Gustavo Pastor', scholar:null, web:'https://www.uni-kassel.de/fb10/en/institute/physik/forschungsgruppen/nanopartikel-und-nanostrukturen/prof-dr-g-m-pastor' },
+        { name:'Ina Schubert', scholar:'https://scholar.google.com/citations?hl=en&user=ZqBt1UEAAAAJ', web:null },
+      ],
+    },
+    {
+      country: lang === 'es' ? 'España' : 'Spain', flag: '🇪🇸',
+      people: [
+        { name:'María José Caturla', scholar:'https://scholar.google.com/citations?hl=en&user=v6xdAEoAAAAJ', web:null },
+        { name:'Raquel González Arrabal', scholar:'https://scholar.google.com/citations?hl=en&user=q6i0jMwAAAAJ', web:null },
       ],
     },
     {
       country: lang === 'es' ? 'Francia' : 'France', flag: '🇫🇷',
       people: [
-        { name:'Julien Tranchida', scholar:'https://scholar.google.cl/citations?hl=en&user=Vu_dHNgAAAAJ', web:null },
+        { name:'Julien Tranchida', scholar:'https://scholar.google.com/citations?hl=en&user=Vu_dHNgAAAAJ', web:null },
       ],
     },
   ];
@@ -192,6 +197,7 @@ window.People = function People({ lang, setScreen }) {
           pointer-events: none;
           animation: globe-spin 60s linear infinite;
         }
+        .collab-country-card:hover {
           border-color: rgba(0,60,180,0.35) !important;
           box-shadow: 0 4px 24px rgba(0,40,120,0.10);
         }
@@ -249,6 +255,11 @@ window.People = function People({ lang, setScreen }) {
                 {m.scholar && (
                   <a href={m.scholar} target="_blank" rel="noopener noreferrer" style={{...pplStyles.link, color:'#1a6e3c'}}>
                     Scholar →
+                  </a>
+                )}
+                {m.web && (
+                  <a href={m.web} target="_blank" rel="noopener noreferrer" style={{...pplStyles.link, color:'#6a0dad'}}>
+                    CONICET →
                   </a>
                 )}
               </div>
