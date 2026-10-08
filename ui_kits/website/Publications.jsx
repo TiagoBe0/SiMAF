@@ -123,6 +123,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "Nature Communications",
     "volume": "17",
     "url": "https://doi.org/10.1038/s41467-026-72210-4",
+    "image": "img/novedades/iron_inner_core.png",
     "investigators": [
       "Eduardo M. Bringa",
       "Orlando Deluigi"
@@ -164,6 +165,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "Physical Review Materials",
     "volume": "10",
     "url": "https://doi.org/10.1103/b3q5-2c4k",
+    "image": "img/novedades/magnetization_recovery.png",
     "investigators": [
       "Eduardo M. Bringa",
       "Gonzalo Dos Santos"

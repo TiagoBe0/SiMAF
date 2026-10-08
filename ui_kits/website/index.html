@@ -65,7 +65,7 @@
 <script src="novedades.js?v=20261008b"></script>
 <script type="text/babel" src="NewsCarousel.jsx?v=20261008b"></script>
 <script type="text/babel" src="ResearchLines.jsx?v=20261008-big"></script>
-<script type="text/babel" src="Publications.jsx?v=20261008-abstracts"></script>
+<script type="text/babel" src="Publications.jsx?v=20261008-abstracts2"></script>
 <script type="text/babel" src="People.jsx?v=20260727-profile-links"></script>
 <script type="text/babel" src="Network.jsx"></script>
 <script type="text/babel" src="Collaborations.jsx"></script>
@@ -92,6 +92,11 @@ function App() {
           <Hero lang={lang} />
           <ResearchLines lang={lang} />
           <Publications lang={lang} limit={3} />
+          <div className="screen-intro" data-screen-label="Personas">
+            <div className="screen-eyebrow">{lang==='es'?'Personas':'People'}</div>
+            <h2 className="screen-title">{lang==='es'?'Nueve miembros. Un laboratorio.':'Nine members. One laboratory.'}</h2>
+          </div>
+          <People lang={lang} setScreen={setScreen} />
           <Footer lang={lang} />
         </main>
       )}
