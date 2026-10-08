@@ -64,11 +64,11 @@ nombre indicado en `image`:
 
 | Paper | Archivo |
 |---|---|
-| Ultrafast thermal sintering… | `ultrafast_sintering.png` |
-| Fitting and validation of a hybrid interatomic potential… | `hybrid_potential.png` |
+| Ultrafast thermal sintering… | `ultrafast_sintering.jpg` ✓ |
+| Fitting and validation of a hybrid interatomic potential… | `hybrid_potential.jpg` ✓ |
 | Dynamic strength of iron… | `iron_inner_core.png` |
-| Changes in microstructure and phonon thermal conductivity… | `lamellar_hea.png` |
-| Atomic-scale control of domain wall motion… | `domain_wall.png` |
+| Changes in microstructure and phonon thermal conductivity… | `lamellar_hea.jpg` ✓ |
+| Atomic-scale control of domain wall motion… | `domain_wall.jpg` ✓ |
 | Nearly full magnetization recovery… | `magnetization_recovery.png` |
 
 La imagen se muestra entera (sin recortar) en un recuadro 16:10; si falta,

@@ -1,4 +1,4 @@
-function publicationMiniatureCandidates(title) {
+function publicationMiniatureCandidates(title, image) {
   const slug = value => value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -6,11 +6,11 @@ function publicationMiniatureCandidates(title) {
     .replace(/^_+|_+$/g, '');
   const full = slug(title);
   const short = full.split('_').filter(Boolean).slice(0, 3).join('_');
-  return [...new Set([short, full].filter(Boolean).map(name => `img/miniatures/${name}.png`))];
+  return [...new Set([image, ...[short, full].filter(Boolean).map(name => `img/miniatures/${name}.png`)].filter(Boolean))];
 }
 
-function PublicationMiniature({ title }) {
-  const candidates = publicationMiniatureCandidates(title);
+function PublicationMiniature({ title, image }) {
+  const candidates = publicationMiniatureCandidates(title, image);
   const [index, setIndex] = React.useState(0);
   const src = candidates[index];
   if (!src) return null;
@@ -30,7 +30,7 @@ function PublicationMiniature({ title }) {
 // Portada de una publicación en "Novedades": usa la imagen de img/miniatures/
 // si existe; si no, dibuja una portada tipográfica estilo revista.
 function NewsCover({ pub, index }) {
-  const candidates = publicationMiniatureCandidates(pub.title);
+  const candidates = publicationMiniatureCandidates(pub.title, pub.image);
   const [imgIndex, setImgIndex] = React.useState(0);
   const src = candidates[imgIndex];
   const hues = ['#0050f0', '#f02850', '#00a050', '#f0a028', '#7828c8', '#00a0c8'];
@@ -96,6 +96,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "International Journal of Heat and Mass Transfer",
     "volume": "270",
     "url": "https://doi.org/10.1016/j.ijheatmasstransfer.2026.129207",
+    "image": "img/novedades/ultrafast_sintering.jpg",
     "investigators": [
       "Eduardo M. Bringa",
       "Geraudys Mora-Barzaga"
@@ -109,6 +110,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "Computational Materials Science",
     "volume": "273, 114946",
     "url": "",
+    "image": "img/novedades/hybrid_potential.jpg",
     "investigators": [
       "Eduardo M. Bringa"
     ],
@@ -134,6 +136,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "Journal of Materials Research and Technology",
     "volume": "42, 12395–12404",
     "url": "https://doi.org/10.1016/j.jmrt.2026.05.370",
+    "image": "img/novedades/lamellar_hea.jpg",
     "investigators": [
       "Eduardo M. Bringa",
       "Geraudys Mora-Barzaga",
@@ -148,6 +151,7 @@ window.Publications = function Publications({ lang, limit }) {
     "venue": "Journal of Science: Advanced Materials and Devices",
     "volume": "11 (2), 101166",
     "url": "https://doi.org/10.1016/j.jsamd.2026.101166",
+    "image": "img/novedades/domain_wall.jpg",
     "investigators": [
       "Eduardo M. Bringa",
       "Gonzalo Dos Santos"
@@ -1120,7 +1124,7 @@ window.Publications = function Publications({ lang, limit }) {
                     {p.investigators.map(name => <button key={name} type="button" onClick={() => !limit && setInvestigatorFilter(name)} style={pubStyles.tag}>{name}</button>)}
                   </div>
                 </div>
-                <PublicationMiniature title={p.title} />
+                <PublicationMiniature title={p.title} image={p.image} />
               </article>
             ))}
           </div>
@@ -1159,8 +1163,8 @@ const newsStyles = {
   head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', gap:24, flexWrap:'wrap', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:24 },
   grid: { display:'grid', gridTemplateColumns:'repeat(4, minmax(0, 1fr))', gap:24 },
   card: { display:'flex', flexDirection:'column', gap:8, color:'inherit', textDecoration:'none', minWidth:0 },
-  cover: { aspectRatio:'3 / 4', border:'1px solid var(--border)', borderRadius:6, overflow:'hidden', background:'var(--navy-900)', transition:'box-shadow .25s ease' },
-  coverImg: { width:'100%', height:'100%', display:'block', objectFit:'cover', background:'#fff' },
+  cover: { aspectRatio:'4 / 3', border:'1px solid var(--border)', borderRadius:6, overflow:'hidden', background:'var(--navy-900)', transition:'box-shadow .25s ease' },
+  coverImg: { width:'100%', height:'100%', display:'block', objectFit:'contain', background:'#fff' },
   typeCover: { height:'100%', display:'flex', flexDirection:'column', padding:'20px 18px', color:'var(--paper-50)', boxSizing:'border-box' },
   coverJournal: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--ink-300)', lineHeight:1.4 },
   coverRule: { height:3, width:44, margin:'14px 0 18px' },
