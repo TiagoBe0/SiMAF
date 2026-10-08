@@ -53,3 +53,24 @@ Para cambiar qué artículos aparecen, agregar o quitar ese campo.
 palabras del título, separadas por `_` (sin tildes), p. ej.
 `Ultrafast_thermal_sintering.png` o `Dynamic_strength_of.png`.
 Si no existe, se dibuja una portada genérica con el nombre de la revista.
+
+## Carrusel "Nuevas publicaciones" (al lado de Líneas de investigación)
+
+Se alimenta de `pappers/novedades.js`. Cada entrada tiene `image`, `title`,
+`authors`, `venue`, `year`, `url`, `abstract_es` y `abstract_en`.
+
+Para cargar la imagen de cada paper, subirla a `pappers/novedades/` con el
+nombre indicado en `image`:
+
+| Paper | Archivo |
+|---|---|
+| Ultrafast thermal sintering… | `ultrafast_sintering.png` |
+| Fitting and validation of a hybrid interatomic potential… | `hybrid_potential.png` |
+| Dynamic strength of iron… | `iron_inner_core.png` |
+| Changes in microstructure and phonon thermal conductivity… | `lamellar_hea.png` |
+| Atomic-scale control of domain wall motion… | `domain_wall.png` |
+| Nearly full magnetization recovery… | `magnetization_recovery.png` |
+
+La imagen se muestra entera (sin recortar) en un recuadro 16:10; si falta,
+aparece una portada genérica. Para agregar un paper nuevo, copiar un bloque
+en `novedades.js` y ponerlo primero.

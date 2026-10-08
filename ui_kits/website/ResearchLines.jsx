@@ -299,6 +299,10 @@ window.ResearchLines = function ResearchLines({ lang }) {
           animation: simaf-compute-drop 5.2s ease-in-out infinite;
           pointer-events: none;
         }
+        @media (max-width: 1000px) {
+          .research-lines-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .news-carousel { position: static !important; max-width: 520px; }
+        }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
           .research-lines-head { align-items: flex-start; flex-direction: column; gap: 6px; }
@@ -311,6 +315,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
         <span style={rlStyles.eye}>{lang==='es'?'Líneas de investigación':'Research lines'}</span>
         <span>0{lines.length}</span>
       </div>
+      <div className="research-lines-layout" style={rlStyles.layout}>
       <div style={rlStyles.list}>
         {lines.map(l => (
           <article key={l.n} className="research-line-row" style={rlStyles.row}>
@@ -417,6 +422,8 @@ window.ResearchLines = function ResearchLines({ lang }) {
           </article>
         ))}
       </div>
+      {window.NewsCarousel && <window.NewsCarousel lang={lang} />}
+      </div>
     </section>
   );
 };
@@ -424,7 +431,8 @@ const rlStyles = {
   wrap: { padding:'72px 48px', maxWidth:1280, margin:'0 auto' },
   head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
   eye: { fontWeight:600, color:'var(--fg)' },
-  list: { display:'flex', flexDirection:'column' },
+  layout: { display:'grid', gridTemplateColumns:'minmax(0, 1fr) 360px', gap:48, alignItems:'start' },
+  list: { display:'flex', flexDirection:'column', minWidth:0 },
   row: { display:'grid', gridTemplateColumns:'80px 24px 1fr', alignItems:'center', gap:20, padding:'28px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
   num: { fontFamily:'var(--font-mono)', fontSize:13, color:'var(--fg-muted)', letterSpacing:'0.1em' },
   dot: { width:14, height:14, borderRadius:'50%' },
