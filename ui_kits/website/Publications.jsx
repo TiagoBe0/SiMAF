@@ -27,14 +27,150 @@ function PublicationMiniature({ title }) {
   );
 }
 
+// Portada de una publicación en "Novedades": usa la imagen de img/miniatures/
+// si existe; si no, dibuja una portada tipográfica estilo revista.
+function NewsCover({ pub, index }) {
+  const candidates = publicationMiniatureCandidates(pub.title);
+  const [imgIndex, setImgIndex] = React.useState(0);
+  const src = candidates[imgIndex];
+  const hues = ['#0050f0', '#f02850', '#00a050', '#f0a028', '#7828c8', '#00a0c8'];
+  const hue = hues[index % hues.length];
+  return (
+    <div className="news-cover" style={{...newsStyles.cover, '--cover-hue':hue}}>
+      {src ? (
+        <img src={src} alt="" style={newsStyles.coverImg} onError={() => setImgIndex(i => i + 1)} />
+      ) : (
+        <div style={newsStyles.typeCover}>
+          <div style={newsStyles.coverJournal}>{pub.venue}</div>
+          <div style={{...newsStyles.coverRule, background:hue}} />
+          <svg viewBox="-50 -50 100 100" style={newsStyles.coverMark} aria-hidden="true">
+            {Array.from({ length: 36 }, (_, k) => {
+              const a = (k / 36) * 2 * Math.PI;
+              const r = 30 + 8 * Math.sin(3 * a + index);
+              return <circle key={k} cx={r * Math.cos(a)} cy={r * Math.sin(a)} r={2.6}
+                             fill={`hsl(${(k * 10 + index * 60) % 360} 85% 58%)`} />;
+            })}
+          </svg>
+          <div style={newsStyles.coverFoot}>
+            <span>{pub.volume ? `Vol. ${pub.volume}` : ''}</span>
+            <span style={{color:hue, fontWeight:700}}>{pub.year}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PublicationNews({ pubs, lang }) {
+  if (!pubs.length) return null;
+  return (
+    <div className="publication-news" style={newsStyles.wrap}>
+      <div style={newsStyles.head}>
+        <span style={{fontWeight:600, color:'var(--fg)'}}>{lang==='es'?'Novedades':'What’s new'}</span>
+        <span>{lang==='es'?'Últimos artículos publicados':'Latest published articles'}</span>
+      </div>
+      <div className="publication-news-grid" style={newsStyles.grid}>
+        {pubs.map((p, i) => {
+          const Tag = p.url ? 'a' : 'div';
+          return (
+            <Tag key={p.title} className="news-card" style={newsStyles.card}
+                 {...(p.url ? { href:p.url, target:'_blank', rel:'noopener' } : {})}>
+              <NewsCover pub={p} index={i} />
+              <div style={newsStyles.meta}>{p.venue} · {p.year}</div>
+              <h3 style={newsStyles.title}>{p.title}</h3>
+              <div style={newsStyles.auth}>{p.authors}</div>
+            </Tag>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 window.Publications = function Publications({ lang, limit }) {
   const allPubs = [
+  {
+    "year": "2026",
+    "title": "Ultrafast thermal sintering controls thermal transport in high-entropy alloy nanoparticle junctions",
+    "authors": "G Mora-Barzaga, P Inostroza, F Valencia, EM Bringa",
+    "venue": "International Journal of Heat and Mass Transfer",
+    "volume": "270",
+    "url": "https://doi.org/10.1016/j.ijheatmasstransfer.2026.129207",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Geraudys Mora-Barzaga"
+    ],
+    "news": true
+  },
+  {
+    "year": "2026",
+    "title": "Fitting and validation of a hybrid interatomic potential for modeling Fe50−XMn30Co10Cr10BX (x = 5 and 7 at.%) compositionally complex alloys",
+    "authors": "R Vargas-Osorio, …, EM Bringa, …, K Paredes-Gil",
+    "venue": "Computational Materials Science",
+    "volume": "273, 114946",
+    "url": "",
+    "investigators": [
+      "Eduardo M. Bringa"
+    ],
+    "news": true
+  },
+  {
+    "year": "2026",
+    "title": "Dynamic strength of iron under pressure-temperature conditions of Earth's inner core",
+    "authors": "YJ Kim, G Righi, O Deluigi, E Bringa, T Lockard, R Rudd, C Ruestes",
+    "venue": "Nature Communications",
+    "volume": "17",
+    "url": "https://doi.org/10.1038/s41467-026-72210-4",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Orlando Deluigi"
+    ],
+    "news": true
+  },
+  {
+    "year": "2026",
+    "title": "Changes in microstructure and phonon thermal conductivity in a lamellar dual-phase high-entropy alloy under tensile strain",
+    "authors": "G Mora-Barzaga, OR Deluigi, HM Urbassek, FJ Valencia, EM Bringa",
+    "venue": "Journal of Materials Research and Technology",
+    "volume": "42, 12395–12404",
+    "url": "https://doi.org/10.1016/j.jmrt.2026.05.370",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Geraudys Mora-Barzaga",
+      "Orlando Deluigi"
+    ],
+    "news": true
+  },
+  {
+    "year": "2026",
+    "title": "Atomic-scale control of domain wall motion in pristine and defective Fe nanowires with Spin-Lattice Dynamics",
+    "authors": "F Corvacho, G Dos Santos, E Bringa, J Rojas-Nunez, M Castro, S Allende, SE Baltazar",
+    "venue": "Journal of Science: Advanced Materials and Devices",
+    "volume": "11 (2), 101166",
+    "url": "https://doi.org/10.1016/j.jsamd.2026.101166",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Gonzalo Dos Santos"
+    ]
+  },
+  {
+    "year": "2026",
+    "title": "Nearly full magnetization recovery after a strong collision between Fe nanoparticles",
+    "authors": "N Plaza-Alcafuz, SE Baltazar, G Dos Santos, SV Nikolov, HM Urbassek, EM Bringa",
+    "venue": "Physical Review Materials",
+    "volume": "10",
+    "url": "https://doi.org/10.1103/b3q5-2c4k",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Gonzalo Dos Santos"
+    ]
+  },
   {
     "year": "2026",
     "title": "Cluster impact into high-entropy alloys: Deformation, hardness changes, and subgrain formation",
     "authors": "IA Alhafez, OR Deluigi, N Merkert, HM Urbassek, EM Bringa",
     "venue": "Journal of Materials Research and Technology",
-    "volume": "",
+    "volume": "42",
     "url": "",
     "investigators": [
       "Eduardo M. Bringa",
@@ -50,6 +186,19 @@ window.Publications = function Publications({ lang, limit }) {
     "url": "",
     "investigators": [
       "Eduardo M. Bringa"
+    ]
+  },
+  {
+    "year": "2026",
+    "title": "Compression of refractory high-entropy alloy nanoparticles: Size and short-range order effects",
+    "authors": "FA Cartellone, N Amigo, FR Roco, O Deluigi, FJ Valencia, EM Bringa",
+    "venue": "International Journal of Refractory Metals and Hard Materials",
+    "volume": "134, 107498",
+    "url": "https://doi.org/10.1016/j.ijrmhm.2025.107498",
+    "investigators": [
+      "Eduardo M. Bringa",
+      "Federico A. Cartellone",
+      "Orlando Deluigi"
     ]
   },
   {
@@ -72,19 +221,6 @@ window.Publications = function Publications({ lang, limit }) {
     "url": "",
     "investigators": [
       "Eduardo M. Bringa"
-    ]
-  },
-  {
-    "year": "2025",
-    "title": "Compression of refractory high-entropy alloy nanoparticles: Size and short-range order effects",
-    "authors": "FA Cartellone, N Amigo, FR Roco, O Deluigi, FJ Valencia, EM Bringa",
-    "venue": "International Journal of Refractory Metals and Hard Materials",
-    "volume": "107498",
-    "url": "https://doi.org/10.1016/j.ijrmhm.2025.107498",
-    "investigators": [
-      "Eduardo M. Bringa",
-      "Federico A. Cartellone",
-      "Orlando Deluigi"
     ]
   },
   {
@@ -114,18 +250,6 @@ window.Publications = function Publications({ lang, limit }) {
     "title": "Dynamic strength measurement of iron at 450 GPa using direct laser-driven Rayleigh-Taylor instability",
     "authors": "YJ Kim, G Righi, OR Deluigi, CJ Ruestes, MA Meyers, RE Rudd",
     "venue": "DPP 2025",
-    "volume": "",
-    "url": "",
-    "investigators": [
-      "Eduardo M. Bringa",
-      "Orlando Deluigi"
-    ]
-  },
-  {
-    "year": "2025",
-    "title": "Dynamic strength of iron under pressure-temperature conditions of Earth's inner core",
-    "authors": "YJ Kim, G Righi, O Deluigi, E Bringa, T Lockard, R Rudd, C Ruestes",
-    "venue": "",
     "volume": "",
     "url": "",
     "investigators": [
@@ -930,6 +1054,19 @@ window.Publications = function Publications({ lang, limit }) {
             animation: none;
           }
         }
+        .news-card { transition: transform .25s ease; }
+        .news-card:hover { transform: translateY(-4px); }
+        .news-card:hover .news-cover { box-shadow: 0 14px 30px -18px var(--cover-hue); }
+        @media (prefers-reduced-motion: reduce) {
+          .news-card, .news-card:hover { transition: none; transform: none; }
+        }
+        @media (max-width: 1100px) {
+          .publication-news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+        }
+        @media (max-width: 560px) {
+          .publication-news-grid { grid-template-columns: 1fr !important; }
+          .news-cover { aspect-ratio: 16 / 9 !important; }
+        }
         @media (max-width: 900px) {
           .publication-filters { grid-template-columns: 1fr !important; }
           .publication-item { align-items: stretch !important; flex-direction: column; }
@@ -945,6 +1082,7 @@ window.Publications = function Publications({ lang, limit }) {
         <span style={{fontWeight:600, color:'var(--fg)'}}>{lang==='es'?'Publicaciones':'Publications'}</span>
         <span>{limit ? (lang==='es'?'Más recientes':'Most recent') : `${filtered.length} / ${allPubs.length} · ${years[years.length-1]}–${years[0]}`}</span>
       </div>
+      {!limit && <PublicationNews pubs={allPubs.filter(p => p.news)} lang={lang} />}
       {!limit && (
         <div className="publication-filters" style={pubStyles.filters}>
           <input
@@ -1015,4 +1153,20 @@ const pubStyles = {
   tags: { marginTop:10, display:'flex', gap:8, flexWrap:'wrap' },
   tag: { border:'1px solid var(--border)', background:'transparent', color:'var(--fg-muted)', borderRadius:4, padding:'4px 8px', fontFamily:'var(--font-sans)', fontSize:11, cursor:'pointer' },
   empty: { padding:'36px 0', fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, color:'var(--fg-muted)' },
+};
+const newsStyles = {
+  wrap: { marginBottom:48 },
+  head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', gap:24, flexWrap:'wrap', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:24 },
+  grid: { display:'grid', gridTemplateColumns:'repeat(4, minmax(0, 1fr))', gap:24 },
+  card: { display:'flex', flexDirection:'column', gap:8, color:'inherit', textDecoration:'none', minWidth:0 },
+  cover: { aspectRatio:'3 / 4', border:'1px solid var(--border)', borderRadius:6, overflow:'hidden', background:'var(--navy-900)', transition:'box-shadow .25s ease' },
+  coverImg: { width:'100%', height:'100%', display:'block', objectFit:'cover', background:'#fff' },
+  typeCover: { height:'100%', display:'flex', flexDirection:'column', padding:'20px 18px', color:'var(--paper-50)', boxSizing:'border-box' },
+  coverJournal: { fontFamily:'var(--font-sans)', fontSize:10, fontWeight:600, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--ink-300)', lineHeight:1.4 },
+  coverRule: { height:3, width:44, margin:'14px 0 18px' },
+  coverMark: { flex:1, minHeight:0, width:'100%', opacity:0.9 },
+  coverFoot: { marginTop:12, display:'flex', justifyContent:'space-between', gap:8, fontFamily:'var(--font-mono)', fontSize:11, color:'var(--ink-300)' },
+  meta: { marginTop:6, fontFamily:'var(--font-mono)', fontSize:11, color:'var(--fg-muted)' },
+  title: { fontFamily:'var(--font-serif)', fontSize:17, fontWeight:500, lineHeight:1.3, color:'var(--fg)', margin:0 },
+  auth: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:14, color:'var(--fg-muted)' },
 };

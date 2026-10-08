@@ -41,3 +41,15 @@ pappers/
 ├── graphical-abstract.png
 └── README.md
 ```
+
+## Sección "Novedades" (página Publicaciones)
+
+Al inicio de la página **Publicaciones** se muestran como "Novedades" las
+entradas de `ui_kits/website/Publications.jsx` que tengan `"news": true`.
+Para cambiar qué artículos aparecen, agregar o quitar ese campo.
+
+**Portada:** se busca automáticamente una imagen en
+`ui_kits/website/img/miniatures/` con el nombre formado por las tres primeras
+palabras del título, separadas por `_` (sin tildes), p. ej.
+`Ultrafast_thermal_sintering.png` o `Dynamic_strength_of.png`.
+Si no existe, se dibuja una portada genérica con el nombre de la revista.
