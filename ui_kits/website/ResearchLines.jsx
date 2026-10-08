@@ -301,7 +301,7 @@ window.ResearchLines = function ResearchLines({ lang }) {
         }
         @media (max-width: 1000px) {
           .research-lines-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .news-carousel { position: static !important; max-width: 520px; }
+          .news-carousel { position: static !important; max-width: 720px; }
         }
         @media (max-width: 680px) {
           .research-lines-wrap { padding: 48px 22px !important; }
@@ -431,12 +431,12 @@ const rlStyles = {
   wrap: { padding:'72px 48px', maxWidth:1280, margin:'0 auto' },
   head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
   eye: { fontWeight:600, color:'var(--fg)' },
-  layout: { display:'grid', gridTemplateColumns:'minmax(0, 1fr) 360px', gap:48, alignItems:'start' },
+  layout: { display:'grid', gridTemplateColumns:'minmax(0, 0.8fr) minmax(0, 1.2fr)', gap:56, alignItems:'start' },
   list: { display:'flex', flexDirection:'column', minWidth:0 },
-  row: { display:'grid', gridTemplateColumns:'80px 24px 1fr', alignItems:'center', gap:20, padding:'28px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
-  num: { fontFamily:'var(--font-mono)', fontSize:13, color:'var(--fg-muted)', letterSpacing:'0.1em' },
-  dot: { width:14, height:14, borderRadius:'50%' },
+  row: { display:'grid', gridTemplateColumns:'40px 14px 1fr', alignItems:'center', gap:12, padding:'14px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
+  num: { fontFamily:'var(--font-mono)', fontSize:11, color:'var(--fg-muted)', letterSpacing:'0.1em' },
+  dot: { width:9, height:9, borderRadius:'50%' },
   body: {},
-  title: { fontFamily:'var(--font-serif)', fontSize:26, fontWeight:500, lineHeight:1.2, letterSpacing:'-0.01em' },
-  desc: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:16, color:'var(--fg-muted)', marginTop:6, maxWidth:'70ch' },
+  title: { fontFamily:'var(--font-serif)', fontSize:17, fontWeight:500, lineHeight:1.2, letterSpacing:'-0.01em' },
+  desc: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:12.5, lineHeight:1.4, color:'var(--fg-muted)', marginTop:3, maxWidth:'70ch' },
 };
