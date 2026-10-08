@@ -353,8 +353,8 @@ window.People = function People({ lang, setScreen }) {
 };
 
 const pplStyles = {
-  wrap: { padding:'72px 48px', maxWidth:1280, margin:'0 auto' },
-  head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
+  wrap: { padding:'32px 48px 24px', maxWidth:1280, margin:'0 auto' },
+  head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:20 },
   headActions: { display:'flex', alignItems:'center', gap:18 },
   networkLink: { border:'none', background:'none', padding:0, color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase' },
   grid: { display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:24 },
@@ -380,7 +380,7 @@ const pplStyles = {
     zIndex: 1,
     padding: '52px 48px 60px',
   },
-  sectionBlock: { marginBottom: 48 },
+  sectionBlock: { marginBottom: 24 },
   sectionLabel: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid var(--rule)', paddingBottom:8, marginBottom:16 },
   sectionLabelDark: { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--fg-muted)', borderBottom:'1px solid rgba(0,0,0,0.12)', paddingBottom:8, marginBottom:16 },
   listGrid: { display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))', gap:'2px 24px' },

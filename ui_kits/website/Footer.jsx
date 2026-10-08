@@ -62,7 +62,7 @@ window.Footer = function Footer({ lang }) {
   );
 };
 const ftStyles = {
-  wrap: { background:'var(--navy-900)', color:'#e9edf7', marginTop:80, padding:'64px 48px 32px' },
+  wrap: { background:'var(--navy-900)', color:'#e9edf7', marginTop:32, padding:'40px 48px 24px' },
   inner: { maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.2fr', gap:60 },
   brand: { display:'flex', gap:16, alignItems:'flex-start' },
   mark: { width:56, height:56, objectFit:'cover', borderRadius:'50%' },
@@ -73,5 +73,5 @@ const ftStyles = {
   item: { fontFamily:'var(--font-sans)', fontSize:13, color:'#e9edf7', marginTop:6 },
   itemMuted: { fontFamily:'var(--font-sans)', fontSize:13, color:'#a8b3d1', marginTop:6 },
   link: { color:'#e9edf7', textDecoration:'none', borderBottom:'1px solid #4d88ff' },
-  rule: { maxWidth:1280, margin:'48px auto 0', paddingTop:16, borderTop:'1px solid #0f356f', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.12em', color:'#a8b3d1' },
+  rule: { maxWidth:1280, margin:'28px auto 0', paddingTop:16, borderTop:'1px solid #0f356f', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.12em', color:'#a8b3d1' },
 };

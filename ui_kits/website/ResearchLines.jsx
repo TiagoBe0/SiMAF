@@ -428,12 +428,12 @@ window.ResearchLines = function ResearchLines({ lang }) {
   );
 };
 const rlStyles = {
-  wrap: { padding:'72px 48px', maxWidth:1280, margin:'0 auto' },
-  head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:40 },
+  wrap: { padding:'32px 48px 24px', maxWidth:1280, margin:'0 auto' },
+  head: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)', marginBottom:20 },
   eye: { fontWeight:600, color:'var(--fg)' },
   layout: { display:'grid', gridTemplateColumns:'minmax(0, 0.8fr) minmax(0, 1.2fr)', gap:56, alignItems:'start' },
   list: { display:'flex', flexDirection:'column', minWidth:0 },
-  row: { display:'grid', gridTemplateColumns:'40px 14px 1fr', alignItems:'center', gap:12, padding:'14px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
+  row: { display:'grid', gridTemplateColumns:'40px 14px 1fr', alignItems:'center', gap:12, padding:'8px 0', borderBottom:'1px solid var(--border)', color:'var(--fg)' },
   num: { fontFamily:'var(--font-mono)', fontSize:11, color:'var(--fg-muted)', letterSpacing:'0.1em' },
   dot: { width:9, height:9, borderRadius:'50%' },
   body: {},

@@ -113,13 +113,13 @@ window.Hero = function Hero({ lang }) {
 };
 
 const heroStyles = {
-  wrap: { position:'relative', padding:'80px 48px 72px', maxWidth:1280, margin:'0 auto' },
+  wrap: { position:'relative', padding:'40px 48px 28px', maxWidth:1280, margin:'0 auto' },
   masthead: { borderTop:'3px double var(--rule)', borderBottom:'1px solid var(--rule)', padding:'8px 0', display:'flex', justifyContent:'space-between', fontFamily:'var(--font-sans)', fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--fg-muted)' },
-  intro: { display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40, margin:'40px 0 36px' },
+  intro: { display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:32, margin:'24px 0 20px' },
   copy: { flex:'1 1 680px', minWidth:0 },
-  h: { fontFamily:'var(--font-serif)', fontSize:'clamp(40px, 5.2vw, 68px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 28px', maxWidth:'20ch' },
-  lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:22, lineHeight:1.55, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
-  atomShell: { position:'relative', width:'min(31vw, 360px)', minWidth:220, aspectRatio:'1 / 1', flex:'0 0 auto', animation:'simaf-atom-settle 20s cubic-bezier(0.2, 0.9, 0.18, 1) infinite', transformOrigin:'50% 50%' },
+  h: { fontFamily:'var(--font-serif)', fontSize:'clamp(34px, 4vw, 52px)', fontWeight:500, lineHeight:1.08, letterSpacing:'-0.02em', color:'var(--fg)', margin:'0 0 16px', maxWidth:'26ch' },
+  lead: { fontFamily:'var(--font-serif)', fontStyle:'italic', fontSize:19, lineHeight:1.5, color:'var(--fg-muted)', maxWidth:'62ch', margin:0 },
+  atomShell: { position:'relative', width:'min(24vw, 280px)', minWidth:200, aspectRatio:'1 / 1', flex:'0 0 auto', animation:'simaf-atom-settle 20s cubic-bezier(0.2, 0.9, 0.18, 1) infinite', transformOrigin:'50% 50%' },
   atomHalo: { position:'absolute', inset:'8%', borderRadius:'50%', background:'radial-gradient(circle, rgba(0,80,240,0.26) 0%, rgba(0,80,240,0.12) 36%, rgba(0,80,240,0.03) 68%, transparent 100%)', filter:'blur(10px)', animation:'simaf-atom-halo 20s ease-out infinite' },
   atomRingA: { position:'absolute', left:'50%', top:'50%', width:'112%', height:'84%', borderRadius:'50%', border:'1px solid rgba(0,80,240,0.22)', boxShadow:'0 0 0 1px rgba(255,255,255,0.12) inset', animation:'simaf-atom-ring-a 20s cubic-bezier(0.2, 0.9, 0.18, 1) infinite', transformOrigin:'50% 50%' },
   atomRingB: { position:'absolute', left:'50%', top:'50%', width:'88%', height:'118%', borderRadius:'50%', border:'1px solid rgba(184,137,24,0.18)', animation:'simaf-atom-ring-b 20s cubic-bezier(0.2, 0.9, 0.18, 1) infinite', transformOrigin:'50% 50%' },
