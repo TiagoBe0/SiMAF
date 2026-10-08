@@ -1,11 +1,11 @@
 // Carrusel "Nuevas publicaciones" (al lado de Líneas de investigación).
 // Orden: el primero es el que se muestra primero.
-// image: ruta relativa a la raíz del repo, p. ej. 'pappers/novedades/sintering.png'.
+// image: ruta relativa a ui_kits/website/, p. ej. 'img/novedades/ultrafast_sintering.png'.
 //        Si es null o el archivo no existe, se muestra una portada genérica.
 // abstract_es / abstract_en: resumen corto (2–3 oraciones). Vacío = no se muestra.
 window.NEWS_PAPERS = [
   {
-    image: 'pappers/novedades/ultrafast_sintering.png',
+    image: 'img/novedades/ultrafast_sintering.png',
     title: 'Ultrafast thermal sintering controls thermal transport in high-entropy alloy nanoparticle junctions',
     authors: 'G Mora-Barzaga, P Inostroza, F Valencia, EM Bringa',
     venue: 'Int. J. Heat Mass Transfer 270',
@@ -15,7 +15,7 @@ window.NEWS_PAPERS = [
     abstract_en: 'Nonequilibrium molecular dynamics is used to study ultrafast thermal sintering of a dimer of high-entropy alloy nanoparticles and its impact on interfacial thermal transport. The effective conductivity grows roughly linearly with contact size, while high-temperature amorphization lowers it; results agree with geometric constriction theory.',
   },
   {
-    image: 'pappers/novedades/hybrid_potential.png',
+    image: 'img/novedades/hybrid_potential.png',
     title: 'Fitting and validation of a hybrid interatomic potential for modeling Fe50−XMn30Co10Cr10BX compositionally complex alloys',
     authors: 'R Vargas-Osorio, …, EM Bringa, …, K Paredes-Gil',
     venue: 'Comput. Mater. Sci. 273',
@@ -25,7 +25,7 @@ window.NEWS_PAPERS = [
     abstract_en: 'A Lennard-Jones potential for boron–metal interactions is fitted and validated, combined with a 2NN-MEAM potential for metal–metal interactions. The hybrid model reproduces ab initio stacking fault energies and captures the formation of CrFeB and CoB clusters.',
   },
   {
-    image: 'pappers/novedades/iron_inner_core.png',
+    image: 'img/novedades/iron_inner_core.png',
     title: "Dynamic strength of iron under pressure-temperature conditions of Earth's inner core",
     authors: 'YJ Kim, G Righi, O Deluigi, E Bringa, T Lockard, R Rudd, C Ruestes, …',
     venue: 'Nature Communications 17',
@@ -35,7 +35,7 @@ window.NEWS_PAPERS = [
     abstract_en: "Experiments at the National Ignition Facility enable the first simultaneous measurement of iron's dynamic strength at pressure and temperature conditions of Earth's inner core, providing experimental benchmarks for its rheology.",
   },
   {
-    image: 'pappers/novedades/lamellar_hea.png',
+    image: 'img/novedades/lamellar_hea.png',
     title: 'Changes in microstructure and phonon thermal conductivity in a lamellar dual-phase high-entropy alloy under tensile strain',
     authors: 'G Mora-Barzaga, OR Deluigi, HM Urbassek, FJ Valencia, EM Bringa',
     venue: 'J. Mater. Res. Technol. 42',
@@ -45,7 +45,7 @@ window.NEWS_PAPERS = [
     abstract_en: '',
   },
   {
-    image: 'pappers/novedades/domain_wall.png',
+    image: 'img/novedades/domain_wall.png',
     title: 'Atomic-scale control of domain wall motion in pristine and defective Fe nanowires with Spin-Lattice Dynamics',
     authors: 'F Corvacho, G Dos Santos, E Bringa, J Rojas-Nunez, M Castro, S Allende, SE Baltazar',
     venue: 'J. Sci. Adv. Mater. Devices 11',
@@ -55,7 +55,7 @@ window.NEWS_PAPERS = [
     abstract_en: 'Spin-lattice dynamics is used to simulate domain wall motion in iron nanowires. Crystalline wires reproduce analytical predictions for wall width and velocity; voids, dislocations and grain boundaries cause non-monotonic motion that is hard to capture with micromagnetic approaches.',
   },
   {
-    image: 'pappers/novedades/magnetization_recovery.png',
+    image: 'img/novedades/magnetization_recovery.png',
     title: 'Nearly full magnetization recovery after a strong collision between Fe nanoparticles',
     authors: 'N Plaza-Alcafuz, SE Baltazar, G Dos Santos, SV Nikolov, HM Urbassek, EM Bringa',
     venue: 'Phys. Rev. Materials 10',

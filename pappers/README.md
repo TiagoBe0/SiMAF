@@ -56,10 +56,10 @@ Si no existe, se dibuja una portada genérica con el nombre de la revista.
 
 ## Carrusel "Nuevas publicaciones" (al lado de Líneas de investigación)
 
-Se alimenta de `pappers/novedades.js`. Cada entrada tiene `image`, `title`,
+Se alimenta de `ui_kits/website/novedades.js`. Cada entrada tiene `image`, `title`,
 `authors`, `venue`, `year`, `url`, `abstract_es` y `abstract_en`.
 
-Para cargar la imagen de cada paper, subirla a `pappers/novedades/` con el
+Para cargar la imagen de cada paper, subirla a `ui_kits/website/img/novedades/` con el
 nombre indicado en `image`:
 
 | Paper | Archivo |
